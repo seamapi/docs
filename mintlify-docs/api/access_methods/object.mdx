@@ -131,3 +131,275 @@ Represents an access method for an Access Grant. Access methods describe the mod
 <ResponseField name="workspace_id" type="String (UUID)">
   ID of the Seam workspace associated with the access method.
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`access_method.issued`**
+
+An access method was issued.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_ids" type="Array">
+  IDs of the access grants associated with this access method.
+</ResponseField>
+
+<ResponseField name="access_grant_keys" type="Array">
+  Keys of the access grants associated with this access method (if present).
+</ResponseField>
+
+<ResponseField name="access_method_id" type="String (UUID)">
+  ID of the affected access method.
+</ResponseField>
+
+<ResponseField name="code" type="String">
+  The actual PIN code for code access methods (only present when mode is 'code').
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_method.issued`
+</ResponseField>
+
+<ResponseField name="is_backup_code" type="Boolean">
+  Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_method.revoked`**
+
+An access method was revoked.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_ids" type="Array">
+  IDs of the access grants associated with this access method.
+</ResponseField>
+
+<ResponseField name="access_grant_keys" type="Array">
+  Keys of the access grants associated with this access method (if present).
+</ResponseField>
+
+<ResponseField name="access_method_id" type="String (UUID)">
+  ID of the affected access method.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_method.revoked`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_method.card_encoding_required`**
+
+An access method representing a physical card requires encoding.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_ids" type="Array">
+  IDs of the access grants associated with this access method.
+</ResponseField>
+
+<ResponseField name="access_grant_keys" type="Array">
+  Keys of the access grants associated with this access method (if present).
+</ResponseField>
+
+<ResponseField name="access_method_id" type="String (UUID)">
+  ID of the affected access method.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_method.card_encoding_required`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_method.deleted`**
+
+An access method was deleted.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_ids" type="Array">
+  IDs of the access grants associated with this access method.
+</ResponseField>
+
+<ResponseField name="access_grant_keys" type="Array">
+  Keys of the access grants associated with this access method (if present).
+</ResponseField>
+
+<ResponseField name="access_method_id" type="String (UUID)">
+  ID of the affected access method.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_method.deleted`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_method.reissued`**
+
+An access method was reissued.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_ids" type="Array">
+  IDs of the access grants associated with this access method.
+</ResponseField>
+
+<ResponseField name="access_grant_keys" type="Array">
+  Keys of the access grants associated with this access method (if present).
+</ResponseField>
+
+<ResponseField name="access_method_id" type="String (UUID)">
+  ID of the affected access method.
+</ResponseField>
+
+<ResponseField name="code" type="String">
+  The actual PIN code for code access methods (only present when mode is 'code').
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_method.reissued`
+</ResponseField>
+
+<ResponseField name="is_backup_code" type="Boolean">
+  Indicates whether the code is a backup code (only present when mode is 'code' and a backup code was used).
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_method.created`**
+
+An access method was created.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_ids" type="Array">
+  IDs of the access grants associated with this access method.
+</ResponseField>
+
+<ResponseField name="access_grant_keys" type="Array">
+  Keys of the access grants associated with this access method (if present).
+</ResponseField>
+
+<ResponseField name="access_method_id" type="String (UUID)">
+  ID of the affected access method.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_method.created`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}

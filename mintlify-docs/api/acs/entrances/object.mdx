@@ -278,3 +278,91 @@ In an access control system, an entrance is a secured door, gate, zone, or other
 <ResponseField name="warnings" type="Array">
   Warnings associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`acs_entrance.added`**
+
+An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was added.
+
+<Accordion title="Properties">
+
+<ResponseField name="acs_entrance_id" type="String (UUID)">
+  The acs entrance id.
+</ResponseField>
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the access system.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `acs_entrance.added`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`acs_entrance.removed`**
+
+An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was removed.
+
+<Accordion title="Properties">
+
+<ResponseField name="acs_entrance_id" type="String (UUID)">
+  The acs entrance id.
+</ResponseField>
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the access system.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `acs_entrance.removed`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}

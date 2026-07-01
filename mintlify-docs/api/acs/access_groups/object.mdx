@@ -110,3 +110,49 @@ To learn whether your access control system supports access groups, see the corr
 <ResponseField name="workspace_id" type="String (UUID)">
   ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the access group.
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`acs_access_group.deleted`**
+
+An ACS access group was deleted.
+
+<Accordion title="Properties">
+
+<ResponseField name="acs_access_group_id" type="String (UUID)">
+  ID of the affected access group.
+</ResponseField>
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the access system.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `acs_access_group.deleted`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}

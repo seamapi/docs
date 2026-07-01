@@ -93,3 +93,41 @@ See also [Get Started with React](https://docs.seam.co/ui-components/overview/ge
 <ResponseField name="workspace_id" type="String (UUID)">
   ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`client_session.deleted`**
+
+A [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) was deleted.
+
+<Accordion title="Properties">
+
+<ResponseField name="client_session_id" type="String (UUID)">
+  ID of the affected client session.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `client_session.deleted`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}

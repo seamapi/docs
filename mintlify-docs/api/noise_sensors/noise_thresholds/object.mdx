@@ -54,3 +54,81 @@ Represents a [noise threshold](https://docs.seam.co/capability-guides/noise-sens
 <ResponseField name="starts_daily_at" type="String">
   Time at which the noise threshold should become active daily.
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`noise_sensor.noise_threshold_triggered`**
+
+Extended periods of noise or noise exceeding a [threshold](https://docs.seam.co/capability-guides/noise-sensors#what-is-a-threshold) were detected.
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `noise_sensor.noise_threshold_triggered`
+</ResponseField>
+
+<ResponseField name="minut_metadata" type="Object">
+  Metadata from Minut.
+</ResponseField>
+
+<ResponseField name="noise_level_decibels" type="number">
+  Detected noise level in decibels.
+</ResponseField>
+
+<ResponseField name="noise_level_nrs" type="number">
+  Detected noise level in Noiseaware Noise Risk Score (NRS).
+</ResponseField>
+
+<ResponseField name="noise_threshold_id" type="String (UUID)">
+  ID of the noise threshold that was triggered.
+</ResponseField>
+
+<ResponseField name="noise_threshold_name" type="String">
+  Name of the noise threshold that was triggered.
+</ResponseField>
+
+<ResponseField name="noiseaware_metadata" type="Object">
+  Metadata from Noiseaware.
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}

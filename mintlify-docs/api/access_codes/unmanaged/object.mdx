@@ -132,3 +132,231 @@ Not all providers support unmanaged access codes. The following providers do not
 <ResponseField name="workspace_id" type="String (UUID)">
   Unique identifier for the Seam workspace associated with the access code.
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`access_code.unmanaged.converted_to_managed`**
+
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.unmanaged.converted_to_managed`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.unmanaged.failed_to_convert_to_managed`**
+
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_errors" type="Array">
+  Errors associated with the access code.
+</ResponseField>
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="access_code_warnings" type="Array">
+  Warnings associated with the access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_errors" type="Array">
+  Errors associated with the device.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="device_warnings" type="Array">
+  Warnings associated with the device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.unmanaged.failed_to_convert_to_managed`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.unmanaged.created`**
+
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.unmanaged.created`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.unmanaged.removed`**
+
+An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.unmanaged.removed`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}

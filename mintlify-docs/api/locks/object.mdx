@@ -3687,374 +3687,239 @@ Indicates that the Wyze Lock is not connected to a gateway.
 
 ---
 
+{/* SEAM-GENERATED-EVENTS:START */}
+
 ## Events
 
 **`lock.locked`**
 
-A [lock](/low-level-apis/smart-locks) was locked.
+A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the access code that was used to lock the device.
+</ResponseField>
 
-<strong>
-  <code>access_code_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="access_code_is_managed" type="Boolean">
+  Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.
+</ResponseField>
 
-ID of the access code that was used to lock the device.
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the Seam action attempt that triggered this lock. Present only when the lock was initiated through Seam (via a `LOCK_DOOR` action attempt).
+</ResponseField>
 
-<strong>
-  <code>access_code_is_managed</code>
-</strong>
-<i>Boolean</i>
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
 
-Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-ID of the action attempt associated with the lock action.
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
 
-<strong>
-  <code>connected_account_custom_metadata</code>
-</strong>
-<i>Record</i>
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
 
-Custom metadata of the connected account, present when connected_account_id is provided.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the [connected account](/core-concepts/connected-accounts) associated with the event.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `lock.locked`
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="is_via_bluetooth" type="Boolean">
+  Whether the lock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="is_via_nfc" type="Boolean">
+  Whether the lock action was performed by an NFC credential tap (such as an Apple Home Key or an NFC key fob) presented to the lock, rather than a direct physical interaction or a Seam-initiated remote action.
+</ResponseField>
 
-<strong>
-  <code>customer_key</code>
-</strong>
-<i>String</i>
+<ResponseField name="method" type="Enum (String)">
+  Method by which the lock was locked. `keycode`: an access code was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or button press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by an auto-relock timer. `unknown`: could not be determined.
 
-The customer key associated with the device, if any.
+  Possible values: `keycode`, `manual`, `automatic`, `unknown`, `remote`
+</ResponseField>
 
-<strong>
-  <code>device_custom_metadata</code>
-</strong>
-<i>Record</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-Custom metadata of the device, present when device_id is provided.
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the affected device.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `lock.locked`
-
-<strong>
-  <code>method</code>
-</strong>
-<i>Enum</i>
-
-Method by which the affected lock device was locked. When the method is `keycode`, the `access_code_id` indicates the access code that was used, if reported by the device.
-
-<details>
-    <summary>Enum values:</summary>
-
-    - <code>keycode</code>
-    - <code>manual</code>
-    - <code>automatic</code>
-    - <code>unknown</code>
-    - <code>seamapi</code>
-
-</details>
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
+</Accordion>
 
 ---
 
 **`lock.unlocked`**
 
-A [lock](/low-level-apis/smart-locks) was unlocked.
+A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the access code that was used to unlock the affected device.
+</ResponseField>
 
-<strong>
-  <code>access_code_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="access_code_is_managed" type="Boolean">
+  Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.
+</ResponseField>
 
-ID of the access code that was used to unlock the affected device.
+<ResponseField name="acs_entrance_id" type="String (UUID)">
+  undocumented: Unreleased.
+        ---
+        ID of the ACS entrance associated with the unlock event.
+</ResponseField>
 
-<strong>
-  <code>access_code_is_managed</code>
-</strong>
-<i>Boolean</i>
+<ResponseField name="acs_system_id" type="String (UUID)">
+  undocumented: Unreleased.
+        ---
+        ID of the ACS system associated with the unlock event.
+</ResponseField>
 
-Whether the access code is managed by Seam (true) or unmanaged (false). Only present when access_code_id is set.
+<ResponseField name="acs_user_id" type="String (UUID)">
+  undocumented: Unreleased.
+        ---
+        ID of the ACS user associated with the unlock event.
+</ResponseField>
 
-<strong>
-  <code>acs_entrance_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the Seam action attempt that triggered this unlock. Present only when the unlock was initiated through Seam (via an `UNLOCK_DOOR` action attempt).
+</ResponseField>
 
-## undocumented: Unreleased.
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
 
-ID of the ACS entrance associated with the unlock event.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
 
-<strong>
-  <code>acs_system_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-## undocumented: Unreleased.
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
 
-ID of the ACS system associated with the unlock event.
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
 
-<strong>
-  <code>acs_user_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
 
-## undocumented: Unreleased.
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the ACS user associated with the unlock event.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `lock.unlocked`
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="is_via_bluetooth" type="Boolean">
+  Whether the unlock action was performed over Bluetooth by a remote client (such as the provider's mobile app), rather than a direct physical interaction or a Seam-initiated remote action.
+</ResponseField>
 
-ID of the action attempt associated with the unlock action.
+<ResponseField name="is_via_nfc" type="Boolean">
+  Whether the unlock action was performed by an NFC credential tap (such as an Apple Home Key or an NFC key fob) presented to the lock, rather than a direct physical interaction or a Seam-initiated remote action.
+</ResponseField>
 
-<strong>
-  <code>connected_account_custom_metadata</code>
-</strong>
-<i>Record</i>
+<ResponseField name="method" type="Enum (String)">
+  Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.
 
-Custom metadata of the connected account, present when connected_account_id is provided.
+  Possible values: `keycode`, `manual`, `automatic`, `unknown`, `remote`
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-ID of the [connected account](/core-concepts/connected-accounts) associated with the event.
+<ResponseField name="user_identity_id" type="String (UUID)">
+  undocumented: Unreleased.
+        ---
+        ID of the user identity associated with the unlock event.
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-Date and time at which the event was created.
-
-<strong>
-  <code>customer_key</code>
-</strong>
-<i>String</i>
-
-The customer key associated with the device, if any.
-
-<strong>
-  <code>device_custom_metadata</code>
-</strong>
-<i>Record</i>
-
-Custom metadata of the device, present when device_id is provided.
-
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the affected device.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `lock.unlocked`
-
-<strong>
-  <code>method</code>
-</strong>
-<i>Enum</i>
-
-Method by which the affected lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](/low-level-apis/smart-locks/access-codes) that was used, if reported by the device.
-
-<details>
-    <summary>Enum values:</summary>
-
-    - <code>keycode</code>
-    - <code>manual</code>
-    - <code>automatic</code>
-    - <code>unknown</code>
-    - <code>seamapi</code>
-
-</details>
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>user_identity_id</code>
-</strong>
-<i>UUID</i>
-
-## undocumented: Unreleased.
-
-ID of the user identity associated with the unlock event.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
+</Accordion>
 
 ---
 
 **`lock.access_denied`**
 
-The [lock](/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
+The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the access code that was used in the unlock attempts.
+</ResponseField>
 
-<strong>
-  <code>access_code_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
 
-ID of the access code that was used in the unlock attempts.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
 
-<strong>
-  <code>connected_account_custom_metadata</code>
-</strong>
-<i>Record</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-Custom metadata of the connected account, present when connected_account_id is provided.
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
 
-ID of the [connected account](/core-concepts/connected-accounts) associated with the event.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `lock.access_denied`
+</ResponseField>
 
-<strong>
-  <code>customer_key</code>
-</strong>
-<i>String</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-The customer key associated with the device, if any.
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-<strong>
-  <code>device_custom_metadata</code>
-</strong>
-<i>Record</i>
+</Accordion>
 
-Custom metadata of the device, present when device_id is provided.
-
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the affected device.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `lock.access_denied`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
+{/* SEAM-GENERATED-EVENTS:END */}
 
 ## Endpoints
 

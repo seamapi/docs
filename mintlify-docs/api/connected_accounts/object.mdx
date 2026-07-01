@@ -129,3 +129,351 @@ Represents a [connected account](https://docs.seam.co/core-concepts/connected-ac
 <ResponseField name="warnings" type="Array">
   Warnings associated with the connected account.
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`connected_account.connected`**
+
+A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was connected for the first time or was reconnected after being disconnected.
+
+<Accordion title="Properties">
+
+<ResponseField name="connect_webview_id" type="String (UUID)">
+  ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="customer_key" type="String">
+  The customer key associated with this connected account, if any.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `connected_account.connected`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`connected_account.created`**
+
+A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was created.
+
+<Accordion title="Properties">
+
+<ResponseField name="connect_webview_id" type="String (UUID)">
+  ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `connected_account.created`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`connected_account.successful_login`**
+
+A [connected account](https://docs.seam.co/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
+
+<Accordion title="Properties">
+
+<ResponseField name="connect_webview_id" type="String (UUID)">
+  ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `connected_account.successful_login`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`connected_account.disconnected`**
+
+A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was disconnected.
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+</ResponseField>
+
+<ResponseField name="connected_account_warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `connected_account.disconnected`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`connected_account.completed_first_sync`**
+
+A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `connected_account.completed_first_sync`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`connected_account.deleted`**
+
+A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was deleted.
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+</ResponseField>
+
+<ResponseField name="connected_account_type" type="String">
+  undocumented: Unreleased.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="customer_key" type="String">
+  The customer key associated with this connected account, if any.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `connected_account.deleted`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`connected_account.completed_first_sync_after_reconnection`**
+
+A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `connected_account.completed_first_sync_after_reconnection`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`connected_account.reauthorization_requested`**
+
+A [connected account](https://docs.seam.co/core-concepts/connected-accounts) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+</ResponseField>
+
+<ResponseField name="connected_account_warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `connected_account.reauthorization_requested`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}

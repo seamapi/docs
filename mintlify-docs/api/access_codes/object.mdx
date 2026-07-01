@@ -256,3 +256,769 @@ For granting a person access to a space, [Access Grants](https://docs.seam.co/us
 <ResponseField name="workspace_id" type="String (UUID)">
   Unique identifier for the Seam workspace associated with the access code.
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`access_code.created`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was created.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.created`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.changed`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.changed`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.scheduled_on_device`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="code" type="String">
+  Code for the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.scheduled_on_device`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.set_on_device`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was set on a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="code" type="String">
+  Code for the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.set_on_device`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.removed_from_device`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was removed from a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.removed_from_device`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.delay_in_setting_on_device`**
+
+There was an unusually long delay in setting an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) on a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_errors" type="Array">
+  Errors associated with the access code.
+</ResponseField>
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="access_code_warnings" type="Array">
+  Warnings associated with the access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_errors" type="Array">
+  Errors associated with the device.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="device_warnings" type="Array">
+  Warnings associated with the device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.delay_in_setting_on_device`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.failed_to_set_on_device`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be set on a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_errors" type="Array">
+  Errors associated with the access code.
+</ResponseField>
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="access_code_warnings" type="Array">
+  Warnings associated with the access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_errors" type="Array">
+  Errors associated with the device.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="device_warnings" type="Array">
+  Warnings associated with the device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.failed_to_set_on_device`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.deleted`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="code" type="String">
+  Code for the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.deleted`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.delay_in_removing_from_device`**
+
+There was an unusually long delay in removing an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) from a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_errors" type="Array">
+  Errors associated with the access code.
+</ResponseField>
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="access_code_warnings" type="Array">
+  Warnings associated with the access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_errors" type="Array">
+  Errors associated with the device.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="device_warnings" type="Array">
+  Warnings associated with the device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.delay_in_removing_from_device`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.failed_to_remove_from_device`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be removed from a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_errors" type="Array">
+  Errors associated with the access code.
+</ResponseField>
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="access_code_warnings" type="Array">
+  Warnings associated with the access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_errors" type="Array">
+  Errors associated with the device.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="device_warnings" type="Array">
+  Warnings associated with the device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.failed_to_remove_from_device`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.modified_external_to_seam`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was modified outside of Seam.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.modified_external_to_seam`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.deleted_external_to_seam`**
+
+An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted outside of Seam.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.deleted_external_to_seam`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_code.backup_access_code_pulled`**
+
+A [backup access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_code_id" type="String (UUID)">
+  ID of the affected access code.
+</ResponseField>
+
+<ResponseField name="backup_access_code_id" type="String">
+  The backup access code id.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the affected access code.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_code.backup_access_code_pulled`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}

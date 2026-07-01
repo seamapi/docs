@@ -69,663 +69,409 @@ Result of the action attempt. Null for pending and errored action attempts.
 
 ---
 
+{/* SEAM-GENERATED-EVENTS:START */}
+
 ## Events
 
 **`action_attempt.lock_door.succeeded`**
 
-A lock door [action attempt](/core-concepts/action-attempts) succeeded.
+A lock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the affected action attempt.
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="action_type" type="String">
+  Type of the action.
+</ResponseField>
 
-ID of the affected action attempt.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-Type of the action.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the connected account associated with the action attempt, if applicable.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `action_attempt.lock_door.succeeded`
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="status" type="String">
+  Status of the action.
+</ResponseField>
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-ID of the device associated with the action attempt, if applicable.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `action_attempt.lock_door.succeeded`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
-
-Status of the action.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
+</Accordion>
 
 ---
 
 **`action_attempt.lock_door.failed`**
 
-A lock door [action attempt](/core-concepts/action-attempts) failed.
+A lock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the affected action attempt.
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="action_type" type="String">
+  Type of the action.
+</ResponseField>
 
-ID of the affected action attempt.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-Type of the action.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the connected account associated with the action attempt, if applicable.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `action_attempt.lock_door.failed`
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="status" type="String">
+  Status of the action.
+</ResponseField>
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-ID of the device associated with the action attempt, if applicable.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `action_attempt.lock_door.failed`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
-
-Status of the action.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
+</Accordion>
 
 ---
 
 **`action_attempt.unlock_door.succeeded`**
 
-An unlock door [action attempt](/core-concepts/action-attempts) succeeded.
+An unlock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the affected action attempt.
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="action_type" type="String">
+  Type of the action.
+</ResponseField>
 
-ID of the affected action attempt.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-Type of the action.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the connected account associated with the action attempt, if applicable.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `action_attempt.unlock_door.succeeded`
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="status" type="String">
+  Status of the action.
+</ResponseField>
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-ID of the device associated with the action attempt, if applicable.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `action_attempt.unlock_door.succeeded`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
-
-Status of the action.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
+</Accordion>
 
 ---
 
 **`action_attempt.unlock_door.failed`**
 
-An unlock door [action attempt](/core-concepts/action-attempts) failed.
+An unlock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the affected action attempt.
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="action_type" type="String">
+  Type of the action.
+</ResponseField>
 
-ID of the affected action attempt.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-Type of the action.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the connected account associated with the action attempt, if applicable.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `action_attempt.unlock_door.failed`
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="status" type="String">
+  Status of the action.
+</ResponseField>
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-ID of the device associated with the action attempt, if applicable.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `action_attempt.unlock_door.failed`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
-
-Status of the action.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
+</Accordion>
 
 ---
 
 **`action_attempt.simulate_keypad_code_entry.succeeded`**
 
-A simulate keypad code entry [action attempt](/core-concepts/action-attempts) succeeded.
+A simulate keypad code entry [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the affected action attempt.
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="action_type" type="String">
+  Type of the action.
+</ResponseField>
 
-ID of the affected action attempt.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-Type of the action.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the connected account associated with the action attempt, if applicable.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `action_attempt.simulate_keypad_code_entry.succeeded`
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="status" type="String">
+  Status of the action.
+</ResponseField>
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-ID of the device associated with the action attempt, if applicable.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `action_attempt.simulate_keypad_code_entry.succeeded`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
-
-Status of the action.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
+</Accordion>
 
 ---
 
 **`action_attempt.simulate_keypad_code_entry.failed`**
 
-A simulate keypad code entry [action attempt](/core-concepts/action-attempts) failed.
+A simulate keypad code entry [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the affected action attempt.
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="action_type" type="String">
+  Type of the action.
+</ResponseField>
 
-ID of the affected action attempt.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-Type of the action.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the connected account associated with the action attempt, if applicable.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `action_attempt.simulate_keypad_code_entry.failed`
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="status" type="String">
+  Status of the action.
+</ResponseField>
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-ID of the device associated with the action attempt, if applicable.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `action_attempt.simulate_keypad_code_entry.failed`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
-
-Status of the action.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
+</Accordion>
 
 ---
 
 **`action_attempt.simulate_manual_lock_via_keypad.succeeded`**
 
-A simulate manual lock via keypad [action attempt](/core-concepts/action-attempts) succeeded.
+A simulate manual lock via keypad [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the affected action attempt.
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="action_type" type="String">
+  Type of the action.
+</ResponseField>
 
-ID of the affected action attempt.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-Type of the action.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the connected account associated with the action attempt, if applicable.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `action_attempt.simulate_manual_lock_via_keypad.succeeded`
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="status" type="String">
+  Status of the action.
+</ResponseField>
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-ID of the device associated with the action attempt, if applicable.
-
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `action_attempt.simulate_manual_lock_via_keypad.succeeded`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
-
-Status of the action.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
+</Accordion>
 
 ---
 
 **`action_attempt.simulate_manual_lock_via_keypad.failed`**
 
-A simulate manual lock via keypad [action attempt](/core-concepts/action-attempts) failed.
+A simulate manual lock via keypad [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.
 
-<details>
+<Accordion title="Properties">
 
-<summary>Properties</summary>
+<ResponseField name="action_attempt_id" type="String (UUID)">
+  ID of the affected action attempt.
+</ResponseField>
 
-<strong>
-  <code>action_attempt_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="action_type" type="String">
+  Type of the action.
+</ResponseField>
 
-ID of the affected action attempt.
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>action_type</code>
-</strong>
-<i>String</i>
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
 
-Type of the action.
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device associated with the action attempt, if applicable.
+</ResponseField>
 
-<strong>
-  <code>connected_account_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
 
-ID of the connected account associated with the action attempt, if applicable.
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `action_attempt.simulate_manual_lock_via_keypad.failed`
+</ResponseField>
 
-<strong>
-  <code>created_at</code>
-</strong>
-<i>Datetime</i>
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
 
-Date and time at which the event was created.
+<ResponseField name="status" type="String">
+  Status of the action.
+</ResponseField>
 
-<strong>
-  <code>device_id</code>
-</strong>
-<i>UUID</i>
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
 
-ID of the device associated with the action attempt, if applicable.
+</Accordion>
 
-<strong>
-  <code>event_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the event.
-
-<strong>
-  <code>event_type</code>
-</strong>
-<i>Enum</i>
-
-Value: `action_attempt.simulate_manual_lock_via_keypad.failed`
-
-<strong>
-  <code>occurred_at</code>
-</strong>
-<i>Datetime</i>
-
-Date and time at which the event occurred.
-
-<strong>
-  <code>status</code>
-</strong>
-<i>String</i>
-
-Status of the action.
-
-<strong>
-  <code>workspace_id</code>
-</strong>
-<i>UUID</i>
-
-ID of the [workspace](/core-concepts/workspaces) associated with the event.
-
-</details>
-
----
+{/* SEAM-GENERATED-EVENTS:END */}
 
 ## Endpoints
 

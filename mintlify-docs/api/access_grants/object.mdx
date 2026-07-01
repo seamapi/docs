@@ -142,3 +142,273 @@ Represents an Access Grant. Access Grants enable you to grant a user identity ac
 <ResponseField name="workspace_id" type="String (UUID)">
   ID of the Seam workspace associated with the Access Grant.
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`access_grant.created`**
+
+An Access Grant was created.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_id" type="String (UUID)">
+  ID of the affected Access Grant.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_grant.created`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_grant.deleted`**
+
+An Access Grant was deleted.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_id" type="String (UUID)">
+  ID of the affected Access Grant.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_grant.deleted`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_grant.access_granted_to_all_doors`**
+
+All access requested for an Access Grant was successfully granted.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_id" type="String (UUID)">
+  ID of the affected Access Grant.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_grant.access_granted_to_all_doors`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_grant.access_granted_to_door`**
+
+Access requested as part of an Access Grant to a particular door was successfully granted.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_id" type="String (UUID)">
+  ID of the affected Access Grant.
+</ResponseField>
+
+<ResponseField name="acs_entrance_id" type="String (UUID)">
+  ID of the affected [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_grant.access_granted_to_door`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_grant.access_to_door_lost`**
+
+Access to a particular door that was requested as part of an Access Grant was lost.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_id" type="String (UUID)">
+  ID of the affected Access Grant.
+</ResponseField>
+
+<ResponseField name="acs_entrance_id" type="String (UUID)">
+  ID of the affected [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_grant.access_to_door_lost`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_grant.access_times_changed`**
+
+An Access Grant's start or end time was changed.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_id" type="String (UUID)">
+  ID of the affected Access Grant.
+</ResponseField>
+
+<ResponseField name="access_grant_key" type="String">
+  Key of the affected Access Grant (if present).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="ends_at" type="String">
+  The new end time for the access grant.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_grant.access_times_changed`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="starts_at" type="String">
+  The new start time for the access grant.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`access_grant.could_not_create_requested_access_methods`**
+
+One or more requested access methods could not be created for an Access Grant.
+
+<Accordion title="Properties">
+
+<ResponseField name="access_grant_id" type="String (UUID)">
+  ID of the affected Access Grant.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="error_message" type="String">
+  Description of why the access methods could not be created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `access_grant.could_not_create_requested_access_methods`
+</ResponseField>
+
+<ResponseField name="missing_device_ids" type="Array">
+  IDs of the devices that did not receive a requested access method. Use these to identify which specific devices failed without having to fetch the Access Grant.
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}

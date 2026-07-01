@@ -140,3 +140,137 @@ For details about the resources associated with an access control system, see th
 <ResponseField name="workspace_id" type="String (UUID)">
   ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 </ResponseField>
+
+{/* SEAM-GENERATED-EVENTS:START */}
+
+## Events
+
+**`acs_system.connected`**
+
+An [access system](https://docs.seam.co/low-level-apis/access-systems) was connected.
+
+<Accordion title="Properties">
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the access system.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `acs_system.connected`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`acs_system.added`**
+
+An [access system](https://docs.seam.co/low-level-apis/access-systems) was added.
+
+<Accordion title="Properties">
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the access system.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `acs_system.added`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+---
+
+**`acs_system.disconnected`**
+
+An [access system](https://docs.seam.co/low-level-apis/access-systems) was disconnected.
+
+<Accordion title="Properties">
+
+<ResponseField name="acs_system_errors" type="Array">
+  Errors associated with the access control system.
+</ResponseField>
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the access system.
+</ResponseField>
+
+<ResponseField name="acs_system_warnings" type="Array">
+  Warnings associated with the access control system.
+</ResponseField>
+
+<ResponseField name="connected_account_errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `acs_system.disconnected`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+{/* SEAM-GENERATED-EVENTS:END */}
