@@ -40,6 +40,61 @@ type EventResource = Blueprint['events'][number]
 type EventProperty = EventResource['properties'][number]
 
 /**
+ * Generic concept pages that upstream `@seamapi/types` descriptions link to
+ * from nearly every event property (`workspace_id`, `connected_account_id`,
+ * `device_id`, ...). Because every event re-declares these shared properties,
+ * the same handful of links repeat dozens of times per page (workspace ~100x,
+ * connected account ~70x) — noise that adds nothing over the page's own nav and
+ * search. We unwrap them to plain text on the generated event pages.
+ *
+ * Paths are matched exactly, with an optional `docs.seam.co` origin and no
+ * anchor or sub-path: `.../workspaces` is stripped, but the more specific
+ * `.../workspaces#sandbox-workspaces` and `.../devices/managed-and-unmanaged-devices`
+ * are kept — an anchored or deeper link carries real context. Contextual links
+ * (thermostat set-points, credential guides, ISO-8601) are absent here by
+ * design, so they survive untouched.
+ *
+ * Upstream already emits these links canonical (no legacy `/latest` prefix), so
+ * stripping at render time — before Phase G canonicalization — matches
+ * reliably. If a future upstream version routes one through a redirect source,
+ * this misses it and canonicalization leaves it a valid link; add the new form
+ * here when that happens.
+ */
+const BOILERPLATE_CONCEPT_PATHS = new Set([
+  '/core-concepts/workspaces',
+  '/core-concepts/connected-accounts',
+  '/core-concepts/devices',
+  '/core-concepts/connect-webviews',
+  '/core-concepts/action-attempts',
+  '/core-concepts/authentication/client-session-tokens',
+  '/developer-tools/webhooks',
+])
+
+/**
+ * Unwrap Markdown links to the generic concept pages above, leaving the link
+ * text intact (`[workspace](.../workspaces)` -> `workspace`). Leaves images
+ * (`![...]`), anchored or sub-path concept links, external links, and links to
+ * any other target untouched.
+ *
+ * Runs at render time on the event/property *descriptions* only — never the
+ * example payloads, whose `event_description` echoes a description verbatim and
+ * must stay byte-for-byte accurate. That prose-vs-payload distinction is why
+ * this lives here rather than in the file-level link layer (`canonicalize-links.ts`),
+ * which cannot tell a description apart from a JSON code block.
+ */
+function stripBoilerplateConceptLinks(text: string): string {
+  return text.replace(
+    /(!?)\[([^\]]+)\]\((https?:\/\/docs\.seam\.co)?(\/[^)\s]*)\)/g,
+    (full, bang: string, label: string, _origin: string, path: string) => {
+      if (bang === '!') return full
+      if (/[#?]/.test(path)) return full
+      const normalized = path.replace(/\/+$/, '')
+      return BOILERPLATE_CONCEPT_PATHS.has(normalized) ? label : full
+    },
+  )
+}
+
+/**
  * Map a blueprint property format to the type label used across the API object
  * pages (e.g. `id` -> `String (UUID)`, `enum` -> `Enum (String)`). Mirrors
  * `formatPropertyType` in generate.ts so event properties read the same as the
@@ -153,7 +208,9 @@ function renderEventProperty(prop: EventProperty): string {
   ) {
     body.push(`Value: \`${prop.values[0].name}\``)
   } else {
-    const description = (prop.description ?? '').trim()
+    const description = stripBoilerplateConceptLinks(
+      (prop.description ?? '').trim(),
+    )
     body.push(description || `The ${prop.name.replace(/_/g, ' ')}.`)
 
     if (hasEnumValues(prop) && prop.values.length > 0) {
@@ -183,7 +240,7 @@ function renderEvent(event: EventResource): string {
   return [
     `## \`${event.eventType}\``,
     '',
-    event.description.trim(),
+    stripBoilerplateConceptLinks(event.description.trim()),
     '',
     renderEventSample(event),
     '',
