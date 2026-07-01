@@ -75,6 +75,17 @@ function indent(text: string, spaces: number): string {
     .join('\n')
 }
 
+/**
+ * Strip inline Markdown links, keeping their text (`[device](/...)` -> `device`).
+ * Event descriptions inherit links from `@seamapi/types` that link common nouns
+ * (workspace, connected account, device) on every event — pure noise in a
+ * reference listing where those concepts are already linked from the object
+ * pages and nav.
+ */
+function stripLinks(text: string): string {
+  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+}
+
 function hasEnumValues(
   prop: EventProperty,
 ): prop is EventProperty & { values: Array<{ name: string }> } {
@@ -126,7 +137,7 @@ function buildEventSample(event: EventResource): Record<string, unknown> {
     if (prop.name === 'event_type') {
       sample[prop.name] = event.eventType
     } else if (prop.name === 'event_description') {
-      sample[prop.name] = event.description.trim()
+      sample[prop.name] = stripLinks(event.description).trim()
     } else {
       sample[prop.name] = sampleValue(prop)
     }
@@ -153,7 +164,7 @@ function renderEventProperty(prop: EventProperty): string {
   ) {
     body.push(`Value: \`${prop.values[0].name}\``)
   } else {
-    const description = (prop.description ?? '').trim()
+    const description = stripLinks(prop.description ?? '').trim()
     body.push(description || `The ${prop.name.replace(/_/g, ' ')}.`)
 
     if (hasEnumValues(prop) && prop.values.length > 0) {
@@ -183,7 +194,7 @@ function renderEvent(event: EventResource): string {
   return [
     `## \`${event.eventType}\``,
     '',
-    event.description.trim(),
+    stripLinks(event.description).trim(),
     '',
     renderEventSample(event),
     '',

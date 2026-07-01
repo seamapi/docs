@@ -5,7 +5,7 @@ description: 'Webhook events that Seam emits for the Thermostat resource, with e
 
 ## `thermostat.climate_preset_activated`
 
-A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.
+A thermostat climate preset was activated.
 
 ```json Example webhook payload
 {
@@ -36,7 +36,7 @@ A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -76,14 +76,14 @@ A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `thermostat.manually_adjusted`
 
-A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted manually.
+A thermostat was adjusted manually.
 
 ```json Example webhook payload
 {
@@ -114,15 +114,15 @@ A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted 
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 </ResponseField>
 
 <ResponseField name="cooling_set_point_celsius" type="number">
-  Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should cool (in °C). See also Set Points.
 </ResponseField>
 
 <ResponseField name="cooling_set_point_fahrenheit" type="number">
-  Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should cool (in °F). See also Set Points.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -150,21 +150,21 @@ A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted 
 </ResponseField>
 
 <ResponseField name="fan_mode_setting" type="Enum (String)">
-  Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+  Desired fan mode setting, such as `on`, `auto`, or `circulate`.
 
   Possible values: `auto`, `on`, `circulate`
 </ResponseField>
 
 <ResponseField name="heating_set_point_celsius" type="number">
-  Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should heat (in °C). See also Set Points.
 </ResponseField>
 
 <ResponseField name="heating_set_point_fahrenheit" type="number">
-  Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  Temperature to which the thermostat should heat (in °F). See also Set Points.
 </ResponseField>
 
 <ResponseField name="hvac_mode_setting" type="Enum (String)">
-  Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+  Desired HVAC mode setting, such as `heat`, `cool`, `heat_cool`, or `off`.
 
   Possible values: `off`, `heat`, `cool`, `heat_cool`, `eco`
 </ResponseField>
@@ -180,14 +180,14 @@ A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted 
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `thermostat.temperature_threshold_exceeded`
 
-A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+A thermostat's temperature reading exceeded the set threshold.
 
 ```json Example webhook payload
 {
@@ -217,7 +217,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -273,14 +273,14 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `thermostat.temperature_threshold_no_longer_exceeded`
 
-A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+A thermostat's temperature reading no longer exceeds the set threshold.
 
 ```json Example webhook payload
 {
@@ -310,7 +310,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -366,14 +366,14 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `thermostat.temperature_reached_set_point`
 
-A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+A thermostat's temperature reading is within 1 °C of the configured cooling or heating set point.
 
 ```json Example webhook payload
 {
@@ -401,7 +401,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -449,14 +449,14 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </ResponseField>
 
 </Accordion>
 
 ## `thermostat.temperature_changed`
 
-A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported temperature changed by at least 1 °C.
+A thermostat's reported temperature changed by at least 1 °C.
 
 ```json Example webhook payload
 {
@@ -482,7 +482,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported te
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 </ResponseField>
 
 <ResponseField name="created_at" type="String (ISO 8601)">
@@ -522,7 +522,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported te
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </ResponseField>
 
 </Accordion>
