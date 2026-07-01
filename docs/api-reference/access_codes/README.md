@@ -2758,11 +2758,15 @@ The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/acc
 
 <strong><code>from</code></strong> <i>Object</i>
 
+  Previous access code name configuration.
+
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 <strong><code>to</code></strong> <i>Object</i>
+
+  New access code name configuration.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
@@ -2817,11 +2821,15 @@ The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks
 
 <strong><code>from</code></strong> <i>Object</i>
 
+  Previous pin code configuration.
+
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 <strong><code>to</code></strong> <i>Object</i>
+
+  New pin code configuration.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
@@ -2876,11 +2884,15 @@ The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-loc
 
 <strong><code>from</code></strong> <i>Object</i>
 
+  Previous time frame configuration.
+
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
 
 <strong><code>to</code></strong> <i>Object</i>
+
+  New time frame configuration.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
