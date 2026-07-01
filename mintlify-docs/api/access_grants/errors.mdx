@@ -1,0 +1,141 @@
+---
+title: 'Access Grant Errors and Warnings'
+description: 'Errors and warnings that Seam reports on the Access Grant resource, each with its code and meaning.'
+---
+
+## Errors
+
+Each error is an object with the following shape:
+
+```json Example error
+{
+  "error_code": "cannot_create_requested_access_methods",
+  "message": "A human-readable message.",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "missing_device_ids": []
+}
+```
+
+<Accordion title="Error object properties">
+
+<ResponseField name="error_code" type="Enum (String)">
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+  One of the error codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the error.
+</ResponseField>
+
+<ResponseField name="missing_device_ids" type="Array">
+  IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure.
+</ResponseField>
+
+</Accordion>
+
+### `cannot_create_requested_access_methods`
+
+Indicates the `cannot_create_requested_access_methods` state.
+
+---
+
+## Warnings
+
+Each warning is an object with the following shape:
+
+```json Example warning
+{
+  "warning_code": "being_deleted",
+  "message": "Indicates that the access grant is being deleted.",
+  "created_at": "2025-01-01T00:00:00.000Z"
+}
+```
+
+<Accordion title="Warning object properties">
+
+<ResponseField name="warning_code" type="Enum (String)">
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+  One of the warning codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the warning.
+</ResponseField>
+
+<ResponseField name="access_method_ids" type="Array">
+  IDs of the access methods being updated.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the device where the requested code was unavailable.
+</ResponseField>
+
+<ResponseField name="failed_devices" type="Array">
+  Devices whose access codes could not be revoked during reconciliation. Present when the provider does not support revoking an offline access code (e.g. Dormakaba oracode with exhausted override budget).
+</ResponseField>
+
+<ResponseField name="new_code" type="String">
+  The new PIN code that was assigned instead.
+</ResponseField>
+
+<ResponseField name="original_code" type="String">
+  The originally requested PIN code that was unavailable.
+</ResponseField>
+
+<ResponseField name="reason" type="Enum (String)">
+  Specific reason why the grant's times are not programmable on the device.
+</ResponseField>
+
+</Accordion>
+
+### `being_deleted`
+
+Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.
+
+---
+
+### `device_does_not_support_access_codes`
+
+Indicates that a device in the access grant does not support access codes and was excluded from code materialization.
+
+---
+
+### `device_time_constraints_violated`
+
+Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.
+
+---
+
+### `overprovisioned_access`
+
+Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.
+
+---
+
+### `requested_code_unavailable`
+
+Indicates that the requested PIN code was already in use on a device, so a different code was assigned.
+
+---
+
+### `underprovisioned_access`
+
+Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.
+
+---
+
+### `updating_access_times`
+
+Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.
+
+---

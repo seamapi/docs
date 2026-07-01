@@ -1,0 +1,351 @@
+---
+title: 'Access Code Errors and Warnings'
+description: 'Errors and warnings that Seam reports on the Access Code resource, each with its code and meaning.'
+---
+
+## Errors
+
+Each error is an object with the following shape:
+
+```json Example error
+{
+  "error_code": "provider_issue",
+  "message": "Indicates a provider-specific issue that prevents the access code from being set or managed. Check the error message for details.",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "is_access_code_error": true
+}
+```
+
+<Accordion title="Error object properties">
+
+<ResponseField name="error_code" type="Enum (String)">
+  Unique identifier of the type of error. Enables quick recognition and categorization of the issue.
+
+  One of the error codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the error. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the error.
+</ResponseField>
+
+<ResponseField name="change_type" type="Enum (String)">
+  Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.
+</ResponseField>
+
+<ResponseField name="is_access_code_error" type="Boolean">
+  Indicates that this is an access code error.
+</ResponseField>
+
+<ResponseField name="is_bridge_error" type="Boolean">
+  Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
+</ResponseField>
+
+<ResponseField name="is_connected_account_error" type="Boolean">
+  Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts/object) error.
+</ResponseField>
+
+<ResponseField name="is_device_error" type="Boolean">
+  Indicates that the error is not a device error.
+</ResponseField>
+
+<ResponseField name="managed_access_code_id" type="String (UUID)">
+  ID of the managed access code that conflicts with this managed access code, when Seam can identify it.
+</ResponseField>
+
+<ResponseField name="modified_fields" type="Array">
+  List of fields that were changed externally, with their previous and new values.
+</ResponseField>
+
+<ResponseField name="unmanaged_access_code_id" type="String (UUID)">
+  ID of the unmanaged access code that conflicts with this managed access code, when Seam can identify it.
+</ResponseField>
+
+</Accordion>
+
+### `access_code_inactive`
+
+Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
+
+---
+
+### `access_code_state_unconfirmed`
+
+Indicates that the provider cannot confirm whether the access code was set or removed on the device.
+
+---
+
+### `account_disconnected`
+
+Indicates that the account is disconnected.
+
+---
+
+### `bridge_disconnected`
+
+Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+
+---
+
+### `code_modified_external_to_seam`
+
+Code was modified or removed externally after Seam successfully set it on the device.
+
+---
+
+### `device_disconnected`
+
+Indicates that the device is disconnected.
+
+---
+
+### `device_offline`
+
+Indicates that the device is offline.
+
+---
+
+### `device_removed`
+
+Indicates that the device has been removed.
+
+---
+
+### `dormakaba_sites_disconnected`
+
+Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.
+
+---
+
+### `duplicate_code_attempt_prevented`
+
+An attempt to modify this access code was prevented.
+
+---
+
+### `duplicate_code_on_device`
+
+Duplicate access code detected on device.
+
+---
+
+### `failed_to_remove_from_device`
+
+Failed to remove code from device.
+
+---
+
+### `failed_to_set_on_device`
+
+Failed to set code on device.
+
+---
+
+### `hub_disconnected`
+
+Indicates that the hub is disconnected.
+
+---
+
+### `insufficient_permissions`
+
+Admin role required—insufficient permissions to manage PINs on this device. Please have an admin update your role, or ask them to set the PIN.
+
+---
+
+### `lockly_missing_wifi_bridge`
+
+Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+
+---
+
+### `missing_device_credentials`
+
+Indicates that device credentials are missing.
+
+---
+
+### `no_space_for_access_code_on_device`
+
+No space for access code on device.
+
+---
+
+### `provider_issue`
+
+Indicates a provider-specific issue that prevents the access code from being set or managed. Check the error message for details.
+
+---
+
+### `replaced_by_newer_access_code`
+
+This access code was overridden on the device by a newer access code programmed to the same slot.
+
+---
+
+### `salto_ks_user_not_subscribed`
+
+Salto site user is not subscribed.
+
+---
+
+### `subscription_required`
+
+Indicates that a subscription is required to connect.
+
+---
+
+### `ttlock_lock_not_paired_to_gateway`
+
+Indicates that the lock is not paired with a gateway.
+
+---
+
+### Access Codes
+
+#### `empty_backup_access_code_pool`
+
+Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
+
+---
+
+### Locks
+
+#### `august_lock_missing_bridge`
+
+Indicates that the lock is not connected to a bridge.
+
+---
+
+#### `august_lock_not_authorized`
+
+Indicates that the user is not authorized to use the August lock.
+
+---
+
+#### `salto_ks_subscription_limit_exceeded`
+
+Indicates that the Salto site user limit has been reached.
+
+---
+
+### Thermostats
+
+#### `auxiliary_heat_running`
+
+Indicates that the auxiliary heat is running.
+
+---
+
+## Warnings
+
+Each warning is an object with the following shape:
+
+```json Example warning
+{
+  "warning_code": "provider_issue",
+  "message": "Indicates a provider-specific issue that may affect the access code. Check the warning message for details.",
+  "created_at": "2025-01-01T00:00:00.000Z"
+}
+```
+
+<Accordion title="Warning object properties">
+
+<ResponseField name="warning_code" type="Enum (String)">
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+  One of the warning codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the warning.
+</ResponseField>
+
+<ResponseField name="change_type" type="Enum (String)">
+  Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.
+</ResponseField>
+
+<ResponseField name="modified_fields" type="Array">
+  List of fields that were changed externally, with their previous and new values.
+</ResponseField>
+
+</Accordion>
+
+### `access_code_inactive`
+
+Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
+
+---
+
+### `being_deleted`
+
+Access code is being deleted.
+
+---
+
+### `code_modified_external_to_seam`
+
+Code was modified or removed externally after Seam successfully set it on the device.
+
+---
+
+### `delay_in_removing_from_device`
+
+Delay in removing code from device.
+
+---
+
+### `delay_in_setting_on_device`
+
+Delay in setting code on device.
+
+---
+
+### `igloo_algopin_must_be_used_within_24_hours`
+
+Algopins must be used within 24 hours.
+
+---
+
+### `management_transferred`
+
+Management was transferred to another workspace.
+
+---
+
+### `provider_issue`
+
+Indicates a provider-specific issue that may affect the access code. Check the warning message for details.
+
+---
+
+### `schlage_access_code_ambiguous_timezone_dst_risk`
+
+The Schlage device's timezone is ambiguous and this code's schedule crosses a daylight-saving transition in at least one plausible timezone. A 1-hour safety buffer has been applied to the side of the schedule affected by the transition (`ends_at` for spring-forward, `starts_at` for fall-back) so the code stays active through the shift — the code may be usable up to 1 hour beyond your requested window. Set the device's timezone via `/devices/report_provider_metadata` to clear the buffer and guarantee exact DST handling.
+
+---
+
+### `schlage_detected_duplicate`
+
+Duplicate access code detected.
+
+---
+
+### `third_party_integration_detected`
+
+Third-party integration detected that may cause access codes to fail.
+
+---
+
+### `using_backup_access_code`
+
+A backup access code has been pulled and is being used in place of this access code.
+
+---

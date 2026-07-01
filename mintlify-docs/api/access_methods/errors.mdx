@@ -1,0 +1,56 @@
+---
+title: 'Access Method Warnings'
+description: 'Warnings that Seam reports on the Access Method resource, each with its code and meaning.'
+---
+
+## Warnings
+
+Each warning is an object with the following shape:
+
+```json Example warning
+{
+  "warning_code": "being_deleted",
+  "message": "Indicates that the access method is being deleted.",
+  "created_at": "2025-01-01T00:00:00.000Z"
+}
+```
+
+<Accordion title="Warning object properties">
+
+<ResponseField name="warning_code" type="Enum (String)">
+  Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.
+
+  One of the warning codes listed below.
+</ResponseField>
+
+<ResponseField name="message" type="String">
+  Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which Seam created the warning.
+</ResponseField>
+
+<ResponseField name="original_access_method_id" type="String (UUID)">
+  ID of the original access method from which this backup access method was split, if applicable.
+</ResponseField>
+
+</Accordion>
+
+### `being_deleted`
+
+Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.
+
+---
+
+### `pulled_backup_access_code`
+
+Indicates that all attempts to create an access code on this device before the start time failed and a backup access code was used to ensure access was provided in time.
+
+---
+
+### `updating_access_times`
+
+Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.
+
+---

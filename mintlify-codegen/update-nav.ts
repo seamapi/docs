@@ -29,6 +29,14 @@ function isEventsPage(page: string): boolean {
 }
 
 /**
+ * Check if a page reference is a generated errors/warnings page
+ * (e.g. "api/devices/errors").
+ */
+function isErrorsPage(page: string): boolean {
+  return page.startsWith('api/') && page.endsWith('/errors')
+}
+
+/**
  * Convert a page path like "api/access_codes/create" to an OpenAPI reference
  * like "POST /access_codes/create".
  * The tab-level "openapi" field in docs.json sets the default spec,
@@ -85,6 +93,9 @@ function transformPages(
 
         // Keep generated events pages as MDX (not endpoints, but real pages)
         if (isEventsPage(page)) return page
+
+        // Keep generated errors/warnings pages as MDX (not endpoints)
+        if (isErrorsPage(page)) return page
 
         // Check if the endpoint exists in the spec
         const apiPath = page.replace(/^api/, '')
@@ -376,13 +387,12 @@ export async function insertEventsPagesIntoNav(
 
   let inserted = 0
   for (const routePath of eventRoutes) {
-    const objectPage = `api${routePath}/object`
-    const eventsPage = `api${routePath}/events`
-    for (const group of apiTab.groups) {
-      const result = insertAfterObjectPage(group.pages, objectPage, eventsPage)
-      if (result === 'inserted') inserted++
-      if (result !== 'not-found') break
-    }
+    const result = insertIntoGroups(
+      apiTab.groups,
+      `api${routePath}/object`,
+      `api${routePath}/events`,
+    )
+    if (result === 'inserted') inserted++
   }
 
   if (inserted > 0) {
@@ -392,24 +402,82 @@ export async function insertEventsPagesIntoNav(
 }
 
 /**
- * Recursively locate `objectPage` in the nav tree and insert `eventsPage` right
- * after it. Returns 'inserted' when added, 'present' when already there, and
- * 'not-found' when the object page isn't in this subtree.
+ * Insert each generated errors/warnings page into the nav after its events page
+ * (falling back to its object page when there is no events page), e.g.
+ * "api/devices/errors" after "api/devices/events". Idempotent: skips routes
+ * whose errors page is already present. Call after the errors pages have been
+ * written to disk and after events pages are wired in.
  */
-function insertAfterObjectPage(
-  pages: any[],
-  objectPage: string,
-  eventsPage: string,
+export async function insertErrorPagesIntoNav(
+  errorRoutes: string[],
+): Promise<void> {
+  if (errorRoutes.length === 0) return
+
+  const docsJsonPath = join(
+    import.meta.dirname,
+    '..',
+    'mintlify-docs',
+    'docs.json',
+  )
+  const docsJson = JSON.parse(await readFile(docsJsonPath, 'utf8'))
+  const apiTab = docsJson.navigation?.tabs?.find(
+    (t: any) => t.tab === 'API Reference',
+  )
+  if (!apiTab?.groups) return
+
+  let inserted = 0
+  for (const routePath of errorRoutes) {
+    const errorsPage = `api${routePath}/errors`
+    // Prefer anchoring after the events page so the sidebar reads
+    // object -> events -> errors; fall back to the object page.
+    for (const anchor of [`api${routePath}/events`, `api${routePath}/object`]) {
+      const result = insertIntoGroups(apiTab.groups, anchor, errorsPage)
+      if (result === 'inserted') inserted++
+      if (result !== 'not-found') break
+    }
+  }
+
+  if (inserted > 0) {
+    await writeFile(docsJsonPath, JSON.stringify(docsJson, null, 2) + '\n')
+    console.log(`  Added ${inserted} errors page(s) to nav`)
+  }
+}
+
+/**
+ * Insert `newPage` after `anchorPage`, searching every top-level nav group.
+ * Returns the first non-'not-found' result (a page lives in one group only).
+ */
+function insertIntoGroups(
+  groups: any[],
+  anchorPage: string,
+  newPage: string,
 ): 'inserted' | 'present' | 'not-found' {
-  const idx = pages.indexOf(objectPage)
+  for (const group of groups) {
+    const result = insertAfterPage(group.pages, anchorPage, newPage)
+    if (result !== 'not-found') return result
+  }
+  return 'not-found'
+}
+
+/**
+ * Recursively locate `anchorPage` in the nav tree and insert `newPage` right
+ * after it. Returns 'inserted' when added, 'present' when already there, and
+ * 'not-found' when the anchor page isn't in this subtree.
+ */
+function insertAfterPage(
+  pages: any[],
+  anchorPage: string,
+  newPage: string,
+): 'inserted' | 'present' | 'not-found' {
+  const idx = pages.indexOf(anchorPage)
   if (idx !== -1) {
-    if (pages.includes(eventsPage)) return 'present'
-    pages.splice(idx + 1, 0, eventsPage)
+    if (pages.includes(newPage)) return 'present'
+    pages.splice(idx + 1, 0, newPage)
     return 'inserted'
   }
   for (const page of pages) {
     if (typeof page === 'object' && page.group) {
-      const result = insertAfterObjectPage(page.pages, objectPage, eventsPage)
+      const result = insertAfterPage(page.pages, anchorPage, newPage)
       if (result !== 'not-found') return result
     }
   }

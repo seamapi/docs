@@ -6,10 +6,15 @@ import { env } from 'node:process'
 import type { Blueprint } from '@seamapi/blueprint'
 
 import { canonicalizeGeneratedLinks } from './canonicalize-links.js'
+import { updateErrorPages } from './errors.js'
 import { updateEventPages } from './events.js'
 import { getRawOpenApiSpec, loadBlueprint } from './load-data.js'
 import { transformSpec } from './transform-spec.js'
-import { insertEventsPagesIntoNav, updateDocsJson } from './update-nav.js'
+import {
+  insertErrorPagesIntoNav,
+  insertEventsPagesIntoNav,
+  updateDocsJson,
+} from './update-nav.js'
 
 const skipCodeFormat = env['SKIP_CODE_FORMAT'] != null
 
@@ -84,6 +89,21 @@ if (updatedEvents.length > 0) {
 // Phase F.6: Wire the generated events pages into the sidebar next to their
 // object page. Runs after nav (Phase E) so its transforms don't strip them.
 await insertEventsPagesIntoNav(updatedEvents)
+
+// Phase F.7: Generate error/warning documentation from the errors/warnings
+// properties on each resource — one combined page per resource. Like events,
+// these are blueprint-only (the OpenAPI spec can't express the enumerated
+// codes) and run before link canonicalization so their description links are
+// rewritten. Nav wiring runs after events so the sidebar reads
+// object -> events -> errors.
+console.log('Updating error and warning documentation...')
+const updatedErrors = await updateErrorPages(blueprint, outputDir)
+if (updatedErrors.length > 0) {
+  console.log(
+    `  Generated errors pages for ${updatedErrors.length} resources: ${updatedErrors.join(', ')}`,
+  )
+}
+await insertErrorPagesIntoNav(updatedErrors)
 
 // Phase G: canonicalize docs links in generated output. Guards against two
 // classes of upstream @seamapi/types regression:
