@@ -138,6 +138,7 @@ ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managi
 
 **`acs_credential_pool_id`** *UUID*
 
+ID of the credential pool to which the credential belongs.
 
 
 
@@ -323,6 +324,7 @@ Indicates whether the latest state of the [credential](https://docs.seam.co/low-
 
 **`is_managed`** *Boolean*
 
+Indicates whether Seam manages the credential.
 
 
 

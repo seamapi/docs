@@ -251,6 +251,8 @@ Full name of the [access system user](https://docs.seam.co/low-level-apis/access
 
 **`hid_acs_system_id`** *String*
 
+ID of the HID access control system associated with the user.
+
 ---
 
 **`phone_number`** *String*

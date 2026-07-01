@@ -384,6 +384,7 @@ Full name of the [access system user](https://docs.seam.co/low-level-apis/access
 
 **`hid_acs_system_id`** *UUID*
 
+ID of the HID access control system associated with the user.
 
 
 
@@ -392,6 +393,7 @@ Full name of the [access system user](https://docs.seam.co/low-level-apis/access
 
 **`is_managed`** *Boolean*
 
+Indicates whether Seam manages the access system user.
 
 
 
@@ -1186,6 +1188,8 @@ An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-
 
 <strong><code>acs_user_id</code></strong> <i>UUID</i>
 
+  ID of the affected access system user.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the connected account.
@@ -1226,6 +1230,8 @@ An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-
   ID of the access system.
 
 <strong><code>acs_user_id</code></strong> <i>UUID</i>
+
+  ID of the affected access system user.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 

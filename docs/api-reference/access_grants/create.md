@@ -450,6 +450,8 @@ Unique email address for the user identity.
 
 <summary><b><code>full_name</code></b> <i>String</i></summary>
 
+Full name of the user associated with the user identity.
+
 </details>
 
 ---

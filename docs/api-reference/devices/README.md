@@ -326,6 +326,7 @@ A thermostat device resource.
 
 **`can_configure_auto_lock`** *Boolean*
 
+Indicates whether the lock supports configuring automatic locking.
 
 
 
@@ -334,6 +335,7 @@ A thermostat device resource.
 
 **`can_hvac_cool`** *Boolean*
 
+Indicates whether the thermostat supports cooling.
 
 
 
@@ -342,6 +344,7 @@ A thermostat device resource.
 
 **`can_hvac_heat`** *Boolean*
 
+Indicates whether the thermostat supports heating.
 
 
 
@@ -350,6 +353,7 @@ A thermostat device resource.
 
 **`can_hvac_heat_cool`** *Boolean*
 
+Indicates whether the thermostat supports simultaneous heating and cooling.
 
 
 
@@ -358,6 +362,7 @@ A thermostat device resource.
 
 **`can_program_offline_access_codes`** *Boolean*
 
+Indicates whether the device supports programming offline access codes.
 
 
 
@@ -366,6 +371,7 @@ A thermostat device resource.
 
 **`can_program_online_access_codes`** *Boolean*
 
+Indicates whether the device supports programming online access codes.
 
 
 
@@ -374,6 +380,7 @@ A thermostat device resource.
 
 **`can_program_thermostat_programs_as_different_each_day`** *Boolean*
 
+Indicates whether the thermostat supports different climate programs for each day of the week.
 
 
 
@@ -382,6 +389,7 @@ A thermostat device resource.
 
 **`can_program_thermostat_programs_as_same_each_day`** *Boolean*
 
+Indicates whether the thermostat supports a single climate program applied to every day.
 
 
 
@@ -390,6 +398,7 @@ A thermostat device resource.
 
 **`can_program_thermostat_programs_as_weekday_weekend`** *Boolean*
 
+Indicates whether the thermostat supports weekday/weekend climate programs.
 
 
 
@@ -398,6 +407,7 @@ A thermostat device resource.
 
 **`can_remotely_lock`** *Boolean*
 
+Indicates whether the device supports remote locking.
 
 
 
@@ -406,6 +416,7 @@ A thermostat device resource.
 
 **`can_remotely_unlock`** *Boolean*
 
+Indicates whether the device supports remote unlocking.
 
 
 
@@ -414,6 +425,7 @@ A thermostat device resource.
 
 **`can_run_thermostat_programs`** *Boolean*
 
+Indicates whether the thermostat supports running climate programs.
 
 
 
@@ -422,6 +434,7 @@ A thermostat device resource.
 
 **`can_simulate_connection`** *Boolean*
 
+Indicates whether the device supports simulating connection in a sandbox.
 
 
 
@@ -430,6 +443,7 @@ A thermostat device resource.
 
 **`can_simulate_disconnection`** *Boolean*
 
+Indicates whether the device supports simulating disconnection in a sandbox.
 
 
 
@@ -438,6 +452,7 @@ A thermostat device resource.
 
 **`can_simulate_hub_connection`** *Boolean*
 
+Indicates whether the hub supports simulating connection in a sandbox.
 
 
 
@@ -446,6 +461,7 @@ A thermostat device resource.
 
 **`can_simulate_hub_disconnection`** *Boolean*
 
+Indicates whether the hub supports simulating disconnection in a sandbox.
 
 
 
@@ -454,6 +470,7 @@ A thermostat device resource.
 
 **`can_simulate_paid_subscription`** *Boolean*
 
+Indicates whether the device supports simulating a paid subscription in a sandbox.
 
 
 
@@ -462,6 +479,7 @@ A thermostat device resource.
 
 **`can_simulate_removal`** *Boolean*
 
+Indicates whether the device supports simulating removal in a sandbox.
 
 
 
@@ -470,6 +488,7 @@ A thermostat device resource.
 
 **`can_turn_off_hvac`** *Boolean*
 
+Indicates whether the thermostat can be turned off.
 
 
 
@@ -478,6 +497,7 @@ A thermostat device resource.
 
 **`can_unlock_with_code`** *Boolean*
 
+Indicates whether the lock supports unlocking with an access code.
 
 
 
@@ -5105,6 +5125,7 @@ A device provider resource.
 
 **`can_configure_auto_lock`** *Boolean*
 
+Indicates whether the lock supports configuring automatic locking.
 
 
 
@@ -5113,6 +5134,7 @@ A device provider resource.
 
 **`can_hvac_cool`** *Boolean*
 
+Indicates whether the thermostat supports cooling.
 
 
 
@@ -5121,6 +5143,7 @@ A device provider resource.
 
 **`can_hvac_heat`** *Boolean*
 
+Indicates whether the thermostat supports heating.
 
 
 
@@ -5129,6 +5152,7 @@ A device provider resource.
 
 **`can_hvac_heat_cool`** *Boolean*
 
+Indicates whether the thermostat supports simultaneous heating and cooling.
 
 
 
@@ -5137,6 +5161,7 @@ A device provider resource.
 
 **`can_program_offline_access_codes`** *Boolean*
 
+Indicates whether the device supports programming offline access codes.
 
 
 
@@ -5145,6 +5170,7 @@ A device provider resource.
 
 **`can_program_online_access_codes`** *Boolean*
 
+Indicates whether the device supports programming online access codes.
 
 
 
@@ -5153,6 +5179,7 @@ A device provider resource.
 
 **`can_program_thermostat_programs_as_different_each_day`** *Boolean*
 
+Indicates whether the thermostat supports different climate programs for each day of the week.
 
 
 
@@ -5161,6 +5188,7 @@ A device provider resource.
 
 **`can_program_thermostat_programs_as_same_each_day`** *Boolean*
 
+Indicates whether the thermostat supports a single climate program applied to every day.
 
 
 
@@ -5169,6 +5197,7 @@ A device provider resource.
 
 **`can_program_thermostat_programs_as_weekday_weekend`** *Boolean*
 
+Indicates whether the thermostat supports weekday/weekend climate programs.
 
 
 
@@ -5177,6 +5206,7 @@ A device provider resource.
 
 **`can_remotely_lock`** *Boolean*
 
+Indicates whether the device supports remote locking.
 
 
 
@@ -5185,6 +5215,7 @@ A device provider resource.
 
 **`can_remotely_unlock`** *Boolean*
 
+Indicates whether the device supports remote unlocking.
 
 
 
@@ -5193,6 +5224,7 @@ A device provider resource.
 
 **`can_run_thermostat_programs`** *Boolean*
 
+Indicates whether the thermostat supports running climate programs.
 
 
 
@@ -5201,6 +5233,7 @@ A device provider resource.
 
 **`can_simulate_connection`** *Boolean*
 
+Indicates whether the device supports simulating connection in a sandbox.
 
 
 
@@ -5209,6 +5242,7 @@ A device provider resource.
 
 **`can_simulate_disconnection`** *Boolean*
 
+Indicates whether the device supports simulating disconnection in a sandbox.
 
 
 
@@ -5217,6 +5251,7 @@ A device provider resource.
 
 **`can_simulate_hub_connection`** *Boolean*
 
+Indicates whether the hub supports simulating connection in a sandbox.
 
 
 
@@ -5225,6 +5260,7 @@ A device provider resource.
 
 **`can_simulate_hub_disconnection`** *Boolean*
 
+Indicates whether the hub supports simulating disconnection in a sandbox.
 
 
 
@@ -5233,6 +5269,7 @@ A device provider resource.
 
 **`can_simulate_paid_subscription`** *Boolean*
 
+Indicates whether the device supports simulating a paid subscription in a sandbox.
 
 
 
@@ -5241,6 +5278,7 @@ A device provider resource.
 
 **`can_simulate_removal`** *Boolean*
 
+Indicates whether the device supports simulating removal in a sandbox.
 
 
 
@@ -5249,6 +5287,7 @@ A device provider resource.
 
 **`can_turn_off_hvac`** *Boolean*
 
+Indicates whether the thermostat can be turned off.
 
 
 
@@ -5257,6 +5296,7 @@ A device provider resource.
 
 **`can_unlock_with_code`** *Boolean*
 
+Indicates whether the lock supports unlocking with an access code.
 
 
 
@@ -5265,6 +5305,7 @@ A device provider resource.
 
 **`device_provider_name`** *Enum*
 
+Name of the device provider.
 
 
 <details>
@@ -5337,6 +5378,7 @@ A device provider resource.
 
 **`display_name`** *String*
 
+Display name for the device provider.
 
 
 
@@ -5345,6 +5387,7 @@ A device provider resource.
 
 **`image_url`** *String*
 
+Image URL for the device provider.
 
 
 
@@ -5353,6 +5396,7 @@ A device provider resource.
 
 **`provider_categories`** *List* *of Enums*
 
+List of provider categories to which the device provider belongs, such as `stable`, `consumer_smartlocks`, `thermostats`, and so on.
 
 
 

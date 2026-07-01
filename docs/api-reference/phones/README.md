@@ -74,7 +74,7 @@ ID of the phone.
 
 **`device_type`** *Enum*
 
-Device type for phones.
+Type of the phone device, such as `ios_phone` or `android_phone`.
 
 
 <details>
@@ -106,7 +106,11 @@ Errors associated with the phone.
   <summary>Child Object Properties</summary>
 <strong><code>error_code</code></strong> <i>String</i>
 
+  Unique identifier of the type of error.
+
 <strong><code>message</code></strong> <i>String</i>
+
+  Detailed description of the error.
 
 </details>
 
@@ -131,7 +135,11 @@ Warnings associated with the phone.
   <summary>Child Object Properties</summary>
 <strong><code>message</code></strong> <i>String</i>
 
+  Detailed description of the warning.
+
 <strong><code>warning_code</code></strong> <i>String</i>
+
+  Unique identifier of the type of warning.
 
 </details>
 

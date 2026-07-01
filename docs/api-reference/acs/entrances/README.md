@@ -682,6 +682,8 @@ An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/r
 
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
 
+  ID of the affected entrance.
+
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
   ID of the access system.
@@ -722,6 +724,8 @@ An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/r
 <summary>Properties</summary>
 
 <strong><code>acs_entrance_id</code></strong> <i>UUID</i>
+
+  ID of the affected entrance.
 
 <strong><code>acs_system_id</code></strong> <i>UUID</i>
 
