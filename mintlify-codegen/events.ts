@@ -84,6 +84,21 @@ function hasEnumValues(
 }
 
 /**
+ * Object-format properties (e.g. the `from`/`to` of a `*.*_changed` event)
+ * carry their own typed `properties` array. Free-form records
+ * (`*_custom_metadata`) have an empty array; those still render as `{}`.
+ */
+function hasNestedProperties(
+  prop: EventProperty,
+): prop is EventProperty & { properties: EventProperty[] } {
+  return (
+    'properties' in prop &&
+    Array.isArray((prop as { properties?: unknown }).properties) &&
+    (prop as { properties: unknown[] }).properties.length > 0
+  )
+}
+
+/**
  * Build an illustrative sample value for an event property from its format.
  * Values are fixed (never random) so generated payloads are stable across
  * runs; this mirrors the value conventions in load-data.ts.
@@ -104,8 +119,18 @@ function sampleValue(prop: EventProperty): unknown {
     case 'list':
       return []
     case 'object':
-    case 'record':
-      return {}
+    case 'record': {
+      // Typed objects (a `*_changed` event's `from`/`to`) expose their own
+      // `properties`; recurse to show their shape. Free-form records have none
+      // and stay `{}`.
+      if (!hasNestedProperties(prop)) return {}
+      const nested: Record<string, unknown> = {}
+      for (const child of prop.properties) {
+        if (child.isUndocumented) continue
+        nested[child.name] = sampleValue(child)
+      }
+      return nested
+    }
     case 'string':
       return ''
     default:
@@ -159,6 +184,22 @@ function renderEventProperty(prop: EventProperty): string {
     if (hasEnumValues(prop) && prop.values.length > 0) {
       const values = prop.values.map((value) => `\`${value.name}\``).join(', ')
       body.push('', `Possible values: ${values}`)
+    }
+  }
+
+  // Typed objects (a `*_changed` event's `from`/`to`) document their child
+  // fields in a nested `<Expandable>`, matching the object pages.
+  if (hasNestedProperties(prop)) {
+    const children = prop.properties
+      .filter((child) => !child.isUndocumented)
+      .map((child) => indent(renderEventProperty(child), 4))
+    if (children.length > 0) {
+      body.push(
+        '',
+        '<Expandable title="properties">',
+        ...children,
+        '</Expandable>',
+      )
     }
   }
 

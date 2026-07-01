@@ -154,9 +154,13 @@ The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/acc
   "device_id": "00000000-0000-0000-0000-000000000000",
   "event_id": "00000000-0000-0000-0000-000000000000",
   "event_type": "access_code.name_changed",
-  "from": {},
+  "from": {
+    "name": ""
+  },
   "occurred_at": "2025-01-01T00:00:00.000Z",
-  "to": {},
+  "to": {
+    "name": ""
+  },
   "workspace_id": "00000000-0000-0000-0000-000000000000"
 }
 ```
@@ -201,6 +205,12 @@ The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/acc
 
 <ResponseField name="from" type="Object">
   Previous access code name configuration.
+
+  <Expandable title="properties">
+      <ResponseField name="name" type="String">
+        Previous name of the access code.
+      </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="occurred_at" type="String (ISO 8601)">
@@ -209,6 +219,12 @@ The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/acc
 
 <ResponseField name="to" type="Object">
   New access code name configuration.
+
+  <Expandable title="properties">
+      <ResponseField name="name" type="String">
+        New name of the access code.
+      </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
@@ -232,9 +248,13 @@ The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks
   "device_id": "00000000-0000-0000-0000-000000000000",
   "event_id": "00000000-0000-0000-0000-000000000000",
   "event_type": "access_code.code_changed",
-  "from": {},
+  "from": {
+    "code": ""
+  },
   "occurred_at": "2025-01-01T00:00:00.000Z",
-  "to": {},
+  "to": {
+    "code": ""
+  },
   "workspace_id": "00000000-0000-0000-0000-000000000000"
 }
 ```
@@ -279,6 +299,12 @@ The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks
 
 <ResponseField name="from" type="Object">
   Previous pin code configuration.
+
+  <Expandable title="properties">
+      <ResponseField name="code" type="String">
+        Previous pin code.
+      </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="occurred_at" type="String (ISO 8601)">
@@ -287,6 +313,12 @@ The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks
 
 <ResponseField name="to" type="Object">
   New pin code configuration.
+
+  <Expandable title="properties">
+      <ResponseField name="code" type="String">
+        New pin code.
+      </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
@@ -310,9 +342,15 @@ The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-loc
   "device_id": "00000000-0000-0000-0000-000000000000",
   "event_id": "00000000-0000-0000-0000-000000000000",
   "event_type": "access_code.time_frame_changed",
-  "from": {},
+  "from": {
+    "ends_at": "",
+    "starts_at": ""
+  },
   "occurred_at": "2025-01-01T00:00:00.000Z",
-  "to": {},
+  "to": {
+    "ends_at": "",
+    "starts_at": ""
+  },
   "workspace_id": "00000000-0000-0000-0000-000000000000"
 }
 ```
@@ -357,6 +395,15 @@ The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-loc
 
 <ResponseField name="from" type="Object">
   Previous time frame configuration.
+
+  <Expandable title="properties">
+      <ResponseField name="ends_at" type="String">
+        Previous end time.
+      </ResponseField>
+      <ResponseField name="starts_at" type="String">
+        Previous start time.
+      </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="occurred_at" type="String (ISO 8601)">
@@ -365,6 +412,15 @@ The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-loc
 
 <ResponseField name="to" type="Object">
   New time frame configuration.
+
+  <Expandable title="properties">
+      <ResponseField name="ends_at" type="String">
+        New end time.
+      </ResponseField>
+      <ResponseField name="starts_at" type="String">
+        New start time.
+      </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
