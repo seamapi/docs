@@ -164,6 +164,7 @@ The customer key associated with this webview, if any.
 
 **`device_selection_mode`** *Enum*
 
+Device selection mode of the Connect Webview. Supported values: `none`, `single`, `multiple`.
 
 
 <details>

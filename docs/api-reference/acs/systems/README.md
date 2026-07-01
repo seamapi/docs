@@ -49,6 +49,7 @@ An access system resource.
 
 **`acs_access_group_count`** *Number*
 
+Number of access groups in the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -66,6 +67,7 @@ ID of the [access control system](https://docs.seam.co/low-level-apis/access-sys
 
 **`acs_user_count`** *Number*
 
+Number of users in the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -183,6 +185,8 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
 
   **`is_bridge_error`** *Boolean*
   
+  
+  Indicates whether the error is related to the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
   
   
   ---
@@ -457,6 +461,7 @@ Indicates whether the `acs_system` is a credential manager.
 
 **`location`** *Object*
 
+Location information for the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -523,6 +528,7 @@ Name of the [access control system](https://docs.seam.co/low-level-apis/access-s
 
 **`visionline_metadata`** *Object*
 
+Visionline-specific metadata for the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 

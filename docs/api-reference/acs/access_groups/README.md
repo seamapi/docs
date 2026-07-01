@@ -137,6 +137,7 @@ Date and time at which the access group was created.
 
 **`display_name`** *String*
 
+Display name for the access group.
 
 
 
@@ -220,6 +221,7 @@ Display name that corresponds to the brand-specific terminology for the access g
 
 **`is_managed`** *Boolean*
 
+Indicates whether Seam manages the access group.
 
 
 

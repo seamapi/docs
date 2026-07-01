@@ -56,6 +56,7 @@ Date and time at which the user identity was created.
 
 **`display_name`** *String*
 
+Display name for the user identity.
 
 
 
@@ -134,6 +135,7 @@ Indicates that there is an issue with an access system user associated with this
 
 **`full_name`** *String*
 
+Full name of the user associated with the user identity.
 
 
 

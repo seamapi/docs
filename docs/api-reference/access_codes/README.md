@@ -3893,6 +3893,8 @@ A [backup access code](https://docs.seam.co/low-level-apis/smart-locks/access-co
 
 <strong><code>backup_access_code_id</code></strong> <i>String</i>
 
+  ID of the backup access code that was pulled from the pool.
+
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the connected account, present when connected_account_id is provided.
