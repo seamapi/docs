@@ -64,7 +64,7 @@ ID of the [access control system](https://docs.seam.co/low-level-apis/access-sys
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
+ID of the connected account that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 
@@ -120,7 +120,7 @@ Errors associated with the [encoder](https://docs.seam.co/low-level-apis/access-
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
+ID of the workspace that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).
 
 
 
@@ -168,7 +168,7 @@ An [access system encoder](https://docs.seam.co/low-level-apis/access-systems/wo
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -211,7 +211,7 @@ An [access system encoder](https://docs.seam.co/low-level-apis/access-systems/wo
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

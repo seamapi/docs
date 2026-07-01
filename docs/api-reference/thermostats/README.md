@@ -2115,7 +2115,7 @@ Active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/
 
   - <strong><code>workspace_id</code></strong> <i>UUID</i>
   
-    ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.
+    ID of the workspace that contains the thermostat schedule.
 
 </details>
 
@@ -4037,7 +4037,7 @@ Configured [daily programs](https://docs.seam.co/capability-guides/thermostats/c
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.
+  ID of the workspace that contains the thermostat daily program.
 
 </details>
 
@@ -4444,7 +4444,7 @@ A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4484,7 +4484,7 @@ A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -4503,7 +4503,7 @@ A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted 
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>cooling_set_point_celsius</code></strong> <i>Number</i>
 
@@ -4585,7 +4585,7 @@ A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted 
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -4604,7 +4604,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4660,7 +4660,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -4679,7 +4679,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4735,7 +4735,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -4754,7 +4754,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4802,7 +4802,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -4821,7 +4821,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported te
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4861,7 +4861,7 @@ A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported te
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

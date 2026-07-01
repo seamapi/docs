@@ -3810,7 +3810,7 @@ A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3863,7 +3863,7 @@ A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3912,7 +3912,7 @@ A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3971,7 +3971,7 @@ A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3994,7 +3994,7 @@ The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a u
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -4026,7 +4026,7 @@ The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a u
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

@@ -139,7 +139,7 @@ Warnings associated with the phone.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the phone.
+ID of the workspace that contains the phone.
 
 
 
@@ -234,7 +234,7 @@ A phone device was deactivated.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

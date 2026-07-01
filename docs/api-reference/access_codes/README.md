@@ -2605,7 +2605,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2633,7 +2633,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2679,7 +2679,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2707,7 +2707,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2730,7 +2730,7 @@ The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/acc
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2770,7 +2770,7 @@ The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/acc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2793,7 +2793,7 @@ The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2833,7 +2833,7 @@ The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2856,7 +2856,7 @@ The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-loc
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2896,7 +2896,7 @@ The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-loc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2923,7 +2923,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2951,7 +2951,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2978,7 +2978,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3006,7 +3006,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3029,7 +3029,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3057,7 +3057,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3137,7 +3137,7 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -3222,7 +3222,7 @@ There was an unusually long delay in setting an [access code](https://docs.seam.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3302,7 +3302,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) f
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -3387,7 +3387,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) f
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3414,7 +3414,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3442,7 +3442,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3522,7 +3522,7 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -3607,7 +3607,7 @@ There was an unusually long delay in removing an [access code](https://docs.seam
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3687,7 +3687,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) f
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -3772,7 +3772,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) f
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3795,7 +3795,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3823,7 +3823,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3846,7 +3846,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3874,7 +3874,7 @@ An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) w
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -3899,7 +3899,7 @@ A [backup access code](https://docs.seam.co/low-level-apis/smart-locks/access-co
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.
+  ID of the connected account associated with the affected access code.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -3927,7 +3927,7 @@ A [backup access code](https://docs.seam.co/low-level-apis/smart-locks/access-co
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

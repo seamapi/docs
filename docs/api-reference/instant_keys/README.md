@@ -34,7 +34,7 @@ An Instant Key resource.
 
 **`client_session_id`** *UUID*
 
-ID of the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) associated with the Instant Key.
+ID of the client session associated with the Instant Key.
 
 
 
@@ -122,7 +122,7 @@ ID of the user identity associated with the Instant Key.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Instant Key.
+ID of the workspace that contains the Instant Key.
 
 
 

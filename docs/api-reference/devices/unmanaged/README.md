@@ -2384,7 +2384,7 @@ An [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unm
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2416,7 +2416,7 @@ An [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unm
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2435,7 +2435,7 @@ The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/m
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2467,7 +2467,7 @@ The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/m
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2505,7 +2505,7 @@ The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/m
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -2605,7 +2605,7 @@ The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/m
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
