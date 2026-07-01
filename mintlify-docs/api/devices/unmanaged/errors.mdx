@@ -51,45 +51,67 @@ Each error is an object with the following shape:
 
 Indicates that the account is disconnected.
 
+---
+
 ### `bridge_disconnected`
 
 Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).
+
+---
 
 ### `device_disconnected`
 
 Indicates that the device is disconnected.
 
+---
+
 ### `device_offline`
 
 Indicates that the device is offline.
+
+---
 
 ### `device_removed`
 
 Indicates that the device has been removed.
 
+---
+
 ### `dormakaba_sites_disconnected`
 
 Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.
+
+---
 
 ### `hub_disconnected`
 
 Indicates that the hub is disconnected.
 
+---
+
 ### `lockly_missing_wifi_bridge`
 
 Indicates that the Lockly lock is not connected to a Wi-Fi bridge.
+
+---
 
 ### `missing_device_credentials`
 
 Indicates that device credentials are missing.
 
+---
+
 ### `subscription_required`
 
 Indicates that a subscription is required to connect.
 
+---
+
 ### `ttlock_lock_not_paired_to_gateway`
 
 Indicates that the lock is not paired with a gateway.
+
+---
 
 ### Access Codes
 
@@ -97,25 +119,35 @@ Indicates that the lock is not paired with a gateway.
 
 Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
 
+---
+
 ### Locks
 
 #### `august_lock_missing_bridge`
 
 Indicates that the lock is not connected to a bridge.
 
+---
+
 #### `august_lock_not_authorized`
 
 Indicates that the user is not authorized to use the August lock.
 
+---
+
 #### `salto_ks_subscription_limit_exceeded`
 
 Indicates that the Salto site user limit has been reached.
+
+---
 
 ### Thermostats
 
 #### `auxiliary_heat_running`
 
 Indicates that the auxiliary heat is running.
+
+---
 
 ## Warnings
 
@@ -159,41 +191,61 @@ Each warning is an object with the following shape:
 
 Indicates that the device appears to be unresponsive.
 
+---
+
 ### `device_has_flaky_connection`
 
 Indicates that the device has a flaky connection.
+
+---
 
 ### `lockly_time_zone_not_configured`
 
 Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.
 
+---
+
 ### `salto_ks_subscription_limit_almost_reached`
 
 Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.
+
+---
 
 ### `scheduled_maintenance_window`
 
 Indicates that a scheduled maintenance window has been detected.
 
+---
+
 ### `third_party_integration_detected`
 
 Indicates that a third-party integration has been detected.
+
+---
 
 ### `ttlock_weak_gateway_signal`
 
 Indicates that the gateway signal is weak.
 
+---
+
 ### `two_n_device_missing_timezone`
 
 Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.
+
+---
 
 ### `ultraloq_time_zone_unknown`
 
 Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.
 
+---
+
 ### `wyze_device_missing_gateway`
 
 Indicates that the Wyze Lock is not connected to a gateway.
+
+---
 
 ### Access Codes
 
@@ -201,29 +253,43 @@ Indicates that the Wyze Lock is not connected to a gateway.
 
 Indicates that there are too many backup codes.
 
+---
+
 #### `max_access_codes_reached`
 
 Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
+
+---
 
 #### `partial_backup_access_code_pool`
 
 Indicates that the backup access code is unhealthy.
 
+---
+
 #### `provider_issue`
 
 Indicates a provider-specific issue that may affect device functionality.
+
+---
 
 #### `salto_ks_lock_access_code_support_removed`
 
 Indicates that a change in the reported device model has been detected for this Salto KS lock, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.
 
+---
+
 #### `salto_ks_office_mode`
 
 Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.
 
+---
+
 #### `salto_ks_privacy_mode`
 
 Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.
+
+---
 
 ### Locks
 
@@ -231,29 +297,43 @@ Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unloc
 
 Indicates that the accessory keypad exists, but is not linked to the Igloohome Bridge. Online access code programming will fail until the keypad is linked to the Igloohome Bridge in the Igloohome app.
 
+---
+
 #### `hub_required_for_additional_capabilities`
 
 Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
+
+---
 
 #### `insufficient_permissions`
 
 Indicates that the connected Kwikset account has member-level access to this lock's home. Admin or owner access is required to manage access codes and control the lock remotely.
 
+---
+
 #### `keynest_unsupported_locker`
 
 Indicates that the key is in a locker that does not support the access codes API.
+
+---
 
 #### `power_saving_mode`
 
 Indicates that the device is in power saving mode and may have limited functionality.
 
+---
+
 #### `ttlock_lock_gateway_unlocking_not_enabled`
 
 Indicates that the Remote Unlock feature is not enabled in the settings."
 
+---
+
 #### `unreliable_online_status`
 
 Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.
+
+---
 
 ### Phones
 
@@ -261,8 +341,12 @@ Indicates that the device may optimistically be reported as online because the p
 
 Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.
 
+---
+
 ### Thermostats
 
 #### `temperature_threshold_exceeded`
 
 Indicates that the temperature threshold has been exceeded.
+
+---

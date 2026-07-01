@@ -205,13 +205,14 @@ function renderObjectShape(prop: Property | undefined, kind: string): string {
 
 /**
  * Render one code entry as a heading (so each code gets a linkable anchor)
- * followed by its description. `level` is the Markdown heading prefix (`###` for
- * ungrouped codes, `####` for codes nested under a variant-group heading).
+ * followed by its description and a divider that separates it from the next
+ * entry. `level` is the Markdown heading prefix (`###` for ungrouped codes,
+ * `####` for codes nested under a variant-group heading).
  */
 function renderEntry(entry: CodeEntry, level: string): string {
   const description =
     entry.description || `Indicates the \`${entry.code}\` state.`
-  return [`${level} \`${entry.code}\``, '', description].join('\n')
+  return [`${level} \`${entry.code}\``, '', description, '', '---'].join('\n')
 }
 
 /**
