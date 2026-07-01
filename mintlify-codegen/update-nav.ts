@@ -22,6 +22,13 @@ function isObjectPage(page: string): boolean {
 }
 
 /**
+ * Check if a page reference is a generated events page (e.g. "api/access_codes/events").
+ */
+function isEventsPage(page: string): boolean {
+  return page.startsWith('api/') && page.endsWith('/events')
+}
+
+/**
  * Convert a page path like "api/access_codes/create" to an OpenAPI reference
  * like "POST /access_codes/create".
  * The tab-level "openapi" field in docs.json sets the default spec,
@@ -75,6 +82,9 @@ function transformPages(
 
         // Keep object pages as MDX (overview/object description pages)
         if (isObjectPage(page)) return page
+
+        // Keep generated events pages as MDX (not endpoints, but real pages)
+        if (isEventsPage(page)) return page
 
         // Check if the endpoint exists in the spec
         const apiPath = page.replace(/^api/, '')
@@ -339,6 +349,71 @@ function insertIntoMatchingGroup(groups: any[], path: string): boolean {
     }
   }
   return false
+}
+
+/**
+ * Insert each generated events page into the nav directly after its object
+ * page (e.g. "api/access_grants/events" after "api/access_grants/object").
+ * Idempotent: skips routes whose events page is already present. Call after the
+ * events pages have been written to disk.
+ */
+export async function insertEventsPagesIntoNav(
+  eventRoutes: string[],
+): Promise<void> {
+  if (eventRoutes.length === 0) return
+
+  const docsJsonPath = join(
+    import.meta.dirname,
+    '..',
+    'mintlify-docs',
+    'docs.json',
+  )
+  const docsJson = JSON.parse(await readFile(docsJsonPath, 'utf8'))
+  const apiTab = docsJson.navigation?.tabs?.find(
+    (t: any) => t.tab === 'API Reference',
+  )
+  if (!apiTab?.groups) return
+
+  let inserted = 0
+  for (const routePath of eventRoutes) {
+    const objectPage = `api${routePath}/object`
+    const eventsPage = `api${routePath}/events`
+    for (const group of apiTab.groups) {
+      const result = insertAfterObjectPage(group.pages, objectPage, eventsPage)
+      if (result === 'inserted') inserted++
+      if (result !== 'not-found') break
+    }
+  }
+
+  if (inserted > 0) {
+    await writeFile(docsJsonPath, JSON.stringify(docsJson, null, 2) + '\n')
+    console.log(`  Added ${inserted} events page(s) to nav`)
+  }
+}
+
+/**
+ * Recursively locate `objectPage` in the nav tree and insert `eventsPage` right
+ * after it. Returns 'inserted' when added, 'present' when already there, and
+ * 'not-found' when the object page isn't in this subtree.
+ */
+function insertAfterObjectPage(
+  pages: any[],
+  objectPage: string,
+  eventsPage: string,
+): 'inserted' | 'present' | 'not-found' {
+  const idx = pages.indexOf(objectPage)
+  if (idx !== -1) {
+    if (pages.includes(eventsPage)) return 'present'
+    pages.splice(idx + 1, 0, eventsPage)
+    return 'inserted'
+  }
+  for (const page of pages) {
+    if (typeof page === 'object' && page.group) {
+      const result = insertAfterObjectPage(page.pages, objectPage, eventsPage)
+      if (result !== 'not-found') return result
+    }
+  }
+  return 'not-found'
 }
 
 // Run if called directly (standalone usage)

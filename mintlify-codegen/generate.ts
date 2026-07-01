@@ -9,7 +9,7 @@ import { canonicalizeGeneratedLinks } from './canonicalize-links.js'
 import { updateEventPages } from './events.js'
 import { getRawOpenApiSpec, loadBlueprint } from './load-data.js'
 import { transformSpec } from './transform-spec.js'
-import { updateDocsJson } from './update-nav.js'
+import { insertEventsPagesIntoNav, updateDocsJson } from './update-nav.js'
 
 const skipCodeFormat = env['SKIP_CODE_FORMAT'] != null
 
@@ -69,17 +69,21 @@ if (updatedObjects.length > 0) {
   )
 }
 
-// Phase F.5: Generate event documentation (per-resource `## Events` sections
-// plus the `event_type` enum on the Event object page) from blueprint.events.
-// Runs after object pages so it wins over the resource Properties rewrite, and
-// before link canonicalization so event-description links are rewritten too.
+// Phase F.5: Generate event documentation from blueprint.events — a dedicated
+// events page per resource plus the `event_type` enum on the Event object page.
+// Runs after object pages (so it can strip any legacy embedded events section)
+// and before link canonicalization (so event-description links are rewritten).
 console.log('Updating event documentation...')
 const updatedEvents = await updateEventPages(blueprint, outputDir)
 if (updatedEvents.length > 0) {
   console.log(
-    `  Updated events on ${updatedEvents.length} pages: ${updatedEvents.join(', ')}`,
+    `  Generated events pages for ${updatedEvents.length} resources: ${updatedEvents.join(', ')}`,
   )
 }
+
+// Phase F.6: Wire the generated events pages into the sidebar next to their
+// object page. Runs after nav (Phase E) so its transforms don't strip them.
+await insertEventsPagesIntoNav(updatedEvents)
 
 // Phase G: canonicalize docs links in generated output. Guards against two
 // classes of upstream @seamapi/types regression:
