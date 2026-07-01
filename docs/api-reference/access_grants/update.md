@@ -150,9 +150,15 @@ To learn more, see [Authentication](https://docs.seam.co/latest/api/authenticati
 
 ## Request Parameters
 
-**`access_grant_id`** *String* (Required)
+**`access_grant_id`** *String*
 
-ID of the Access Grant to update.
+ID of the Access Grant to update. Provide either `access_grant_id` or `access_grant_key`.
+
+---
+
+**`access_grant_key`** *String*
+
+Key of the Access Grant to update. Provide either `access_grant_id` or `access_grant_key`.
 
 ---
 
