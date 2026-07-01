@@ -98,6 +98,14 @@ function hasNestedProperties(
   )
 }
 
+// Illustrative values for well-known fields that the type system types as
+// plain strings, so their `from`/`to` payloads read realistically instead of
+// showing `""`. `*_at` string fields are handled as datetimes below.
+const SAMPLE_STRING_VALUES: Record<string, string> = {
+  code: '1234',
+  name: 'My Access Code',
+}
+
 /**
  * Build an illustrative sample value for an event property from its format.
  * Values are fixed (never random) so generated payloads are stable across
@@ -132,7 +140,10 @@ function sampleValue(prop: EventProperty): unknown {
       return nested
     }
     case 'string':
-      return ''
+      // Some datetime fields (e.g. a time frame's `starts_at`/`ends_at`) are
+      // typed as plain strings; render them like the datetime fields above.
+      if (/_at$/.test(prop.name)) return '2025-01-01T00:00:00.000Z'
+      return SAMPLE_STRING_VALUES[prop.name] ?? ''
     default:
       return null
   }
