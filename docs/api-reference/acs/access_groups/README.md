@@ -119,7 +119,7 @@ ID of the access control system that contains the access group.
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the access group.
+ID of the connected account that contains the access group.
 
 
 
@@ -677,7 +677,7 @@ Warnings associated with the `acs_access_group`.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the access group.
+ID of the workspace that contains the access group.
 
 
 
@@ -734,7 +734,7 @@ An ACS access group was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

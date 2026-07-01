@@ -246,7 +246,7 @@ Indicates that the ACS user's profile does not match the user identity's profile
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.
+ID of the workspace that contains the user identity.
 
 
 

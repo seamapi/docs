@@ -708,7 +708,7 @@ An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/r
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -749,7 +749,7 @@ An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/r
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

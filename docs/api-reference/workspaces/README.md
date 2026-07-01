@@ -204,7 +204,7 @@ Represents a [device](https://docs.seam.co/core-concepts/devices) that has been 
 
 Represents an event. Events let you know when something interesting happens in your workspace. For example, when a lock is unlocked, Seam creates a `lock.unlocked` event. When a device's battery level is low, Seam creates a `device.battery_low` event.
 
-As with other API resources, you can retrieve an individual event or a list of events. Seam also provides a separate [webhook](https://docs.seam.co/developer-tools/webhooks) system for sending the event objects directly to an endpoint on your sever. Manage webhooks through [Seam Console](https://console.seam.co). You can also use the webhooks sandbox in Seam Console to see the different payloads for each event and test them against your own endpoints.
+As with other API resources, you can retrieve an individual event or a list of events. Seam also provides a separate webhook system for sending the event objects directly to an endpoint on your sever. Manage webhooks through [Seam Console](https://console.seam.co). You can also use the webhooks sandbox in Seam Console to see the different payloads for each event and test them against your own endpoints.
 
 
 
@@ -489,7 +489,7 @@ Name of the [workspace](https://docs.seam.co/core-concepts/workspaces).
 
 **`organization_id`** *UUID*
 
-ID of the organization to which the [workspace](https://docs.seam.co/core-concepts/workspaces) belongs, or `null` if the workspace is not assigned to an organization.
+ID of the organization to which the workspace belongs, or `null` if the workspace is not assigned to an organization.
 
 
 
@@ -507,7 +507,7 @@ Publishable key for the [workspace](https://docs.seam.co/core-concepts/workspace
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces).
+ID of the workspace.
 
 
 

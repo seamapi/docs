@@ -46,7 +46,7 @@ A client session resource.
 
 **`client_session_id`** *UUID*
 
-ID of the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).
+ID of the client session.
 
 
 
@@ -148,7 +148,7 @@ IDs of the [user identities](https://docs.seam.co/capability-guides/mobile-acces
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).
+ID of the workspace associated with the client session.
 
 
 
@@ -160,7 +160,7 @@ ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated 
 
 **`client_session.deleted`**
 
-A [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) was deleted.
+A client session was deleted.
 
 <details>
 
@@ -188,7 +188,7 @@ A [client session](https://docs.seam.co/core-concepts/authentication/client-sess
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

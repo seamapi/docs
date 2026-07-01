@@ -56,7 +56,7 @@ URL for the [webhook](https://docs.seam.co/developer-tools/webhooks).
 
 **`webhook_id`** *String*
 
-ID of the [webhook](https://docs.seam.co/developer-tools/webhooks).
+ID of the webhook.
 
 
 

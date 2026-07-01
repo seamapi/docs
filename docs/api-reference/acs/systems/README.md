@@ -74,7 +74,7 @@ ID of the [access control system](https://docs.seam.co/low-level-apis/access-sys
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
+ID of the connected account associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -666,7 +666,7 @@ Indicates that the access control system requires additional setup before it can
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).
+ID of the workspace that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -787,7 +787,7 @@ An [access system](https://docs.seam.co/low-level-apis/access-systems) was conne
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -826,7 +826,7 @@ An [access system](https://docs.seam.co/low-level-apis/access-systems) was added
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -941,7 +941,7 @@ An [access system](https://docs.seam.co/low-level-apis/access-systems) was disco
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
