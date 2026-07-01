@@ -204,19 +204,20 @@ function renderObjectShape(prop: Property | undefined, kind: string): string {
 }
 
 /**
- * Render one code entry as bold code plus its description, matching the
- * original GitBook layout.
+ * Render one code entry as a heading (so each code gets a linkable anchor)
+ * followed by its description. `level` is the Markdown heading prefix (`###` for
+ * ungrouped codes, `####` for codes nested under a variant-group heading).
  */
-function renderEntry(entry: CodeEntry): string {
+function renderEntry(entry: CodeEntry, level: string): string {
   const description =
     entry.description || `Indicates the \`${entry.code}\` state.`
-  return [`**\`${entry.code}\`**`, '', description, '', '---'].join('\n')
+  return [`${level} \`${entry.code}\``, '', description].join('\n')
 }
 
 /**
  * Render an `## Errors` or `## Warnings` section: the object shape followed by
- * every code with its meaning. Returns '' when there are no codes. `kind` is the
- * singular noun (`error`/`warning`) used in prose.
+ * every code (as a linkable heading) with its meaning. Returns '' when there are
+ * no codes. `kind` is the singular noun (`error`/`warning`) used in prose.
  */
 function renderSection(
   title: string,
@@ -229,8 +230,13 @@ function renderSection(
   const shape = renderObjectShape(prop, kind)
   if (shape) blocks.push(shape)
   for (const group of groups) {
+    // Named variant groups get an `###` heading and nest their codes at `####`;
+    // ungrouped codes sit directly under the section at `###`.
+    const codeLevel = group.name != null ? '####' : '###'
     if (group.name != null) blocks.push(`### ${group.name}`)
-    for (const entry of group.entries) blocks.push(renderEntry(entry))
+    for (const entry of group.entries) {
+      blocks.push(renderEntry(entry, codeLevel))
+    }
   }
   return blocks.join('\n\n')
 }

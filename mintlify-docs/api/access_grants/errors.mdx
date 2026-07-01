@@ -38,11 +38,9 @@ Each error is an object with the following shape:
 
 </Accordion>
 
-**`cannot_create_requested_access_methods`**
+### `cannot_create_requested_access_methods`
 
 Indicates the `cannot_create_requested_access_methods` state.
-
----
 
 ## Warnings
 
@@ -98,44 +96,30 @@ Each warning is an object with the following shape:
 
 </Accordion>
 
-**`being_deleted`**
+### `being_deleted`
 
 Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.
 
----
-
-**`device_does_not_support_access_codes`**
+### `device_does_not_support_access_codes`
 
 Indicates that a device in the access grant does not support access codes and was excluded from code materialization.
 
----
-
-**`device_time_constraints_violated`**
+### `device_time_constraints_violated`
 
 Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.
 
----
-
-**`overprovisioned_access`**
+### `overprovisioned_access`
 
 Indicates that the access grant has access to locations it should not have. Access methods are being removed from the extra locations.
 
----
-
-**`requested_code_unavailable`**
+### `requested_code_unavailable`
 
 Indicates that the requested PIN code was already in use on a device, so a different code was assigned.
 
----
-
-**`underprovisioned_access`**
+### `underprovisioned_access`
 
 Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.
 
----
-
-**`updating_access_times`**
+### `updating_access_times`
 
 Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.
-
----
