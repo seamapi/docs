@@ -397,6 +397,7 @@
                 "group": "Access Grants",
                 "pages": [
                   "api/access_grants/object",
+                  "api/access_grants/events",
                   "POST /access_grants/request_access_methods",
                   "POST /access_grants/create",
                   "POST /access_grants/delete",
@@ -418,6 +419,7 @@
                 "group": "Access Methods",
                 "pages": [
                   "api/access_methods/object",
+                  "api/access_methods/events",
                   "POST /access_methods/assign_card",
                   "POST /access_methods/delete",
                   "POST /access_methods/encode",
@@ -443,6 +445,7 @@
                 "group": "Devices",
                 "pages": [
                   "api/devices/object",
+                  "api/devices/events",
                   "POST /devices/get",
                   "POST /devices/list_device_providers",
                   "POST /devices/list",
@@ -463,6 +466,7 @@
                     "group": "Unmanaged Devices",
                     "pages": [
                       "api/devices/unmanaged/object",
+                      "api/devices/unmanaged/events",
                       "POST /devices/unmanaged/get",
                       "POST /devices/unmanaged/list",
                       "POST /devices/unmanaged/update"
@@ -475,6 +479,7 @@
                 "group": "Locks",
                 "pages": [
                   "api/locks/object",
+                  "api/locks/events",
                   "POST /locks/get",
                   "POST /locks/list",
                   "POST /locks/lock_door",
@@ -493,6 +498,7 @@
                 "group": "Thermostats",
                 "pages": [
                   "api/thermostats/object",
+                  "api/thermostats/events",
                   "POST /thermostats/activate_climate_preset",
                   "POST /thermostats/create_climate_preset",
                   "POST /thermostats/delete_climate_preset",
@@ -551,6 +557,7 @@
                     "group": "Noise Thresholds",
                     "pages": [
                       "api/noise_sensors/noise_thresholds/object",
+                      "api/noise_sensors/noise_thresholds/events",
                       "POST /noise_sensors/noise_thresholds/create",
                       "POST /noise_sensors/noise_thresholds/delete",
                       "POST /noise_sensors/noise_thresholds/get",
@@ -568,6 +575,7 @@
                     "group": "Access Groups",
                     "pages": [
                       "api/acs/access_groups/object",
+                      "api/acs/access_groups/events",
                       "POST /acs/access_groups/add_user",
                       "POST /acs/access_groups/get",
                       "POST /acs/access_groups/list",
@@ -581,6 +589,7 @@
                     "group": "ACS Users",
                     "pages": [
                       "api/acs/users/object",
+                      "api/acs/users/events",
                       "POST /acs/users/add_to_access_group",
                       "POST /acs/users/create",
                       "POST /acs/users/delete",
@@ -598,6 +607,7 @@
                     "group": "Credentials",
                     "pages": [
                       "api/acs/credentials/object",
+                      "api/acs/credentials/events",
                       "POST /acs/credentials/assign",
                       "POST /acs/credentials/create",
                       "POST /acs/credentials/delete",
@@ -612,6 +622,7 @@
                     "group": "Encoders",
                     "pages": [
                       "api/acs/encoders/object",
+                      "api/acs/encoders/events",
                       "POST /acs/encoders/encode_credential",
                       "POST /acs/encoders/get",
                       "POST /acs/encoders/list",
@@ -627,6 +638,7 @@
                     "group": "Entrances",
                     "pages": [
                       "api/acs/entrances/object",
+                      "api/acs/entrances/events",
                       "POST /acs/entrances/get",
                       "POST /acs/entrances/grant_access",
                       "POST /acs/entrances/list_credentials_with_access",
@@ -638,6 +650,7 @@
                     "group": "Systems",
                     "pages": [
                       "api/acs/systems/object",
+                      "api/acs/systems/events",
                       "POST /acs/systems/get",
                       "POST /acs/systems/list",
                       "POST /acs/systems/list_compatible_credential_manager_acs_systems",
@@ -655,6 +668,7 @@
                 "group": "Connect Webviews",
                 "pages": [
                   "api/connect_webviews/object",
+                  "api/connect_webviews/events",
                   "POST /connect_webviews/create",
                   "POST /connect_webviews/delete",
                   "POST /connect_webviews/get",
@@ -665,6 +679,7 @@
                 "group": "Connected Accounts",
                 "pages": [
                   "api/connected_accounts/object",
+                  "api/connected_accounts/events",
                   "POST /connected_accounts/delete",
                   "POST /connected_accounts/get",
                   "POST /connected_accounts/list",
@@ -721,6 +736,7 @@
                 "group": "Client Sessions",
                 "pages": [
                   "api/client_sessions/object",
+                  "api/client_sessions/events",
                   "POST /client_sessions/create",
                   "POST /client_sessions/delete",
                   "POST /client_sessions/get",
@@ -743,6 +759,7 @@
                 "group": "Spaces",
                 "pages": [
                   "api/spaces/object",
+                  "api/spaces/events",
                   "POST /spaces/add_connected_account",
                   "POST /spaces/add_devices",
                   "POST /spaces/add_acs_entrances",
@@ -785,6 +802,7 @@
                 "group": "Action Attempts",
                 "pages": [
                   "api/action_attempts/object",
+                  "api/action_attempts/events",
                   "POST /action_attempts/get",
                   "POST /action_attempts/list"
                 ]
@@ -798,6 +816,7 @@
                 "group": "Access Codes",
                 "pages": [
                   "api/access_codes/object",
+                  "api/access_codes/events",
                   "POST /access_codes/create",
                   "POST /access_codes/create_multiple",
                   "POST /access_codes/delete",
@@ -818,6 +837,7 @@
                     "group": "Unmanaged Access Codes",
                     "pages": [
                       "api/access_codes/unmanaged/object",
+                      "api/access_codes/unmanaged/events",
                       "POST /access_codes/unmanaged/convert_to_managed",
                       "POST /access_codes/unmanaged/delete",
                       "POST /access_codes/unmanaged/get",
@@ -831,6 +851,7 @@
                 "group": "Phones",
                 "pages": [
                   "api/phones/object",
+                  "api/phones/events",
                   "POST /phones/deactivate",
                   "POST /phones/get",
                   "POST /phones/list",

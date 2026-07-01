@@ -1,0 +1,168 @@
+---
+title: 'ACS System Events'
+description: 'Webhook events that Seam emits for the ACS System resource, with example payloads and properties.'
+---
+
+## `acs_system.connected`
+
+An [access system](https://docs.seam.co/low-level-apis/access-systems) was connected.
+
+```json Example webhook payload
+{
+  "acs_system_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "acs_system.connected",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the access system.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `acs_system.connected`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+## `acs_system.added`
+
+An [access system](https://docs.seam.co/low-level-apis/access-systems) was added.
+
+```json Example webhook payload
+{
+  "acs_system_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "acs_system.added",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the access system.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `acs_system.added`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+## `acs_system.disconnected`
+
+An [access system](https://docs.seam.co/low-level-apis/access-systems) was disconnected.
+
+```json Example webhook payload
+{
+  "acs_system_errors": [],
+  "acs_system_id": "00000000-0000-0000-0000-000000000000",
+  "acs_system_warnings": [],
+  "connected_account_errors": [],
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "connected_account_warnings": [],
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "acs_system.disconnected",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="acs_system_errors" type="Array">
+  Errors associated with the access control system.
+</ResponseField>
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  ID of the access system.
+</ResponseField>
+
+<ResponseField name="acs_system_warnings" type="Array">
+  Warnings associated with the access control system.
+</ResponseField>
+
+<ResponseField name="connected_account_errors" type="Array">
+  Errors associated with the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the connected account.
+</ResponseField>
+
+<ResponseField name="connected_account_warnings" type="Array">
+  Warnings associated with the connected account.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `acs_system.disconnected`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>

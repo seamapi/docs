@@ -1,0 +1,528 @@
+---
+title: 'Thermostat Events'
+description: 'Webhook events that Seam emits for the Thermostat resource, with example payloads and properties.'
+---
+
+## `thermostat.climate_preset_activated`
+
+A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.
+
+```json Example webhook payload
+{
+  "climate_preset_key": "",
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "thermostat.climate_preset_activated",
+  "is_fallback_climate_preset": true,
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "thermostat_schedule_id": "00000000-0000-0000-0000-000000000000",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="climate_preset_key" type="String">
+  Key of the climate preset that was activated.
+</ResponseField>
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `thermostat.climate_preset_activated`
+</ResponseField>
+
+<ResponseField name="is_fallback_climate_preset" type="Boolean">
+  Indicates whether the climate preset that was activated is the fallback climate preset for the thermostat.
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="thermostat_schedule_id" type="String (UUID)">
+  ID of the thermostat schedule that prompted the affected climate preset to be activated.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+## `thermostat.manually_adjusted`
+
+A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted manually.
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "cooling_set_point_celsius": 0,
+  "cooling_set_point_fahrenheit": 0,
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "thermostat.manually_adjusted",
+  "fan_mode_setting": "auto",
+  "heating_set_point_celsius": 0,
+  "heating_set_point_fahrenheit": 0,
+  "hvac_mode_setting": "off",
+  "method": "seam",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
+
+<ResponseField name="cooling_set_point_celsius" type="number">
+  Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+</ResponseField>
+
+<ResponseField name="cooling_set_point_fahrenheit" type="number">
+  Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `thermostat.manually_adjusted`
+</ResponseField>
+
+<ResponseField name="fan_mode_setting" type="Enum (String)">
+  Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.
+
+  Possible values: `auto`, `on`, `circulate`
+</ResponseField>
+
+<ResponseField name="heating_set_point_celsius" type="number">
+  Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+</ResponseField>
+
+<ResponseField name="heating_set_point_fahrenheit" type="number">
+  Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+</ResponseField>
+
+<ResponseField name="hvac_mode_setting" type="Enum (String)">
+  Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.
+
+  Possible values: `off`, `heat`, `cool`, `heat_cool`, `eco`
+</ResponseField>
+
+<ResponseField name="method" type="Enum (String)">
+  Method used to adjust the affected thermostat manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the thermostat.
+
+  Possible values: `seam`, `external`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+## `thermostat.temperature_threshold_exceeded`
+
+A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "thermostat.temperature_threshold_exceeded",
+  "lower_limit_celsius": 0,
+  "lower_limit_fahrenheit": 0,
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "temperature_celsius": 0,
+  "temperature_fahrenheit": 0,
+  "upper_limit_celsius": 0,
+  "upper_limit_fahrenheit": 0,
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `thermostat.temperature_threshold_exceeded`
+</ResponseField>
+
+<ResponseField name="lower_limit_celsius" type="number">
+  Lower temperature limit, in °C, defined by the set threshold.
+</ResponseField>
+
+<ResponseField name="lower_limit_fahrenheit" type="number">
+  Lower temperature limit, in °F, defined by the set threshold.
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="temperature_celsius" type="number">
+  Temperature, in °C, reported by the affected thermostat.
+</ResponseField>
+
+<ResponseField name="temperature_fahrenheit" type="number">
+  Temperature, in °F, reported by the affected thermostat.
+</ResponseField>
+
+<ResponseField name="upper_limit_celsius" type="number">
+  Upper temperature limit, in °C, defined by the set threshold.
+</ResponseField>
+
+<ResponseField name="upper_limit_fahrenheit" type="number">
+  Upper temperature limit, in °F, defined by the set threshold.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+## `thermostat.temperature_threshold_no_longer_exceeded`
+
+A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "thermostat.temperature_threshold_no_longer_exceeded",
+  "lower_limit_celsius": 0,
+  "lower_limit_fahrenheit": 0,
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "temperature_celsius": 0,
+  "temperature_fahrenheit": 0,
+  "upper_limit_celsius": 0,
+  "upper_limit_fahrenheit": 0,
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `thermostat.temperature_threshold_no_longer_exceeded`
+</ResponseField>
+
+<ResponseField name="lower_limit_celsius" type="number">
+  Lower temperature limit, in °C, defined by the set threshold.
+</ResponseField>
+
+<ResponseField name="lower_limit_fahrenheit" type="number">
+  Lower temperature limit, in °F, defined by the set threshold.
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="temperature_celsius" type="number">
+  Temperature, in °C, reported by the affected thermostat.
+</ResponseField>
+
+<ResponseField name="temperature_fahrenheit" type="number">
+  Temperature, in °F, reported by the affected thermostat.
+</ResponseField>
+
+<ResponseField name="upper_limit_celsius" type="number">
+  Upper temperature limit, in °C, defined by the set threshold.
+</ResponseField>
+
+<ResponseField name="upper_limit_fahrenheit" type="number">
+  Upper temperature limit, in °F, defined by the set threshold.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+## `thermostat.temperature_reached_set_point`
+
+A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "desired_temperature_celsius": 0,
+  "desired_temperature_fahrenheit": 0,
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "thermostat.temperature_reached_set_point",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "temperature_celsius": 0,
+  "temperature_fahrenheit": 0,
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
+
+<ResponseField name="desired_temperature_celsius" type="number">
+  Desired temperature, in °C, defined by the affected thermostat's cooling or heating set point.
+</ResponseField>
+
+<ResponseField name="desired_temperature_fahrenheit" type="number">
+  Desired temperature, in °F, defined by the affected thermostat's cooling or heating set point.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `thermostat.temperature_reached_set_point`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="temperature_celsius" type="number">
+  Temperature, in °C, reported by the affected thermostat.
+</ResponseField>
+
+<ResponseField name="temperature_fahrenheit" type="number">
+  Temperature, in °F, reported by the affected thermostat.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
+
+## `thermostat.temperature_changed`
+
+A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported temperature changed by at least 1 °C.
+
+```json Example webhook payload
+{
+  "connected_account_custom_metadata": {},
+  "connected_account_id": "00000000-0000-0000-0000-000000000000",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "customer_key": "",
+  "device_custom_metadata": {},
+  "device_id": "00000000-0000-0000-0000-000000000000",
+  "event_id": "00000000-0000-0000-0000-000000000000",
+  "event_type": "thermostat.temperature_changed",
+  "occurred_at": "2025-01-01T00:00:00.000Z",
+  "temperature_celsius": 0,
+  "temperature_fahrenheit": 0,
+  "workspace_id": "00000000-0000-0000-0000-000000000000"
+}
+```
+
+<Accordion title="Properties">
+
+<ResponseField name="connected_account_custom_metadata" type="Object">
+  Custom metadata of the connected account, present when connected_account_id is provided.
+</ResponseField>
+
+<ResponseField name="connected_account_id" type="String (UUID)">
+  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+</ResponseField>
+
+<ResponseField name="created_at" type="String (ISO 8601)">
+  Date and time at which the event was created.
+</ResponseField>
+
+<ResponseField name="customer_key" type="String">
+  The customer key associated with the device, if any.
+</ResponseField>
+
+<ResponseField name="device_custom_metadata" type="Object">
+  Custom metadata of the device, present when device_id is provided.
+</ResponseField>
+
+<ResponseField name="device_id" type="String (UUID)">
+  ID of the affected device.
+</ResponseField>
+
+<ResponseField name="event_id" type="String (UUID)">
+  ID of the event.
+</ResponseField>
+
+<ResponseField name="event_type" type="Enum (String)">
+  Value: `thermostat.temperature_changed`
+</ResponseField>
+
+<ResponseField name="occurred_at" type="String (ISO 8601)">
+  Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="temperature_celsius" type="number">
+  Temperature, in °C, reported by the affected thermostat.
+</ResponseField>
+
+<ResponseField name="temperature_fahrenheit" type="number">
+  Temperature, in °F, reported by the affected thermostat.
+</ResponseField>
+
+<ResponseField name="workspace_id" type="String (UUID)">
+  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+</ResponseField>
+
+</Accordion>
