@@ -2383,7 +2383,7 @@ Represents a [device](https://docs.seam.co/core-concepts/devices) that has been 
 
 ## Events
 
-**`device.connected`**
+### `device.connected`
 
 The status of a [device](https://docs.seam.co/core-concepts/devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.
 
@@ -2446,9 +2446,7 @@ The status of a [device](https://docs.seam.co/core-concepts/devices) changed fro
 
 </Accordion>
 
----
-
-**`device.added`**
+### `device.added`
 
 A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.
 
@@ -2511,9 +2509,7 @@ A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was 
 
 </Accordion>
 
----
-
-**`device.converted_to_unmanaged`**
+### `device.converted_to_unmanaged`
 
 A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).
 
@@ -2576,9 +2572,7 @@ A managed device was successfully converted to an [unmanaged device](https://doc
 
 </Accordion>
 
----
-
-**`device.disconnected`**
+### `device.disconnected`
 
 The status of a [device](https://docs.seam.co/core-concepts/devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
 
@@ -2668,9 +2662,7 @@ The status of a [device](https://docs.seam.co/core-concepts/devices) changed fro
 
 </Accordion>
 
----
-
-**`device.tampered`**
+### `device.tampered`
 
 A [device](https://docs.seam.co/core-concepts/devices) detected that it was tampered with, for example, opened or moved.
 
@@ -2733,9 +2725,7 @@ A [device](https://docs.seam.co/core-concepts/devices) detected that it was tamp
 
 </Accordion>
 
----
-
-**`device.low_battery`**
+### `device.low_battery`
 
 A [device](https://docs.seam.co/core-concepts/devices) battery level dropped below the low threshold.
 
@@ -2803,9 +2793,7 @@ A [device](https://docs.seam.co/core-concepts/devices) battery level dropped bel
 
 </Accordion>
 
----
-
-**`device.battery_status_changed`**
+### `device.battery_status_changed`
 
 A [device](https://docs.seam.co/core-concepts/devices) battery status changed since the last `battery_status_changed` event.
 
@@ -2880,9 +2868,7 @@ A [device](https://docs.seam.co/core-concepts/devices) battery status changed si
 
 </Accordion>
 
----
-
-**`device.removed`**
+### `device.removed`
 
 A [device](https://docs.seam.co/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/core-concepts/connected-accounts).
 
@@ -2945,9 +2931,7 @@ A [device](https://docs.seam.co/core-concepts/devices) was removed externally fr
 
 </Accordion>
 
----
-
-**`device.deleted`**
+### `device.deleted`
 
 A [device](https://docs.seam.co/core-concepts/devices) was deleted.
 
@@ -3015,9 +2999,7 @@ A [device](https://docs.seam.co/core-concepts/devices) was deleted.
 
 </Accordion>
 
----
-
-**`device.third_party_integration_detected`**
+### `device.third_party_integration_detected`
 
 Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.
 
@@ -3080,9 +3062,7 @@ Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is usi
 
 </Accordion>
 
----
-
-**`device.third_party_integration_no_longer_detected`**
+### `device.third_party_integration_no_longer_detected`
 
 Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.
 
@@ -3145,9 +3125,7 @@ Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no 
 
 </Accordion>
 
----
-
-**`device.salto.privacy_mode_activated`**
+### `device.salto.privacy_mode_activated`
 
 A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) activated privacy mode.
 
@@ -3210,9 +3188,7 @@ A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto
 
 </Accordion>
 
----
-
-**`device.salto.privacy_mode_deactivated`**
+### `device.salto.privacy_mode_deactivated`
 
 A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) deactivated privacy mode.
 
@@ -3275,9 +3251,7 @@ A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto
 
 </Accordion>
 
----
-
-**`device.connection_became_flaky`**
+### `device.connection_became_flaky`
 
 Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) connection.
 
@@ -3360,9 +3334,7 @@ Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) conne
 
 </Accordion>
 
----
-
-**`device.connection_stabilized`**
+### `device.connection_stabilized`
 
 Seam detected that a previously-flaky [device](https://docs.seam.co/core-concepts/devices) connection stabilized.
 
@@ -3425,9 +3397,7 @@ Seam detected that a previously-flaky [device](https://docs.seam.co/core-concept
 
 </Accordion>
 
----
-
-**`device.error.subscription_required`**
+### `device.error.subscription_required`
 
 A third-party subscription is required to use all [device](https://docs.seam.co/core-concepts/devices) features.
 
@@ -3510,9 +3480,7 @@ A third-party subscription is required to use all [device](https://docs.seam.co/
 
 </Accordion>
 
----
-
-**`device.error.subscription_required.resolved`**
+### `device.error.subscription_required.resolved`
 
 A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/core-concepts/devices) features.
 
@@ -3575,9 +3543,7 @@ A third-party subscription is active or no longer required to use all [device](h
 
 </Accordion>
 
----
-
-**`device.accessory_keypad_connected`**
+### `device.accessory_keypad_connected`
 
 An accessory keypad was connected to a [device](https://docs.seam.co/core-concepts/devices).
 
@@ -3640,9 +3606,7 @@ An accessory keypad was connected to a [device](https://docs.seam.co/core-concep
 
 </Accordion>
 
----
-
-**`device.accessory_keypad_disconnected`**
+### `device.accessory_keypad_disconnected`
 
 An accessory keypad was disconnected from a [device](https://docs.seam.co/core-concepts/devices).
 
@@ -3725,9 +3689,7 @@ An accessory keypad was disconnected from a [device](https://docs.seam.co/core-c
 
 </Accordion>
 
----
-
-**`device.name_changed`**
+### `device.name_changed`
 
 The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
 
@@ -3795,9 +3757,7 @@ The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
 
 </Accordion>
 
----
-
-**`camera.activated`**
+### `camera.activated`
 
 A [camera](https://docs.seam.co/core-concepts/devices) was activated, for example, by motion detection.
 
@@ -3884,9 +3844,7 @@ A [camera](https://docs.seam.co/core-concepts/devices) was activated, for exampl
 
 </Accordion>
 
----
-
-**`device.doorbell_rang`**
+### `device.doorbell_rang`
 
 A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/devices).
 

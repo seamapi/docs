@@ -181,7 +181,7 @@ function renderEvent(event: EventResource): string {
     .join('\n\n')
 
   return [
-    `**\`${event.eventType}\`**`,
+    `### \`${event.eventType}\``,
     '',
     event.description.trim(),
     '',
@@ -197,7 +197,7 @@ function renderEvent(event: EventResource): string {
 
 /** Render the full marker-wrapped `## Events` section for a resource. */
 function renderEventsSection(events: EventResource[]): string {
-  const body = events.map(renderEvent).join('\n\n---\n\n')
+  const body = events.map(renderEvent).join('\n\n')
   return [EVENTS_START, '', '## Events', '', body, '', EVENTS_END].join('\n')
 }
 
