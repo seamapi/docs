@@ -4008,6 +4008,24 @@ The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a u
 
   ID of the access code that was used in the unlock attempts.
 
+<strong><code>acs_entrance_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the ACS entrance associated with the access-denied event.
+
+<strong><code>acs_system_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the ACS system associated with the access-denied event.
+
+<strong><code>acs_user_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the ACS user associated with the access-denied event.
+
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
   Custom metadata of the connected account, present when connected_account_id is provided.
@@ -4043,6 +4061,12 @@ The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a u
 <strong><code>occurred_at</code></strong> <i>Datetime</i>
 
   Date and time at which the event occurred.
+
+<strong><code>user_identity_id</code></strong> <i>UUID</i>
+
+  undocumented: Unreleased.
+      ---
+      ID of the user identity associated with the access-denied event.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 

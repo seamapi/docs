@@ -228,6 +228,9 @@ The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a u
 ```json Example webhook payload
 {
   "access_code_id": "00000000-0000-0000-0000-000000000000",
+  "acs_entrance_id": "00000000-0000-0000-0000-000000000000",
+  "acs_system_id": "00000000-0000-0000-0000-000000000000",
+  "acs_user_id": "00000000-0000-0000-0000-000000000000",
   "connected_account_custom_metadata": {},
   "connected_account_id": "00000000-0000-0000-0000-000000000000",
   "created_at": "2025-01-01T00:00:00.000Z",
@@ -237,6 +240,7 @@ The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a u
   "event_id": "00000000-0000-0000-0000-000000000000",
   "event_type": "lock.access_denied",
   "occurred_at": "2025-01-01T00:00:00.000Z",
+  "user_identity_id": "00000000-0000-0000-0000-000000000000",
   "workspace_id": "00000000-0000-0000-0000-000000000000"
 }
 ```
@@ -245,6 +249,24 @@ The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a u
 
 <ResponseField name="access_code_id" type="String (UUID)">
   ID of the access code that was used in the unlock attempts.
+</ResponseField>
+
+<ResponseField name="acs_entrance_id" type="String (UUID)">
+  undocumented: Unreleased.
+        ---
+        ID of the ACS entrance associated with the access-denied event.
+</ResponseField>
+
+<ResponseField name="acs_system_id" type="String (UUID)">
+  undocumented: Unreleased.
+        ---
+        ID of the ACS system associated with the access-denied event.
+</ResponseField>
+
+<ResponseField name="acs_user_id" type="String (UUID)">
+  undocumented: Unreleased.
+        ---
+        ID of the ACS user associated with the access-denied event.
 </ResponseField>
 
 <ResponseField name="connected_account_custom_metadata" type="Object">
@@ -281,6 +303,12 @@ The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a u
 
 <ResponseField name="occurred_at" type="String (ISO 8601)">
   Date and time at which the event occurred.
+</ResponseField>
+
+<ResponseField name="user_identity_id" type="String (UUID)">
+  undocumented: Unreleased.
+        ---
+        ID of the user identity associated with the access-denied event.
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
