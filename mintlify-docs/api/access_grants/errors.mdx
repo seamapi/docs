@@ -7,6 +7,8 @@ description: 'Errors and warnings that Seam reports on the Access Grant resource
 
 Each error is an object with the following shape:
 
+<ResponseExample>
+
 ```json Example error
 {
   "error_code": "cannot_create_requested_access_methods",
@@ -15,6 +17,8 @@ Each error is an object with the following shape:
   "missing_device_ids": []
 }
 ```
+
+</ResponseExample>
 
 <Accordion title="Error object properties">
 
@@ -48,6 +52,8 @@ Indicates the `cannot_create_requested_access_methods` state.
 
 Each warning is an object with the following shape:
 
+<ResponseExample>
+
 ```json Example warning
 {
   "warning_code": "being_deleted",
@@ -55,6 +61,8 @@ Each warning is an object with the following shape:
   "created_at": "2025-01-01T00:00:00.000Z"
 }
 ```
+
+</ResponseExample>
 
 <Accordion title="Warning object properties">
 

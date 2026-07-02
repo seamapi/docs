@@ -202,9 +202,13 @@ function renderObjectShape(prop: Property | undefined, kind: string): string {
   return [
     `Each ${kind} is an object with the following shape:`,
     '',
+    '<ResponseExample>',
+    '',
     `\`\`\`json Example ${kind}`,
     json,
     '```',
+    '',
+    '</ResponseExample>',
     '',
     `<Accordion title="${title} object properties">`,
     '',
