@@ -137,7 +137,7 @@ ID of the [thermostat schedule](https://docs.seam.co/capability-guides/thermosta
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.
+ID of the workspace that contains the thermostat schedule.
 
 
 

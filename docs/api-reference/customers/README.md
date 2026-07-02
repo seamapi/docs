@@ -70,7 +70,7 @@ URL for the customer portal.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the customer portal.
+ID of the workspace associated with the customer portal.
 
 
 

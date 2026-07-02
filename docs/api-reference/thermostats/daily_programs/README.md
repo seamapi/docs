@@ -92,7 +92,7 @@ ID of the thermostat daily program.
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.
+ID of the workspace that contains the thermostat daily program.
 
 
 

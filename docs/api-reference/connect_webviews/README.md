@@ -110,7 +110,7 @@ ID of the Connect Webview.
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the Connect Webview.
+ID of the connected account associated with the Connect Webview.
 
 
 
@@ -164,6 +164,7 @@ The customer key associated with this webview, if any.
 
 **`device_selection_mode`** *Enum*
 
+Device selection mode of the Connect Webview. Supported values: `none`, `single`, `multiple`.
 
 
 <details>
@@ -231,7 +232,7 @@ Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Connect Webview.
+ID of the workspace that contains the Connect Webview.
 
 
 
@@ -243,7 +244,7 @@ ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contai
 
 **`connect_webview.login_succeeded`**
 
-A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login succeeded.
+A Connect Webview login succeeded.
 
 <details>
 
@@ -251,7 +252,7 @@ A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login s
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the affected [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
+  ID of the affected Connect Webview.
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
@@ -259,7 +260,7 @@ A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login s
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -283,14 +284,14 @@ A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login s
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`connect_webview.login_failed`**
 
-A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login failed.
+A Connect Webview login failed.
 
 <details>
 
@@ -298,7 +299,7 @@ A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login f
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the affected [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
+  ID of the affected Connect Webview.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -318,7 +319,7 @@ A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login f
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

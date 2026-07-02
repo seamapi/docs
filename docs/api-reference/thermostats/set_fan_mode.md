@@ -191,6 +191,8 @@ ID of the thermostat device for which you want to set the fan mode.
 
 **`fan_mode`** *String*
 
+Fan mode setting for the thermostat, such as `auto`, `on`, or `circulate`.
+
 {% hint style="warning" %}
 **Deprecated**. Use `fan_mode_setting` instead.
 {% endhint %}

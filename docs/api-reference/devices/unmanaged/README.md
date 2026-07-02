@@ -68,6 +68,7 @@ An unmanaged device resource.
 
 **`can_configure_auto_lock`** *Boolean*
 
+Indicates whether the lock supports configuring automatic locking.
 
 
 
@@ -76,6 +77,7 @@ An unmanaged device resource.
 
 **`can_hvac_cool`** *Boolean*
 
+Indicates whether the thermostat supports cooling.
 
 
 
@@ -84,6 +86,7 @@ An unmanaged device resource.
 
 **`can_hvac_heat`** *Boolean*
 
+Indicates whether the thermostat supports heating.
 
 
 
@@ -92,6 +95,7 @@ An unmanaged device resource.
 
 **`can_hvac_heat_cool`** *Boolean*
 
+Indicates whether the thermostat supports simultaneous heating and cooling.
 
 
 
@@ -100,6 +104,7 @@ An unmanaged device resource.
 
 **`can_program_offline_access_codes`** *Boolean*
 
+Indicates whether the device supports programming offline access codes.
 
 
 
@@ -108,6 +113,7 @@ An unmanaged device resource.
 
 **`can_program_online_access_codes`** *Boolean*
 
+Indicates whether the device supports programming online access codes.
 
 
 
@@ -116,6 +122,7 @@ An unmanaged device resource.
 
 **`can_program_thermostat_programs_as_different_each_day`** *Boolean*
 
+Indicates whether the thermostat supports different climate programs for each day of the week.
 
 
 
@@ -124,6 +131,7 @@ An unmanaged device resource.
 
 **`can_program_thermostat_programs_as_same_each_day`** *Boolean*
 
+Indicates whether the thermostat supports a single climate program applied to every day.
 
 
 
@@ -132,6 +140,7 @@ An unmanaged device resource.
 
 **`can_program_thermostat_programs_as_weekday_weekend`** *Boolean*
 
+Indicates whether the thermostat supports weekday/weekend climate programs.
 
 
 
@@ -140,6 +149,7 @@ An unmanaged device resource.
 
 **`can_remotely_lock`** *Boolean*
 
+Indicates whether the device supports remote locking.
 
 
 
@@ -148,6 +158,7 @@ An unmanaged device resource.
 
 **`can_remotely_unlock`** *Boolean*
 
+Indicates whether the device supports remote unlocking.
 
 
 
@@ -156,6 +167,7 @@ An unmanaged device resource.
 
 **`can_run_thermostat_programs`** *Boolean*
 
+Indicates whether the thermostat supports running climate programs.
 
 
 
@@ -164,6 +176,7 @@ An unmanaged device resource.
 
 **`can_simulate_connection`** *Boolean*
 
+Indicates whether the device supports simulating connection in a sandbox.
 
 
 
@@ -172,6 +185,7 @@ An unmanaged device resource.
 
 **`can_simulate_disconnection`** *Boolean*
 
+Indicates whether the device supports simulating disconnection in a sandbox.
 
 
 
@@ -180,6 +194,7 @@ An unmanaged device resource.
 
 **`can_simulate_hub_connection`** *Boolean*
 
+Indicates whether the hub supports simulating connection in a sandbox.
 
 
 
@@ -188,6 +203,7 @@ An unmanaged device resource.
 
 **`can_simulate_hub_disconnection`** *Boolean*
 
+Indicates whether the hub supports simulating disconnection in a sandbox.
 
 
 
@@ -196,6 +212,7 @@ An unmanaged device resource.
 
 **`can_simulate_paid_subscription`** *Boolean*
 
+Indicates whether the device supports simulating a paid subscription in a sandbox.
 
 
 
@@ -204,6 +221,7 @@ An unmanaged device resource.
 
 **`can_simulate_removal`** *Boolean*
 
+Indicates whether the device supports simulating removal in a sandbox.
 
 
 
@@ -212,6 +230,7 @@ An unmanaged device resource.
 
 **`can_turn_off_hvac`** *Boolean*
 
+Indicates whether the thermostat can be turned off.
 
 
 
@@ -220,6 +239,7 @@ An unmanaged device resource.
 
 **`can_unlock_with_code`** *Boolean*
 
+Indicates whether the lock supports unlocking with an access code.
 
 
 
@@ -1011,6 +1031,7 @@ Indicates that one or more dormakaba sites associated with the connected account
 
 **`is_managed`** *Boolean*
 
+Indicates that Seam does not manage the device.
 
 
 
@@ -2384,7 +2405,7 @@ An [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unm
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2416,7 +2437,7 @@ An [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unm
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2435,7 +2456,7 @@ The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/m
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -2467,7 +2488,7 @@ The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/m
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -2505,7 +2526,7 @@ The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/m
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -2605,7 +2626,7 @@ The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/m
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

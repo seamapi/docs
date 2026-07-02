@@ -326,6 +326,7 @@ A thermostat device resource.
 
 **`can_configure_auto_lock`** *Boolean*
 
+Indicates whether the lock supports configuring automatic locking.
 
 
 
@@ -334,6 +335,7 @@ A thermostat device resource.
 
 **`can_hvac_cool`** *Boolean*
 
+Indicates whether the thermostat supports cooling.
 
 
 
@@ -342,6 +344,7 @@ A thermostat device resource.
 
 **`can_hvac_heat`** *Boolean*
 
+Indicates whether the thermostat supports heating.
 
 
 
@@ -350,6 +353,7 @@ A thermostat device resource.
 
 **`can_hvac_heat_cool`** *Boolean*
 
+Indicates whether the thermostat supports simultaneous heating and cooling.
 
 
 
@@ -358,6 +362,7 @@ A thermostat device resource.
 
 **`can_program_offline_access_codes`** *Boolean*
 
+Indicates whether the device supports programming offline access codes.
 
 
 
@@ -366,6 +371,7 @@ A thermostat device resource.
 
 **`can_program_online_access_codes`** *Boolean*
 
+Indicates whether the device supports programming online access codes.
 
 
 
@@ -374,6 +380,7 @@ A thermostat device resource.
 
 **`can_program_thermostat_programs_as_different_each_day`** *Boolean*
 
+Indicates whether the thermostat supports different climate programs for each day of the week.
 
 
 
@@ -382,6 +389,7 @@ A thermostat device resource.
 
 **`can_program_thermostat_programs_as_same_each_day`** *Boolean*
 
+Indicates whether the thermostat supports a single climate program applied to every day.
 
 
 
@@ -390,6 +398,7 @@ A thermostat device resource.
 
 **`can_program_thermostat_programs_as_weekday_weekend`** *Boolean*
 
+Indicates whether the thermostat supports weekday/weekend climate programs.
 
 
 
@@ -398,6 +407,7 @@ A thermostat device resource.
 
 **`can_remotely_lock`** *Boolean*
 
+Indicates whether the device supports remote locking.
 
 
 
@@ -406,6 +416,7 @@ A thermostat device resource.
 
 **`can_remotely_unlock`** *Boolean*
 
+Indicates whether the device supports remote unlocking.
 
 
 
@@ -414,6 +425,7 @@ A thermostat device resource.
 
 **`can_run_thermostat_programs`** *Boolean*
 
+Indicates whether the thermostat supports running climate programs.
 
 
 
@@ -422,6 +434,7 @@ A thermostat device resource.
 
 **`can_simulate_connection`** *Boolean*
 
+Indicates whether the device supports simulating connection in a sandbox.
 
 
 
@@ -430,6 +443,7 @@ A thermostat device resource.
 
 **`can_simulate_disconnection`** *Boolean*
 
+Indicates whether the device supports simulating disconnection in a sandbox.
 
 
 
@@ -438,6 +452,7 @@ A thermostat device resource.
 
 **`can_simulate_hub_connection`** *Boolean*
 
+Indicates whether the hub supports simulating connection in a sandbox.
 
 
 
@@ -446,6 +461,7 @@ A thermostat device resource.
 
 **`can_simulate_hub_disconnection`** *Boolean*
 
+Indicates whether the hub supports simulating disconnection in a sandbox.
 
 
 
@@ -454,6 +470,7 @@ A thermostat device resource.
 
 **`can_simulate_paid_subscription`** *Boolean*
 
+Indicates whether the device supports simulating a paid subscription in a sandbox.
 
 
 
@@ -462,6 +479,7 @@ A thermostat device resource.
 
 **`can_simulate_removal`** *Boolean*
 
+Indicates whether the device supports simulating removal in a sandbox.
 
 
 
@@ -470,6 +488,7 @@ A thermostat device resource.
 
 **`can_turn_off_hvac`** *Boolean*
 
+Indicates whether the thermostat can be turned off.
 
 
 
@@ -478,6 +497,7 @@ A thermostat device resource.
 
 **`can_unlock_with_code`** *Boolean*
 
+Indicates whether the lock supports unlocking with an access code.
 
 
 
@@ -4076,7 +4096,7 @@ Active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/
 
   - <strong><code>workspace_id</code></strong> <i>UUID</i>
   
-    ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.
+    ID of the workspace that contains the thermostat schedule.
 
 </details>
 
@@ -4758,7 +4778,7 @@ Configured [daily programs](https://docs.seam.co/capability-guides/thermostats/c
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.
+  ID of the workspace that contains the thermostat daily program.
 
 </details>
 
@@ -5105,6 +5125,7 @@ A device provider resource.
 
 **`can_configure_auto_lock`** *Boolean*
 
+Indicates whether the lock supports configuring automatic locking.
 
 
 
@@ -5113,6 +5134,7 @@ A device provider resource.
 
 **`can_hvac_cool`** *Boolean*
 
+Indicates whether the thermostat supports cooling.
 
 
 
@@ -5121,6 +5143,7 @@ A device provider resource.
 
 **`can_hvac_heat`** *Boolean*
 
+Indicates whether the thermostat supports heating.
 
 
 
@@ -5129,6 +5152,7 @@ A device provider resource.
 
 **`can_hvac_heat_cool`** *Boolean*
 
+Indicates whether the thermostat supports simultaneous heating and cooling.
 
 
 
@@ -5137,6 +5161,7 @@ A device provider resource.
 
 **`can_program_offline_access_codes`** *Boolean*
 
+Indicates whether the device supports programming offline access codes.
 
 
 
@@ -5145,6 +5170,7 @@ A device provider resource.
 
 **`can_program_online_access_codes`** *Boolean*
 
+Indicates whether the device supports programming online access codes.
 
 
 
@@ -5153,6 +5179,7 @@ A device provider resource.
 
 **`can_program_thermostat_programs_as_different_each_day`** *Boolean*
 
+Indicates whether the thermostat supports different climate programs for each day of the week.
 
 
 
@@ -5161,6 +5188,7 @@ A device provider resource.
 
 **`can_program_thermostat_programs_as_same_each_day`** *Boolean*
 
+Indicates whether the thermostat supports a single climate program applied to every day.
 
 
 
@@ -5169,6 +5197,7 @@ A device provider resource.
 
 **`can_program_thermostat_programs_as_weekday_weekend`** *Boolean*
 
+Indicates whether the thermostat supports weekday/weekend climate programs.
 
 
 
@@ -5177,6 +5206,7 @@ A device provider resource.
 
 **`can_remotely_lock`** *Boolean*
 
+Indicates whether the device supports remote locking.
 
 
 
@@ -5185,6 +5215,7 @@ A device provider resource.
 
 **`can_remotely_unlock`** *Boolean*
 
+Indicates whether the device supports remote unlocking.
 
 
 
@@ -5193,6 +5224,7 @@ A device provider resource.
 
 **`can_run_thermostat_programs`** *Boolean*
 
+Indicates whether the thermostat supports running climate programs.
 
 
 
@@ -5201,6 +5233,7 @@ A device provider resource.
 
 **`can_simulate_connection`** *Boolean*
 
+Indicates whether the device supports simulating connection in a sandbox.
 
 
 
@@ -5209,6 +5242,7 @@ A device provider resource.
 
 **`can_simulate_disconnection`** *Boolean*
 
+Indicates whether the device supports simulating disconnection in a sandbox.
 
 
 
@@ -5217,6 +5251,7 @@ A device provider resource.
 
 **`can_simulate_hub_connection`** *Boolean*
 
+Indicates whether the hub supports simulating connection in a sandbox.
 
 
 
@@ -5225,6 +5260,7 @@ A device provider resource.
 
 **`can_simulate_hub_disconnection`** *Boolean*
 
+Indicates whether the hub supports simulating disconnection in a sandbox.
 
 
 
@@ -5233,6 +5269,7 @@ A device provider resource.
 
 **`can_simulate_paid_subscription`** *Boolean*
 
+Indicates whether the device supports simulating a paid subscription in a sandbox.
 
 
 
@@ -5241,6 +5278,7 @@ A device provider resource.
 
 **`can_simulate_removal`** *Boolean*
 
+Indicates whether the device supports simulating removal in a sandbox.
 
 
 
@@ -5249,6 +5287,7 @@ A device provider resource.
 
 **`can_turn_off_hvac`** *Boolean*
 
+Indicates whether the thermostat can be turned off.
 
 
 
@@ -5257,6 +5296,7 @@ A device provider resource.
 
 **`can_unlock_with_code`** *Boolean*
 
+Indicates whether the lock supports unlocking with an access code.
 
 
 
@@ -5265,6 +5305,7 @@ A device provider resource.
 
 **`device_provider_name`** *Enum*
 
+Name of the device provider.
 
 
 <details>
@@ -5337,6 +5378,7 @@ A device provider resource.
 
 **`display_name`** *String*
 
+Display name for the device provider.
 
 
 
@@ -5345,6 +5387,7 @@ A device provider resource.
 
 **`image_url`** *String*
 
+Image URL for the device provider.
 
 
 
@@ -5353,6 +5396,7 @@ A device provider resource.
 
 **`provider_categories`** *List* *of Enums*
 
+List of provider categories to which the device provider belongs, such as `stable`, `consumer_smartlocks`, `thermostats`, and so on.
 
 
 
@@ -5364,7 +5408,7 @@ A device provider resource.
 
 **`device.connected`**
 
-The status of a [device](https://docs.seam.co/core-concepts/devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.
+The status of a device changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.
 
 <details>
 
@@ -5376,7 +5420,7 @@ The status of a [device](https://docs.seam.co/core-concepts/devices) changed fro
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5408,14 +5452,14 @@ The status of a [device](https://docs.seam.co/core-concepts/devices) changed fro
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.added`**
 
-A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.
+A device was added to Seam or was re-added to Seam after having been removed.
 
 <details>
 
@@ -5427,7 +5471,7 @@ A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was 
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5459,7 +5503,7 @@ A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was 
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -5478,7 +5522,7 @@ A managed device was successfully converted to an [unmanaged device](https://doc
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5510,14 +5554,14 @@ A managed device was successfully converted to an [unmanaged device](https://doc
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.disconnected`**
 
-The status of a [device](https://docs.seam.co/core-concepts/devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
+The status of a device changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.
 
 <details>
 
@@ -5548,7 +5592,7 @@ The status of a [device](https://docs.seam.co/core-concepts/devices) changed fro
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -5648,14 +5692,14 @@ The status of a [device](https://docs.seam.co/core-concepts/devices) changed fro
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.tampered`**
 
-A [device](https://docs.seam.co/core-concepts/devices) detected that it was tampered with, for example, opened or moved.
+A device detected that it was tampered with, for example, opened or moved.
 
 <details>
 
@@ -5667,7 +5711,7 @@ A [device](https://docs.seam.co/core-concepts/devices) detected that it was tamp
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5699,14 +5743,14 @@ A [device](https://docs.seam.co/core-concepts/devices) detected that it was tamp
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.low_battery`**
 
-A [device](https://docs.seam.co/core-concepts/devices) battery level dropped below the low threshold.
+A device battery level dropped below the low threshold.
 
 <details>
 
@@ -5722,7 +5766,7 @@ A [device](https://docs.seam.co/core-concepts/devices) battery level dropped bel
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5754,14 +5798,14 @@ A [device](https://docs.seam.co/core-concepts/devices) battery level dropped bel
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.battery_status_changed`**
 
-A [device](https://docs.seam.co/core-concepts/devices) battery status changed since the last `battery_status_changed` event.
+A device battery status changed since the last `battery_status_changed` event.
 
 <details>
 
@@ -5789,7 +5833,7 @@ A [device](https://docs.seam.co/core-concepts/devices) battery status changed si
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5821,14 +5865,14 @@ A [device](https://docs.seam.co/core-concepts/devices) battery status changed si
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.removed`**
 
-A [device](https://docs.seam.co/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+A device was removed externally from the connected account.
 
 <details>
 
@@ -5840,7 +5884,7 @@ A [device](https://docs.seam.co/core-concepts/devices) was removed externally fr
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5872,14 +5916,14 @@ A [device](https://docs.seam.co/core-concepts/devices) was removed externally fr
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.deleted`**
 
-A [device](https://docs.seam.co/core-concepts/devices) was deleted.
+A device was deleted.
 
 <details>
 
@@ -5891,7 +5935,7 @@ A [device](https://docs.seam.co/core-concepts/devices) was deleted.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5927,14 +5971,14 @@ A [device](https://docs.seam.co/core-concepts/devices) was deleted.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.third_party_integration_detected`**
 
-Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.
+Seam detected that a device is using a third-party integration that will interfere with Seam device management.
 
 <details>
 
@@ -5946,7 +5990,7 @@ Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is usi
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -5978,14 +6022,14 @@ Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is usi
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.third_party_integration_no_longer_detected`**
 
-Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.
+Seam detected that a device is no longer using a third-party integration that was interfering with Seam device management.
 
 <details>
 
@@ -5997,7 +6041,7 @@ Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no 
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6029,7 +6073,7 @@ Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no 
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -6048,7 +6092,7 @@ A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6080,7 +6124,7 @@ A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -6099,7 +6143,7 @@ A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6131,14 +6175,14 @@ A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.connection_became_flaky`**
 
-Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) connection.
+Seam detected a flaky device connection.
 
 <details>
 
@@ -6169,7 +6213,7 @@ Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) conne
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -6258,14 +6302,14 @@ Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) conne
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.connection_stabilized`**
 
-Seam detected that a previously-flaky [device](https://docs.seam.co/core-concepts/devices) connection stabilized.
+Seam detected that a previously-flaky device connection stabilized.
 
 <details>
 
@@ -6277,7 +6321,7 @@ Seam detected that a previously-flaky [device](https://docs.seam.co/core-concept
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6309,14 +6353,14 @@ Seam detected that a previously-flaky [device](https://docs.seam.co/core-concept
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.error.subscription_required`**
 
-A third-party subscription is required to use all [device](https://docs.seam.co/core-concepts/devices) features.
+A third-party subscription is required to use all device features.
 
 <details>
 
@@ -6347,7 +6391,7 @@ A third-party subscription is required to use all [device](https://docs.seam.co/
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -6436,14 +6480,14 @@ A third-party subscription is required to use all [device](https://docs.seam.co/
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.error.subscription_required.resolved`**
 
-A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/core-concepts/devices) features.
+A third-party subscription is active or no longer required to use all device features.
 
 <details>
 
@@ -6455,7 +6499,7 @@ A third-party subscription is active or no longer required to use all [device](h
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6487,14 +6531,14 @@ A third-party subscription is active or no longer required to use all [device](h
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.accessory_keypad_connected`**
 
-An accessory keypad was connected to a [device](https://docs.seam.co/core-concepts/devices).
+An accessory keypad was connected to a device.
 
 <details>
 
@@ -6506,7 +6550,7 @@ An accessory keypad was connected to a [device](https://docs.seam.co/core-concep
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6538,14 +6582,14 @@ An accessory keypad was connected to a [device](https://docs.seam.co/core-concep
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.accessory_keypad_disconnected`**
 
-An accessory keypad was disconnected from a [device](https://docs.seam.co/core-concepts/devices).
+An accessory keypad was disconnected from a device.
 
 <details>
 
@@ -6576,7 +6620,7 @@ An accessory keypad was disconnected from a [device](https://docs.seam.co/core-c
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -6665,14 +6709,14 @@ An accessory keypad was disconnected from a [device](https://docs.seam.co/core-c
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.name_changed`**
 
-The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
+The name of a device was changed.
 
 <details>
 
@@ -6684,7 +6728,7 @@ The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6720,14 +6764,14 @@ The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`camera.activated`**
 
-A [camera](https://docs.seam.co/core-concepts/devices) was activated, for example, by motion detection.
+A camera was activated, for example, by motion detection.
 
 <details>
 
@@ -6748,7 +6792,7 @@ A [camera](https://docs.seam.co/core-concepts/devices) was activated, for exampl
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6800,14 +6844,14 @@ A [camera](https://docs.seam.co/core-concepts/devices) was activated, for exampl
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`device.doorbell_rang`**
 
-A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/devices).
+A doorbell button was pressed on a device.
 
 <details>
 
@@ -6819,7 +6863,7 @@ A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/d
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.
+  ID of the connected account associated with the event.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -6859,7 +6903,7 @@ A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/d
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

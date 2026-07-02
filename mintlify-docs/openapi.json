@@ -1368,7 +1368,7 @@
             "type": "string"
           },
           "connected_account_id": {
-            "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the access group.",
+            "description": "ID of the connected account that contains the access group.",
             "format": "uuid",
             "type": "string"
           },
@@ -1378,6 +1378,7 @@
             "type": "string"
           },
           "display_name": {
+            "description": "Display name for the access group.",
             "type": "string"
           },
           "errors": {
@@ -1438,6 +1439,7 @@
             "type": "string"
           },
           "is_managed": {
+            "description": "Indicates whether Seam manages the access group.",
             "enum": [
               true
             ],
@@ -1887,7 +1889,7 @@
             "type": "array"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the access group.",
+            "description": "ID of the workspace that contains the access group.",
             "format": "uuid",
             "type": "string"
           }
@@ -1931,6 +1933,7 @@
             "type": "string"
           },
           "acs_credential_pool_id": {
+            "description": "ID of the credential pool to which the credential belongs.",
             "format": "uuid",
             "type": "string"
           },
@@ -2060,6 +2063,7 @@
             "type": "boolean"
           },
           "is_managed": {
+            "description": "Indicates whether Seam manages the credential.",
             "enum": [
               true
             ],
@@ -2179,7 +2183,7 @@
             }
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).",
+            "description": "ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).",
             "format": "uuid",
             "type": "string"
           }
@@ -2296,7 +2300,7 @@
             "type": "string"
           },
           "connected_account_id": {
-            "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).",
+            "description": "ID of the connected account that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).",
             "format": "uuid",
             "type": "string"
           },
@@ -2341,7 +2345,7 @@
             "type": "array"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).",
+            "description": "ID of the workspace that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).",
             "format": "uuid",
             "type": "string"
           }
@@ -2880,6 +2884,7 @@
         "description": "Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nWithin an `acs_system`, create [`acs_user`s](https://docs.seam.co/api/acs/users/object#acs_user) and [`acs_credential`s](https://docs.seam.co/api/acs/credentials/object#acs_credential) to grant access to the `acs_user`s.\n\nFor details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs/object).",
         "properties": {
           "acs_access_group_count": {
+            "description": "Number of access groups in the [access control system](https://docs.seam.co/low-level-apis/access-systems).",
             "format": "float",
             "type": "number"
           },
@@ -2889,11 +2894,12 @@
             "type": "string"
           },
           "acs_user_count": {
+            "description": "Number of users in the [access control system](https://docs.seam.co/low-level-apis/access-systems).",
             "format": "float",
             "type": "number"
           },
           "connected_account_id": {
-            "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).",
+            "description": "ID of the connected account associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).",
             "format": "uuid",
             "type": "string"
           },
@@ -2978,6 +2984,7 @@
             "type": "boolean"
           },
           "location": {
+            "description": "Location information for the [access control system](https://docs.seam.co/low-level-apis/access-systems).",
             "properties": {
               "time_zone": {
                 "description": "Time zone in which the [access control system](https://docs.seam.co/low-level-apis/access-systems) is located.",
@@ -3022,6 +3029,7 @@
             "x-deprecated": "Use `external_type_display_name`."
           },
           "visionline_metadata": {
+            "description": "Visionline-specific metadata for the [access control system](https://docs.seam.co/low-level-apis/access-systems).",
             "properties": {
               "lan_address": {
                 "description": "IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) on the local network.",
@@ -3146,7 +3154,7 @@
             "type": "array"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).",
+            "description": "ID of the workspace that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).",
             "format": "uuid",
             "type": "string"
           }
@@ -3203,7 +3211,7 @@
             "type": "string"
           },
           "connected_account_id": {
-            "description": "\n      The ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ",
+            "description": "\n      The ID of the connected account that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ",
             "format": "uuid",
             "type": "string"
           },
@@ -3273,10 +3281,12 @@
             "type": "string"
           },
           "hid_acs_system_id": {
+            "description": "ID of the HID access control system associated with the user.",
             "format": "uuid",
             "type": "string"
           },
           "is_managed": {
+            "description": "Indicates whether Seam manages the access system user.",
             "enum": [
               true
             ],
@@ -3903,7 +3913,7 @@
             "type": "array"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).",
+            "description": "ID of the workspace that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).",
             "format": "uuid",
             "type": "string"
           }
@@ -4365,7 +4375,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) with which Seam Bridge is paired.",
+            "description": "ID of the workspace with which Seam Bridge is paired.",
             "format": "uuid",
             "type": "string"
           }
@@ -4388,7 +4398,7 @@
         "description": "Represents a [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.",
         "properties": {
           "client_session_id": {
-            "description": "ID of the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).",
+            "description": "ID of the client session.",
             "format": "uuid",
             "type": "string"
           },
@@ -4452,7 +4462,7 @@
             "x-deprecated": "Use `user_identity_id` instead."
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).",
+            "description": "ID of the workspace associated with the client session.",
             "format": "uuid",
             "type": "string"
           }
@@ -4532,7 +4542,7 @@
             "type": "string"
           },
           "connected_account_id": {
-            "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the Connect Webview.",
+            "description": "ID of the connected account associated with the Connect Webview.",
             "format": "uuid",
             "nullable": true,
             "type": "string"
@@ -4573,6 +4583,7 @@
             "type": "string"
           },
           "device_selection_mode": {
+            "description": "Device selection mode of the Connect Webview. Supported values: `none`, `single`, `multiple`.",
             "enum": [
               "none",
               "single",
@@ -4608,7 +4619,7 @@
             "type": "boolean"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Connect Webview.",
+            "description": "ID of the workspace that contains the Connect Webview.",
             "format": "uuid",
             "type": "string"
           }
@@ -4997,7 +5008,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the customer.",
+            "description": "ID of the workspace associated with the customer.",
             "format": "uuid",
             "type": "string"
           }
@@ -5034,7 +5045,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the customer portal.",
+            "description": "ID of the workspace associated with the customer portal.",
             "format": "uuid",
             "type": "string"
           }
@@ -5126,63 +5137,83 @@
         "description": "Represents a [device](https://docs.seam.co/core-concepts/devices) that has been connected to Seam.",
         "properties": {
           "can_configure_auto_lock": {
+            "description": "Indicates whether the lock supports configuring automatic locking.",
             "type": "boolean"
           },
           "can_hvac_cool": {
+            "description": "Indicates whether the thermostat supports cooling.",
             "type": "boolean"
           },
           "can_hvac_heat": {
+            "description": "Indicates whether the thermostat supports heating.",
             "type": "boolean"
           },
           "can_hvac_heat_cool": {
+            "description": "Indicates whether the thermostat supports simultaneous heating and cooling.",
             "type": "boolean"
           },
           "can_program_offline_access_codes": {
+            "description": "Indicates whether the device supports programming offline access codes.",
             "type": "boolean"
           },
           "can_program_online_access_codes": {
+            "description": "Indicates whether the device supports programming online access codes.",
             "type": "boolean"
           },
           "can_program_thermostat_programs_as_different_each_day": {
+            "description": "Indicates whether the thermostat supports different climate programs for each day of the week.",
             "type": "boolean"
           },
           "can_program_thermostat_programs_as_same_each_day": {
+            "description": "Indicates whether the thermostat supports a single climate program applied to every day.",
             "type": "boolean"
           },
           "can_program_thermostat_programs_as_weekday_weekend": {
+            "description": "Indicates whether the thermostat supports weekday/weekend climate programs.",
             "type": "boolean"
           },
           "can_remotely_lock": {
+            "description": "Indicates whether the device supports remote locking.",
             "type": "boolean"
           },
           "can_remotely_unlock": {
+            "description": "Indicates whether the device supports remote unlocking.",
             "type": "boolean"
           },
           "can_run_thermostat_programs": {
+            "description": "Indicates whether the thermostat supports running climate programs.",
             "type": "boolean"
           },
           "can_simulate_connection": {
+            "description": "Indicates whether the device supports simulating connection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_disconnection": {
+            "description": "Indicates whether the device supports simulating disconnection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_hub_connection": {
+            "description": "Indicates whether the hub supports simulating connection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_hub_disconnection": {
+            "description": "Indicates whether the hub supports simulating disconnection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_paid_subscription": {
+            "description": "Indicates whether the device supports simulating a paid subscription in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_removal": {
+            "description": "Indicates whether the device supports simulating removal in a sandbox.",
             "type": "boolean"
           },
           "can_turn_off_hvac": {
+            "description": "Indicates whether the thermostat can be turned off.",
             "type": "boolean"
           },
           "can_unlock_with_code": {
+            "description": "Indicates whether the lock supports unlocking with an access code.",
             "type": "boolean"
           },
           "capabilities_supported": {
@@ -7263,7 +7294,7 @@
                             "type": "string"
                           },
                           "workspace_id": {
-                            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.",
+                            "description": "ID of the workspace that contains the thermostat schedule.",
                             "format": "uuid",
                             "type": "string"
                           }
@@ -7294,6 +7325,7 @@
                       "available_climate_preset_modes": {
                         "description": "Climate preset modes that the thermostat supports, such as \"home\", \"away\", \"wake\", \"sleep\", \"occupied\", and \"unoccupied\".",
                         "items": {
+                          "description": "Climate preset mode for the thermostat, such as `home`, `away`, `wake`, `sleep`, `occupied`, or `unoccupied`.",
                           "enum": [
                             "home",
                             "away",
@@ -7440,6 +7472,7 @@
                       "available_fan_mode_settings": {
                         "description": "Fan mode settings that the thermostat supports.",
                         "items": {
+                          "description": "Fan mode setting for the thermostat, such as `auto`, `on`, or `circulate`.",
                           "enum": [
                             "auto",
                             "on",
@@ -7453,6 +7486,7 @@
                       "available_hvac_mode_settings": {
                         "description": "HVAC mode settings that the thermostat supports.",
                         "items": {
+                          "description": "HVAC mode setting for the thermostat, such as `heat`, `cool`, `heat_cool`, `eco`, or `off`.",
                           "enum": [
                             "off",
                             "heat",
@@ -7924,7 +7958,7 @@
                               "type": "string"
                             },
                             "workspace_id": {
-                              "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.",
+                              "description": "ID of the workspace that contains the thermostat daily program.",
                               "format": "uuid",
                               "type": "string"
                             }
@@ -8119,66 +8153,87 @@
       "device_provider": {
         "properties": {
           "can_configure_auto_lock": {
+            "description": "Indicates whether the lock supports configuring automatic locking.",
             "type": "boolean"
           },
           "can_hvac_cool": {
+            "description": "Indicates whether the thermostat supports cooling.",
             "type": "boolean"
           },
           "can_hvac_heat": {
+            "description": "Indicates whether the thermostat supports heating.",
             "type": "boolean"
           },
           "can_hvac_heat_cool": {
+            "description": "Indicates whether the thermostat supports simultaneous heating and cooling.",
             "type": "boolean"
           },
           "can_program_offline_access_codes": {
+            "description": "Indicates whether the device supports programming offline access codes.",
             "type": "boolean"
           },
           "can_program_online_access_codes": {
+            "description": "Indicates whether the device supports programming online access codes.",
             "type": "boolean"
           },
           "can_program_thermostat_programs_as_different_each_day": {
+            "description": "Indicates whether the thermostat supports different climate programs for each day of the week.",
             "type": "boolean"
           },
           "can_program_thermostat_programs_as_same_each_day": {
+            "description": "Indicates whether the thermostat supports a single climate program applied to every day.",
             "type": "boolean"
           },
           "can_program_thermostat_programs_as_weekday_weekend": {
+            "description": "Indicates whether the thermostat supports weekday/weekend climate programs.",
             "type": "boolean"
           },
           "can_remotely_lock": {
+            "description": "Indicates whether the device supports remote locking.",
             "type": "boolean"
           },
           "can_remotely_unlock": {
+            "description": "Indicates whether the device supports remote unlocking.",
             "type": "boolean"
           },
           "can_run_thermostat_programs": {
+            "description": "Indicates whether the thermostat supports running climate programs.",
             "type": "boolean"
           },
           "can_simulate_connection": {
+            "description": "Indicates whether the device supports simulating connection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_disconnection": {
+            "description": "Indicates whether the device supports simulating disconnection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_hub_connection": {
+            "description": "Indicates whether the hub supports simulating connection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_hub_disconnection": {
+            "description": "Indicates whether the hub supports simulating disconnection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_paid_subscription": {
+            "description": "Indicates whether the device supports simulating a paid subscription in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_removal": {
+            "description": "Indicates whether the device supports simulating removal in a sandbox.",
             "type": "boolean"
           },
           "can_turn_off_hvac": {
+            "description": "Indicates whether the thermostat can be turned off.",
             "type": "boolean"
           },
           "can_unlock_with_code": {
+            "description": "Indicates whether the lock supports unlocking with an access code.",
             "type": "boolean"
           },
           "device_provider_name": {
+            "description": "Name of the device provider.",
             "enum": [
               "hotek",
               "dormakaba_community",
@@ -8244,12 +8299,15 @@
             "type": "string"
           },
           "display_name": {
+            "description": "Display name for the device provider.",
             "type": "string"
           },
           "image_url": {
+            "description": "Image URL for the device provider.",
             "type": "string"
           },
           "provider_categories": {
+            "description": "List of provider categories to which the device provider belongs, such as `stable`, `consumer_smartlocks`, `thermostats`, and so on.",
             "items": {
               "enum": [
                 "stable",
@@ -8299,7 +8357,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the enrollment automation.",
+            "description": "ID of the workspace that contains the enrollment automation.",
             "format": "uuid",
             "type": "string"
           }
@@ -8344,7 +8402,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -8389,7 +8447,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -8422,6 +8480,7 @@
               "changed_properties": {
                 "description": "List of properties that changed on the access code.",
                 "items": {
+                  "description": "Record describing a single changed property.",
                   "properties": {
                     "from": {
                       "description": "Previous value of the property, or null if not set.",
@@ -8462,7 +8521,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -8507,7 +8566,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -8548,7 +8607,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -8592,6 +8651,7 @@
                 "type": "string"
               },
               "from": {
+                "description": "Previous access code name configuration.",
                 "properties": {
                   "name": {
                     "description": "Previous name of the access code.",
@@ -8610,6 +8670,7 @@
                 "type": "string"
               },
               "to": {
+                "description": "New access code name configuration.",
                 "properties": {
                   "name": {
                     "description": "New name of the access code.",
@@ -8623,7 +8684,7 @@
                 "type": "object"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -8667,7 +8728,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -8711,6 +8772,7 @@
                 "type": "string"
               },
               "from": {
+                "description": "Previous pin code configuration.",
                 "properties": {
                   "code": {
                     "description": "Previous pin code.",
@@ -8729,6 +8791,7 @@
                 "type": "string"
               },
               "to": {
+                "description": "New pin code configuration.",
                 "properties": {
                   "code": {
                     "description": "New pin code.",
@@ -8742,7 +8805,7 @@
                 "type": "object"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -8786,7 +8849,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -8830,6 +8893,7 @@
                 "type": "string"
               },
               "from": {
+                "description": "Previous time frame configuration.",
                 "properties": {
                   "ends_at": {
                     "description": "Previous end time.",
@@ -8854,6 +8918,7 @@
                 "type": "string"
               },
               "to": {
+                "description": "New time frame configuration.",
                 "properties": {
                   "ends_at": {
                     "description": "New end time.",
@@ -8873,7 +8938,7 @@
                 "type": "object"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -8921,7 +8986,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -8966,7 +9031,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -9012,7 +9077,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -9057,7 +9122,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -9099,7 +9164,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -9144,7 +9209,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -9168,6 +9233,7 @@
               "access_code_errors": {
                 "description": "Errors associated with the access code.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -9200,6 +9266,7 @@
               "access_code_warnings": {
                 "description": "Warnings associated with the access code.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -9241,6 +9308,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -9266,13 +9334,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -9319,6 +9388,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -9351,6 +9421,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -9392,7 +9463,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -9422,6 +9493,7 @@
               "access_code_errors": {
                 "description": "Errors associated with the access code.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -9454,6 +9526,7 @@
               "access_code_warnings": {
                 "description": "Warnings associated with the access code.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -9495,6 +9568,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -9520,13 +9594,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -9573,6 +9648,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -9605,6 +9681,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -9646,7 +9723,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -9698,7 +9775,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -9743,7 +9820,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -9768,6 +9845,7 @@
               "access_code_errors": {
                 "description": "Errors associated with the access code.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -9800,6 +9878,7 @@
               "access_code_warnings": {
                 "description": "Warnings associated with the access code.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -9841,6 +9920,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -9866,13 +9946,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -9919,6 +10000,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -9951,6 +10033,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -9992,7 +10075,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -10022,6 +10105,7 @@
               "access_code_errors": {
                 "description": "Errors associated with the access code.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -10054,6 +10138,7 @@
               "access_code_warnings": {
                 "description": "Warnings associated with the access code.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -10095,6 +10180,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -10120,13 +10206,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -10173,6 +10260,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -10205,6 +10293,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -10246,7 +10335,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -10293,7 +10382,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -10338,7 +10427,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -10379,7 +10468,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -10424,7 +10513,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -10451,6 +10540,7 @@
                 "type": "string"
               },
               "backup_access_code_id": {
+                "description": "ID of the backup access code that was pulled from the pool.",
                 "type": "string"
               },
               "connected_account_custom_metadata": {
@@ -10468,7 +10558,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -10513,7 +10603,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -10555,7 +10645,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -10600,7 +10690,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -10624,6 +10714,7 @@
               "access_code_errors": {
                 "description": "Errors associated with the access code.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -10656,6 +10747,7 @@
               "access_code_warnings": {
                 "description": "Warnings associated with the access code.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -10697,6 +10789,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -10722,13 +10815,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -10775,6 +10869,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -10807,6 +10902,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -10848,7 +10944,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -10895,7 +10991,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -10940,7 +11036,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -10981,7 +11077,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the affected access code.",
+                "description": "ID of the connected account associated with the affected access code.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -11026,7 +11122,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11074,7 +11170,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11120,7 +11216,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11166,7 +11262,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11217,7 +11313,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11269,7 +11365,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11328,7 +11424,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11386,7 +11482,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11456,7 +11552,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11518,7 +11614,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11580,7 +11676,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11642,7 +11738,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11712,7 +11808,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11774,7 +11870,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11826,7 +11922,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11877,7 +11973,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -11899,6 +11995,7 @@
               "acs_system_errors": {
                 "description": "Errors associated with the access control system.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -11931,6 +12028,7 @@
               "acs_system_warnings": {
                 "description": "Warnings associated with the access control system.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -11958,6 +12056,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -11990,6 +12089,7 @@
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -12036,7 +12136,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12096,7 +12196,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12153,7 +12253,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12210,7 +12310,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12267,7 +12367,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12293,6 +12393,7 @@
                 "type": "string"
               },
               "acs_user_id": {
+                "description": "ID of the affected access system user.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12323,7 +12424,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12349,6 +12450,7 @@
                 "type": "string"
               },
               "acs_user_id": {
+                "description": "ID of the affected access system user.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12379,7 +12481,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12436,7 +12538,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12493,7 +12595,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12550,7 +12652,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12571,6 +12673,7 @@
             "description": "An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was added.",
             "properties": {
               "acs_entrance_id": {
+                "description": "ID of the affected entrance.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12606,7 +12709,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12627,6 +12730,7 @@
             "description": "An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was removed.",
             "properties": {
               "acs_entrance_id": {
+                "description": "ID of the affected entrance.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12662,7 +12766,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12680,7 +12784,7 @@
             "x-route-path": "/acs/entrances"
           },
           {
-            "description": "A [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) was deleted.",
+            "description": "A client session was deleted.",
             "properties": {
               "client_session_id": {
                 "description": "ID of the affected client session.",
@@ -12709,7 +12813,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12726,10 +12830,10 @@
             "x-route-path": "/client_sessions"
           },
           {
-            "description": "A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was connected for the first time or was reconnected after being disconnected.",
+            "description": "A connected account was connected for the first time or was reconnected after being disconnected.",
             "properties": {
               "connect_webview_id": {
-                "description": "ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.",
+                "description": "ID of the Connect Webview associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12748,7 +12852,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).",
+                "description": "ID of the affected connected account.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12778,7 +12882,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12795,10 +12899,10 @@
             "x-route-path": "/connected_accounts"
           },
           {
-            "description": "A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was created.",
+            "description": "A connected account was created.",
             "properties": {
               "connect_webview_id": {
-                "description": "ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.",
+                "description": "ID of the Connect Webview associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12817,7 +12921,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).",
+                "description": "ID of the affected connected account.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12843,7 +12947,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12862,10 +12966,10 @@
           },
           {
             "deprecated": true,
-            "description": "A [connected account](https://docs.seam.co/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).",
+            "description": "A connected account had a successful login using a Connect Webview.",
             "properties": {
               "connect_webview_id": {
-                "description": "ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.",
+                "description": "ID of the Connect Webview associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12884,7 +12988,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).",
+                "description": "ID of the affected connected account.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -12910,7 +13014,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -12929,7 +13033,7 @@
             "x-route-path": "/connected_accounts"
           },
           {
-            "description": "A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was disconnected.",
+            "description": "A connected account was disconnected.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -12948,6 +13052,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -12973,13 +13078,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).",
+                "description": "ID of the affected connected account.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -13026,7 +13132,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13045,7 +13151,7 @@
             "x-route-path": "/connected_accounts"
           },
           {
-            "description": "A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.",
+            "description": "A connected account completed the first sync with Seam, and the corresponding devices or systems are now available.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -13062,7 +13168,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).",
+                "description": "ID of the affected connected account.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -13088,7 +13194,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13105,7 +13211,7 @@
             "x-route-path": "/connected_accounts"
           },
           {
-            "description": "A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was deleted.",
+            "description": "A connected account was deleted.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -13122,7 +13228,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).",
+                "description": "ID of the affected connected account.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -13156,7 +13262,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13173,7 +13279,7 @@
             "x-route-path": "/connected_accounts"
           },
           {
-            "description": "A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.",
+            "description": "A connected account completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -13190,7 +13296,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).",
+                "description": "ID of the affected connected account.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -13216,7 +13322,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13233,7 +13339,7 @@
             "x-route-path": "/connected_accounts"
           },
           {
-            "description": "A [connected account](https://docs.seam.co/core-concepts/connected-accounts) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.",
+            "description": "A connected account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -13252,6 +13358,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -13277,13 +13384,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).",
+                "description": "ID of the affected connected account.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -13330,7 +13438,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13349,7 +13457,7 @@
             "x-route-path": "/connected_accounts"
           },
           {
-            "description": "A lock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.",
+            "description": "A lock door action attempt succeeded.",
             "properties": {
               "action_attempt_id": {
                 "description": "ID of the affected action attempt.",
@@ -13396,7 +13504,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13415,7 +13523,7 @@
             "x-route-path": "/action_attempts"
           },
           {
-            "description": "A lock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.",
+            "description": "A lock door action attempt failed.",
             "properties": {
               "action_attempt_id": {
                 "description": "ID of the affected action attempt.",
@@ -13462,7 +13570,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13481,7 +13589,7 @@
             "x-route-path": "/action_attempts"
           },
           {
-            "description": "An unlock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.",
+            "description": "An unlock door action attempt succeeded.",
             "properties": {
               "action_attempt_id": {
                 "description": "ID of the affected action attempt.",
@@ -13528,7 +13636,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13547,7 +13655,7 @@
             "x-route-path": "/action_attempts"
           },
           {
-            "description": "An unlock door [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.",
+            "description": "An unlock door action attempt failed.",
             "properties": {
               "action_attempt_id": {
                 "description": "ID of the affected action attempt.",
@@ -13594,7 +13702,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13613,7 +13721,7 @@
             "x-route-path": "/action_attempts"
           },
           {
-            "description": "A simulate keypad code entry [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.",
+            "description": "A simulate keypad code entry action attempt succeeded.",
             "properties": {
               "action_attempt_id": {
                 "description": "ID of the affected action attempt.",
@@ -13660,7 +13768,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13679,7 +13787,7 @@
             "x-route-path": "/action_attempts"
           },
           {
-            "description": "A simulate keypad code entry [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.",
+            "description": "A simulate keypad code entry action attempt failed.",
             "properties": {
               "action_attempt_id": {
                 "description": "ID of the affected action attempt.",
@@ -13726,7 +13834,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13745,7 +13853,7 @@
             "x-route-path": "/action_attempts"
           },
           {
-            "description": "A simulate manual lock via keypad [action attempt](https://docs.seam.co/core-concepts/action-attempts) succeeded.",
+            "description": "A simulate manual lock via keypad action attempt succeeded.",
             "properties": {
               "action_attempt_id": {
                 "description": "ID of the affected action attempt.",
@@ -13792,7 +13900,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13811,7 +13919,7 @@
             "x-route-path": "/action_attempts"
           },
           {
-            "description": "A simulate manual lock via keypad [action attempt](https://docs.seam.co/core-concepts/action-attempts) failed.",
+            "description": "A simulate manual lock via keypad action attempt failed.",
             "properties": {
               "action_attempt_id": {
                 "description": "ID of the affected action attempt.",
@@ -13858,7 +13966,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13877,10 +13985,10 @@
             "x-route-path": "/action_attempts"
           },
           {
-            "description": "A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login succeeded.",
+            "description": "A Connect Webview login succeeded.",
             "properties": {
               "connect_webview_id": {
-                "description": "ID of the affected [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).",
+                "description": "ID of the affected Connect Webview.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -13899,7 +14007,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -13929,7 +14037,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13947,10 +14055,10 @@
             "x-route-path": "/connect_webviews"
           },
           {
-            "description": "A [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login failed.",
+            "description": "A Connect Webview login failed.",
             "properties": {
               "connect_webview_id": {
-                "description": "ID of the affected [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).",
+                "description": "ID of the affected Connect Webview.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -13976,7 +14084,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -13993,7 +14101,7 @@
             "x-route-path": "/connect_webviews"
           },
           {
-            "description": "The status of a [device](https://docs.seam.co/core-concepts/devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.",
+            "description": "The status of a device changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -14010,7 +14118,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -14059,7 +14167,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -14077,7 +14185,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "A [device](https://docs.seam.co/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.",
+            "description": "A device was added to Seam or was re-added to Seam after having been removed.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -14094,7 +14202,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -14143,7 +14251,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -14178,7 +14286,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -14227,7 +14335,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -14262,7 +14370,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -14311,7 +14419,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -14346,7 +14454,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -14395,7 +14503,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -14413,7 +14521,7 @@
             "x-route-path": "/devices/unmanaged"
           },
           {
-            "description": "The status of a [device](https://docs.seam.co/core-concepts/devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.",
+            "description": "The status of a device changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -14432,6 +14540,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -14457,13 +14566,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -14514,6 +14624,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -14546,6 +14657,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -14596,7 +14708,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -14638,6 +14750,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -14663,13 +14776,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -14720,6 +14834,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -14752,6 +14867,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -14802,7 +14918,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -14825,7 +14941,7 @@
             "x-route-path": "/devices/unmanaged"
           },
           {
-            "description": "A [device](https://docs.seam.co/core-concepts/devices) detected that it was tampered with, for example, opened or moved.",
+            "description": "A device detected that it was tampered with, for example, opened or moved.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -14842,7 +14958,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -14891,7 +15007,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -14909,7 +15025,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "A [device](https://docs.seam.co/core-concepts/devices) battery level dropped below the low threshold.",
+            "description": "A device battery level dropped below the low threshold.",
             "properties": {
               "battery_level": {
                 "description": "Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device.",
@@ -14933,7 +15049,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -14982,7 +15098,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15001,7 +15117,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "A [device](https://docs.seam.co/core-concepts/devices) battery status changed since the last `battery_status_changed` event.",
+            "description": "A device battery status changed since the last `battery_status_changed` event.",
             "properties": {
               "battery_level": {
                 "description": "Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device.",
@@ -15035,7 +15151,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15084,7 +15200,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15104,7 +15220,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "A [device](https://docs.seam.co/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/core-concepts/connected-accounts).",
+            "description": "A device was removed externally from the connected account.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -15121,7 +15237,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15170,7 +15286,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15188,7 +15304,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "A [device](https://docs.seam.co/core-concepts/devices) was deleted.",
+            "description": "A device was deleted.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -15205,7 +15321,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15259,7 +15375,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15277,7 +15393,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.",
+            "description": "Seam detected that a device is using a third-party integration that will interfere with Seam device management.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -15294,7 +15410,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15343,7 +15459,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15361,7 +15477,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "Seam detected that a [device](https://docs.seam.co/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.",
+            "description": "Seam detected that a device is no longer using a third-party integration that was interfering with Seam device management.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -15378,7 +15494,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15427,7 +15543,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15462,7 +15578,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15511,7 +15627,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15546,7 +15662,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15595,7 +15711,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15613,7 +15729,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "Seam detected a flaky [device](https://docs.seam.co/core-concepts/devices) connection.",
+            "description": "Seam detected a flaky device connection.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -15632,6 +15748,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -15657,13 +15774,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -15714,6 +15832,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -15746,6 +15865,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -15787,7 +15907,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15809,7 +15929,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "Seam detected that a previously-flaky [device](https://docs.seam.co/core-concepts/devices) connection stabilized.",
+            "description": "Seam detected that a previously-flaky device connection stabilized.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -15826,7 +15946,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -15875,7 +15995,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -15893,7 +16013,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "A third-party subscription is required to use all [device](https://docs.seam.co/core-concepts/devices) features.",
+            "description": "A third-party subscription is required to use all device features.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -15912,6 +16032,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -15937,13 +16058,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -15994,6 +16116,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -16026,6 +16149,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -16067,7 +16191,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -16089,7 +16213,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/core-concepts/devices) features.",
+            "description": "A third-party subscription is active or no longer required to use all device features.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -16106,7 +16230,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -16155,7 +16279,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -16173,7 +16297,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "An accessory keypad was connected to a [device](https://docs.seam.co/core-concepts/devices).",
+            "description": "An accessory keypad was connected to a device.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -16190,7 +16314,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -16239,7 +16363,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -16257,7 +16381,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "An accessory keypad was disconnected from a [device](https://docs.seam.co/core-concepts/devices).",
+            "description": "An accessory keypad was disconnected from a device.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -16276,6 +16400,7 @@
               "connected_account_errors": {
                 "description": "Errors associated with the connected account.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -16301,13 +16426,14 @@
                 "type": "array"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
               "connected_account_warnings": {
                 "description": "Warnings associated with the connected account.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -16358,6 +16484,7 @@
               "device_errors": {
                 "description": "Errors associated with the device.",
                 "items": {
+                  "description": "Error associated with the resource, including the error code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the error.",
@@ -16390,6 +16517,7 @@
               "device_warnings": {
                 "description": "Warnings associated with the device.",
                 "items": {
+                  "description": "Warning associated with the resource, including the warning code, message, and creation timestamp.",
                   "properties": {
                     "created_at": {
                       "description": "Date and time at which Seam created the warning.",
@@ -16431,7 +16559,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -16470,7 +16598,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -16548,7 +16676,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -16597,7 +16725,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -16665,7 +16793,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -16730,7 +16858,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -16803,7 +16931,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -16843,7 +16971,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -16892,7 +17020,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -16931,7 +17059,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -16990,7 +17118,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17028,7 +17156,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -17125,7 +17253,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17161,7 +17289,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -17244,7 +17372,7 @@
                 "type": "number"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17285,7 +17413,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -17368,7 +17496,7 @@
                 "type": "number"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17409,7 +17537,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -17478,7 +17606,7 @@
                 "type": "number"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17515,7 +17643,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -17574,7 +17702,7 @@
                 "type": "number"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17594,7 +17722,7 @@
             "x-route-path": "/thermostats"
           },
           {
-            "description": "The name of a [device](https://docs.seam.co/core-concepts/devices) was changed.",
+            "description": "The name of a device was changed.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -17611,7 +17739,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -17664,7 +17792,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17683,7 +17811,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "A [camera](https://docs.seam.co/core-concepts/devices) was activated, for example, by motion detection.",
+            "description": "A camera was activated, for example, by motion detection.",
             "properties": {
               "activation_reason": {
                 "description": "The reason the camera was activated.",
@@ -17707,7 +17835,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -17776,7 +17904,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17795,7 +17923,7 @@
             "x-route-path": "/devices"
           },
           {
-            "description": "A doorbell button was pressed on a [device](https://docs.seam.co/core-concepts/devices).",
+            "description": "A doorbell button was pressed on a device.",
             "properties": {
               "connected_account_custom_metadata": {
                 "additionalProperties": {
@@ -17812,7 +17940,7 @@
                 "type": "object"
               },
               "connected_account_id": {
-                "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the event.",
+                "description": "ID of the connected account associated with the event.",
                 "format": "uuid",
                 "type": "string"
               },
@@ -17871,7 +17999,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17918,7 +18046,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -17978,7 +18106,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -18045,7 +18173,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -18114,7 +18242,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -18183,7 +18311,7 @@
                 "type": "string"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.",
+                "description": "ID of the workspace associated with the event.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -18208,7 +18336,7 @@
         "description": "Represents a Seam Instant Key. For issuing Bluetooth mobile keys, Instant Keys are the fastest way to share access. With a single API call, you can create a mobile key and send it through text or email or embed it in your own app.",
         "properties": {
           "client_session_id": {
-            "description": "ID of the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) associated with the Instant Key.",
+            "description": "ID of the client session associated with the Instant Key.",
             "format": "uuid",
             "type": "string"
           },
@@ -18262,7 +18390,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the Instant Key.",
+            "description": "ID of the workspace that contains the Instant Key.",
             "format": "uuid",
             "type": "string"
           }
@@ -18302,7 +18430,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the magic link.",
+            "description": "ID of the workspace associated with the magic link.",
             "format": "uuid",
             "type": "string"
           }
@@ -18419,7 +18547,7 @@
             "type": "string"
           },
           "device_type": {
-            "description": "Device type for phones.\n          ",
+            "description": "Type of the phone device, such as `ios_phone` or `android_phone`.",
             "enum": [
               "ios_phone",
               "android_phone"
@@ -18435,9 +18563,11 @@
             "items": {
               "properties": {
                 "error_code": {
+                  "description": "Unique identifier of the type of error.",
                   "type": "string"
                 },
                 "message": {
+                  "description": "Detailed description of the error.",
                   "type": "string"
                 }
               },
@@ -18454,7 +18584,7 @@
             "type": "string"
           },
           "properties": {
-            "description": "\n          Properties of the phone.\n          ",
+            "description": "Properties of the phone.",
             "properties": {
               "assa_abloy_credential_service_metadata": {
                 "description": "ASSA ABLOY Credential Service metadata for the phone.",
@@ -18512,9 +18642,11 @@
             "items": {
               "properties": {
                 "message": {
+                  "description": "Detailed description of the warning.",
                   "type": "string"
                 },
                 "warning_code": {
+                  "description": "Unique identifier of the type of warning.",
                   "type": "string"
                 }
               },
@@ -18527,7 +18659,7 @@
             "type": "array"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the phone.\n  ",
+            "description": "ID of the workspace that contains the phone.\n  ",
             "format": "uuid",
             "type": "string"
           }
@@ -18612,6 +18744,7 @@
                         "type": "string"
                       },
                       "acs_credential_pool_id": {
+                        "description": "ID of the credential pool to which the credential belongs.",
                         "format": "uuid",
                         "type": "string"
                       },
@@ -19262,6 +19395,7 @@
                         "type": "boolean"
                       },
                       "is_managed": {
+                        "description": "Indicates whether Seam manages the credential.",
                         "enum": [
                           true
                         ],
@@ -19533,7 +19667,7 @@
                         "type": "array"
                       },
                       "workspace_id": {
-                        "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).",
+                        "description": "ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).",
                         "format": "uuid",
                         "type": "string"
                       }
@@ -19611,6 +19745,7 @@
                 "type": "string"
               },
               "display_name": {
+                "description": "Display name for the user identity.",
                 "minLength": 1,
                 "type": "string"
               },
@@ -19672,6 +19807,7 @@
                 "type": "array"
               },
               "full_name": {
+                "description": "Full name of the user associated with the user identity.",
                 "minLength": 1,
                 "nullable": true,
                 "type": "string"
@@ -19759,7 +19895,7 @@
                 "type": "array"
               },
               "workspace_id": {
-                "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.",
+                "description": "ID of the workspace that contains the user identity.",
                 "format": "uuid",
                 "type": "string"
               }
@@ -19892,7 +20028,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the space.",
+            "description": "ID of the workspace associated with the space.",
             "format": "uuid",
             "type": "string"
           }
@@ -20055,7 +20191,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat daily program.",
+            "description": "ID of the workspace that contains the thermostat daily program.",
             "format": "uuid",
             "type": "string"
           }
@@ -20141,7 +20277,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the thermostat schedule.",
+            "description": "ID of the workspace that contains the thermostat schedule.",
             "format": "uuid",
             "type": "string"
           }
@@ -20402,7 +20538,7 @@
             "type": "string"
           },
           "connected_account_id": {
-            "description": "ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that contains the access group.",
+            "description": "ID of the connected account that contains the access group.",
             "format": "uuid",
             "type": "string"
           },
@@ -20412,6 +20548,7 @@
             "type": "string"
           },
           "display_name": {
+            "description": "Display name for the access group.",
             "type": "string"
           },
           "errors": {
@@ -20921,7 +21058,7 @@
             "type": "array"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the access group.",
+            "description": "ID of the workspace that contains the access group.",
             "format": "uuid",
             "type": "string"
           }
@@ -20966,6 +21103,7 @@
             "type": "string"
           },
           "acs_credential_pool_id": {
+            "description": "ID of the credential pool to which the credential belongs.",
             "format": "uuid",
             "type": "string"
           },
@@ -21214,7 +21352,7 @@
             }
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).",
+            "description": "ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).",
             "format": "uuid",
             "type": "string"
           }
@@ -21270,7 +21408,7 @@
             "type": "string"
           },
           "connected_account_id": {
-            "description": "\n      The ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ",
+            "description": "\n      The ID of the connected account that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ",
             "format": "uuid",
             "type": "string"
           },
@@ -21340,6 +21478,7 @@
             "type": "string"
           },
           "hid_acs_system_id": {
+            "description": "ID of the HID access control system associated with the user.",
             "format": "uuid",
             "type": "string"
           },
@@ -21970,7 +22109,7 @@
             "type": "array"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).",
+            "description": "ID of the workspace that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).",
             "format": "uuid",
             "type": "string"
           }
@@ -21995,63 +22134,83 @@
         "description": "Represents an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged.",
         "properties": {
           "can_configure_auto_lock": {
+            "description": "Indicates whether the lock supports configuring automatic locking.",
             "type": "boolean"
           },
           "can_hvac_cool": {
+            "description": "Indicates whether the thermostat supports cooling.",
             "type": "boolean"
           },
           "can_hvac_heat": {
+            "description": "Indicates whether the thermostat supports heating.",
             "type": "boolean"
           },
           "can_hvac_heat_cool": {
+            "description": "Indicates whether the thermostat supports simultaneous heating and cooling.",
             "type": "boolean"
           },
           "can_program_offline_access_codes": {
+            "description": "Indicates whether the device supports programming offline access codes.",
             "type": "boolean"
           },
           "can_program_online_access_codes": {
+            "description": "Indicates whether the device supports programming online access codes.",
             "type": "boolean"
           },
           "can_program_thermostat_programs_as_different_each_day": {
+            "description": "Indicates whether the thermostat supports different climate programs for each day of the week.",
             "type": "boolean"
           },
           "can_program_thermostat_programs_as_same_each_day": {
+            "description": "Indicates whether the thermostat supports a single climate program applied to every day.",
             "type": "boolean"
           },
           "can_program_thermostat_programs_as_weekday_weekend": {
+            "description": "Indicates whether the thermostat supports weekday/weekend climate programs.",
             "type": "boolean"
           },
           "can_remotely_lock": {
+            "description": "Indicates whether the device supports remote locking.",
             "type": "boolean"
           },
           "can_remotely_unlock": {
+            "description": "Indicates whether the device supports remote unlocking.",
             "type": "boolean"
           },
           "can_run_thermostat_programs": {
+            "description": "Indicates whether the thermostat supports running climate programs.",
             "type": "boolean"
           },
           "can_simulate_connection": {
+            "description": "Indicates whether the device supports simulating connection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_disconnection": {
+            "description": "Indicates whether the device supports simulating disconnection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_hub_connection": {
+            "description": "Indicates whether the hub supports simulating connection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_hub_disconnection": {
+            "description": "Indicates whether the hub supports simulating disconnection in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_paid_subscription": {
+            "description": "Indicates whether the device supports simulating a paid subscription in a sandbox.",
             "type": "boolean"
           },
           "can_simulate_removal": {
+            "description": "Indicates whether the device supports simulating removal in a sandbox.",
             "type": "boolean"
           },
           "can_turn_off_hvac": {
+            "description": "Indicates whether the thermostat can be turned off.",
             "type": "boolean"
           },
           "can_unlock_with_code": {
+            "description": "Indicates whether the lock supports unlocking with an access code.",
             "type": "boolean"
           },
           "capabilities_supported": {
@@ -22203,6 +22362,7 @@
             }
           },
           "is_managed": {
+            "description": "Indicates that Seam does not manage the device.",
             "enum": [
               false
             ],
@@ -22493,6 +22653,7 @@
             "type": "string"
           },
           "display_name": {
+            "description": "Display name for the user identity.",
             "minLength": 1,
             "type": "string"
           },
@@ -22554,6 +22715,7 @@
             "type": "array"
           },
           "full_name": {
+            "description": "Full name of the user associated with the user identity.",
             "minLength": 1,
             "nullable": true,
             "type": "string"
@@ -22641,7 +22803,7 @@
             "type": "array"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.",
+            "description": "ID of the workspace that contains the user identity.",
             "format": "uuid",
             "type": "string"
           }
@@ -22681,7 +22843,7 @@
             "type": "string"
           },
           "webhook_id": {
-            "description": "ID of the [webhook](https://docs.seam.co/developer-tools/webhooks).",
+            "description": "ID of the webhook.",
             "type": "string"
           }
         },
@@ -22751,7 +22913,7 @@
             "type": "string"
           },
           "organization_id": {
-            "description": "ID of the organization to which the [workspace](https://docs.seam.co/core-concepts/workspaces) belongs, or `null` if the workspace is not assigned to an organization.",
+            "description": "ID of the organization to which the workspace belongs, or `null` if the workspace is not assigned to an organization.",
             "format": "uuid",
             "nullable": true,
             "type": "string"
@@ -22761,7 +22923,7 @@
             "type": "string"
           },
           "workspace_id": {
-            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces).",
+            "description": "ID of the workspace.",
             "format": "uuid",
             "type": "string"
           }
@@ -26809,6 +26971,7 @@
                                 "type": "string"
                               },
                               "full_name": {
+                                "description": "Full name of the user associated with the user identity.",
                                 "minLength": 1,
                                 "nullable": true,
                                 "type": "string"
@@ -42641,6 +42804,7 @@
                     "type": "string"
                   },
                   "hid_acs_system_id": {
+                    "description": "ID of the HID access control system associated with the user.",
                     "format": "uuid",
                     "type": "string"
                   },
@@ -42764,6 +42928,7 @@
                     "type": "string"
                   },
                   "hid_acs_system_id": {
+                    "description": "ID of the HID access control system associated with the user.",
                     "format": "uuid",
                     "type": "string"
                   },
@@ -66644,6 +66809,7 @@
                   },
                   "fan_mode": {
                     "deprecated": true,
+                    "description": "Fan mode setting for the thermostat, such as `auto`, `on`, or `circulate`.",
                     "enum": [
                       "auto",
                       "on",
@@ -70606,6 +70772,7 @@
                           "type": "string"
                         },
                         "display_name": {
+                          "description": "Display name for the user identity.",
                           "minLength": 1,
                           "type": "string"
                         },
@@ -70667,6 +70834,7 @@
                           "type": "array"
                         },
                         "full_name": {
+                          "description": "Full name of the user associated with the user identity.",
                           "minLength": 1,
                           "nullable": true,
                           "type": "string"
@@ -70748,7 +70916,7 @@
                           "type": "array"
                         },
                         "workspace_id": {
-                          "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.",
+                          "description": "ID of the workspace that contains the user identity.",
                           "format": "uuid",
                           "type": "string"
                         }
@@ -70859,6 +71027,7 @@
                           "type": "string"
                         },
                         "display_name": {
+                          "description": "Display name for the user identity.",
                           "minLength": 1,
                           "type": "string"
                         },
@@ -70920,6 +71089,7 @@
                           "type": "array"
                         },
                         "full_name": {
+                          "description": "Full name of the user associated with the user identity.",
                           "minLength": 1,
                           "nullable": true,
                           "type": "string"
@@ -71001,7 +71171,7 @@
                           "type": "array"
                         },
                         "workspace_id": {
-                          "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.",
+                          "description": "ID of the workspace that contains the user identity.",
                           "format": "uuid",
                           "type": "string"
                         }
@@ -71135,6 +71305,7 @@
                             "type": "string"
                           },
                           "display_name": {
+                            "description": "Display name for the user identity.",
                             "minLength": 1,
                             "type": "string"
                           },
@@ -71196,6 +71367,7 @@
                             "type": "array"
                           },
                           "full_name": {
+                            "description": "Full name of the user associated with the user identity.",
                             "minLength": 1,
                             "nullable": true,
                             "type": "string"
@@ -71277,7 +71449,7 @@
                             "type": "array"
                           },
                           "workspace_id": {
-                            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.",
+                            "description": "ID of the workspace that contains the user identity.",
                             "format": "uuid",
                             "type": "string"
                           }
@@ -71411,6 +71583,7 @@
                             "type": "string"
                           },
                           "display_name": {
+                            "description": "Display name for the user identity.",
                             "minLength": 1,
                             "type": "string"
                           },
@@ -71472,6 +71645,7 @@
                             "type": "array"
                           },
                           "full_name": {
+                            "description": "Full name of the user associated with the user identity.",
                             "minLength": 1,
                             "nullable": true,
                             "type": "string"
@@ -71553,7 +71727,7 @@
                             "type": "array"
                           },
                           "workspace_id": {
-                            "description": "ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the user identity.",
+                            "description": "ID of the workspace that contains the user identity.",
                             "format": "uuid",
                             "type": "string"
                           }

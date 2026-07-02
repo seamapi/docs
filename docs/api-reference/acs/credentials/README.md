@@ -138,6 +138,7 @@ ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managi
 
 **`acs_credential_pool_id`** *UUID*
 
+ID of the credential pool to which the credential belongs.
 
 
 
@@ -323,6 +324,7 @@ Indicates whether the latest state of the [credential](https://docs.seam.co/low-
 
 **`is_managed`** *Boolean*
 
+Indicates whether Seam manages the credential.
 
 
 
@@ -650,7 +652,7 @@ Access permissions for the [credential](https://docs.seam.co/low-level-apis/acce
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
+ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).
 
 
 
@@ -737,7 +739,7 @@ An [access system credential](https://docs.seam.co/low-level-apis/access-systems
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -780,7 +782,7 @@ An [access system credential](https://docs.seam.co/low-level-apis/access-systems
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -823,7 +825,7 @@ An [access system credential](https://docs.seam.co/low-level-apis/access-systems
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -866,7 +868,7 @@ An [access system credential](https://docs.seam.co/low-level-apis/access-systems
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

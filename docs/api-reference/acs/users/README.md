@@ -105,7 +105,7 @@ ID of the [access system user](https://docs.seam.co/low-level-apis/access-system
 
 **`connected_account_id`** *UUID*
 
-The ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
+The ID of the connected account that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
 
 
 
@@ -384,6 +384,7 @@ Full name of the [access system user](https://docs.seam.co/low-level-apis/access
 
 **`hid_acs_system_id`** *UUID*
 
+ID of the HID access control system associated with the user.
 
 
 
@@ -392,6 +393,7 @@ Full name of the [access system user](https://docs.seam.co/low-level-apis/access
 
 **`is_managed`** *Boolean*
 
+Indicates whether Seam manages the access system user.
 
 
 
@@ -1096,7 +1098,7 @@ Indicates that the [access system user](https://docs.seam.co/low-level-apis/acce
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
+ID of the workspace that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).
 
 
 
@@ -1186,6 +1188,8 @@ An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-
 
 <strong><code>acs_user_id</code></strong> <i>UUID</i>
 
+  ID of the affected access system user.
+
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
   ID of the connected account.
@@ -1208,7 +1212,7 @@ An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -1226,6 +1230,8 @@ An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-
   ID of the access system.
 
 <strong><code>acs_user_id</code></strong> <i>UUID</i>
+
+  ID of the affected access system user.
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
@@ -1249,7 +1255,7 @@ An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

@@ -46,7 +46,7 @@ For details about the resources associated with an access control system, see th
 ## Properties
 
 <ResponseField name="acs_access_group_count" type="number">
-  The acs access group count.
+  Number of access groups in the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 </ResponseField>
 
 <ResponseField name="acs_system_id" type="String (UUID)">
@@ -54,11 +54,11 @@ For details about the resources associated with an access control system, see th
 </ResponseField>
 
 <ResponseField name="acs_user_count" type="number">
-  The acs user count.
+  Number of users in the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 </ResponseField>
 
 <ResponseField name="connected_account_id" type="String (UUID)">
-  ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
+  ID of the connected account associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 </ResponseField>
 
 <ResponseField name="connected_account_ids" type="Array" deprecated>
@@ -98,7 +98,7 @@ For details about the resources associated with an access control system, see th
 </ResponseField>
 
 <ResponseField name="location" type="Object">
-  The location.
+  Location information for the [access control system](https://docs.seam.co/low-level-apis/access-systems).
   <Expandable title="properties">
     <ResponseField name="time_zone" type="String">
       Time zone in which the [access control system](https://docs.seam.co/low-level-apis/access-systems) is located.
@@ -119,7 +119,7 @@ For details about the resources associated with an access control system, see th
 </ResponseField>
 
 <ResponseField name="visionline_metadata" type="Object">
-  The visionline metadata.
+  Visionline-specific metadata for the [access control system](https://docs.seam.co/low-level-apis/access-systems).
   <Expandable title="properties">
     <ResponseField name="lan_address" type="String">
       IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) on the local network.
@@ -138,5 +138,5 @@ For details about the resources associated with an access control system, see th
 </ResponseField>
 
 <ResponseField name="workspace_id" type="String (UUID)">
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).
+  ID of the workspace that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 </ResponseField>

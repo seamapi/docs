@@ -839,7 +839,7 @@ Indicates that an unknown issue occurred while syncing the state of the connecte
 
 **`connected_account.connected`**
 
-A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was connected for the first time or was reconnected after being disconnected.
+A connected account was connected for the first time or was reconnected after being disconnected.
 
 <details>
 
@@ -847,7 +847,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.
+  ID of the Connect Webview associated with the event.
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
@@ -855,7 +855,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+  ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -879,14 +879,14 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`connected_account.created`**
 
-A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was created.
+A connected account was created.
 
 <details>
 
@@ -894,7 +894,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.
+  ID of the Connect Webview associated with the event.
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
@@ -902,7 +902,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+  ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -922,14 +922,14 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`connected_account.successful_login`**
 
-A [connected account](https://docs.seam.co/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).
+A connected account had a successful login using a Connect Webview.
 
 <details>
 
@@ -937,7 +937,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) had
 
 <strong><code>connect_webview_id</code></strong> <i>UUID</i>
 
-  ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) associated with the event.
+  ID of the Connect Webview associated with the event.
 
 <strong><code>connected_account_custom_metadata</code></strong> <i>Record</i>
 
@@ -945,7 +945,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) had
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+  ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -965,14 +965,14 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) had
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`connected_account.disconnected`**
 
-A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was disconnected.
+A connected account was disconnected.
 
 <details>
 
@@ -1003,7 +1003,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+  ID of the affected connected account.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -1042,14 +1042,14 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`connected_account.completed_first_sync`**
 
-A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.
+A connected account completed the first sync with Seam, and the corresponding devices or systems are now available.
 
 <details>
 
@@ -1061,7 +1061,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) com
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+  ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -1081,14 +1081,14 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) com
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`connected_account.deleted`**
 
-A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was deleted.
+A connected account was deleted.
 
 <details>
 
@@ -1100,7 +1100,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+  ID of the affected connected account.
 
 <strong><code>connected_account_type</code></strong> <i>String</i>
 
@@ -1128,14 +1128,14 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) was
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`connected_account.completed_first_sync_after_reconnection`**
 
-A [connected account](https://docs.seam.co/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.
+A connected account completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.
 
 <details>
 
@@ -1147,7 +1147,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) com
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+  ID of the affected connected account.
 
 <strong><code>created_at</code></strong> <i>Datetime</i>
 
@@ -1167,14 +1167,14 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) com
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
 
 **`connected_account.reauthorization_requested`**
 
-A [connected account](https://docs.seam.co/core-concepts/connected-accounts) requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
+A connected account requires reauthorization using a new Connect Webview. The account is still connected, but cannot access new features. Delaying reauthorization too long will eventually cause the Connected Account to become disconnected.
 
 <details>
 
@@ -1205,7 +1205,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) req
 
 <strong><code>connected_account_id</code></strong> <i>UUID</i>
 
-  ID of the affected [connected account](https://docs.seam.co/core-concepts/connected-accounts).
+  ID of the affected connected account.
 
 <strong><code>connected_account_warnings</code></strong> <i>List</i> <i>of Objects</i>
 
@@ -1244,7 +1244,7 @@ A [connected account](https://docs.seam.co/core-concepts/connected-accounts) req
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---

@@ -49,6 +49,7 @@ An access system resource.
 
 **`acs_access_group_count`** *Number*
 
+Number of access groups in the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -66,6 +67,7 @@ ID of the [access control system](https://docs.seam.co/low-level-apis/access-sys
 
 **`acs_user_count`** *Number*
 
+Number of users in the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -74,7 +76,7 @@ ID of the [access control system](https://docs.seam.co/low-level-apis/access-sys
 
 **`connected_account_id`** *UUID*
 
-ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
+ID of the connected account associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -183,6 +185,8 @@ Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.s
 
   **`is_bridge_error`** *Boolean*
   
+  
+  Indicates whether the error is related to the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
   
   
   ---
@@ -457,6 +461,7 @@ Indicates whether the `acs_system` is a credential manager.
 
 **`location`** *Object*
 
+Location information for the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -523,6 +528,7 @@ Name of the [access control system](https://docs.seam.co/low-level-apis/access-s
 
 **`visionline_metadata`** *Object*
 
+Visionline-specific metadata for the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -666,7 +672,7 @@ Indicates that the access control system requires additional setup before it can
 
 **`workspace_id`** *UUID*
 
-ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).
+ID of the workspace that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).
 
 
 
@@ -787,7 +793,7 @@ An [access system](https://docs.seam.co/low-level-apis/access-systems) was conne
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -826,7 +832,7 @@ An [access system](https://docs.seam.co/low-level-apis/access-systems) was added
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
@@ -941,7 +947,7 @@ An [access system](https://docs.seam.co/low-level-apis/access-systems) was disco
 
 <strong><code>workspace_id</code></strong> <i>UUID</i>
 
-  ID of the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the event.
+  ID of the workspace associated with the event.
 </details>
 
 ---
