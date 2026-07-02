@@ -6,6 +6,7 @@ import { env } from 'node:process'
 import type { Blueprint } from '@seamapi/blueprint'
 
 import { canonicalizeGeneratedLinks } from './canonicalize-links.js'
+import { dedupeConceptLinksInPages } from './concept-links.js'
 import { updateEventPages } from './events.js'
 import { getRawOpenApiSpec, loadBlueprint } from './load-data.js'
 import { transformSpec } from './transform-spec.js'
@@ -99,6 +100,16 @@ await insertEventsPagesIntoNav(updatedEvents)
 console.log('Canonicalizing docs links in generated output...')
 const sanitizedCount = await canonicalizeGeneratedLinks(outputDir)
 console.log(`  Canonicalized links in ${sanitizedCount} generated file(s)`)
+
+// Phase H: de-duplicate generic concept links (workspace, connected account,
+// device, ...) within each page — keep the first, unwrap the rest — so a reader
+// gets the link on first encounter without it repeating on every shared
+// property. Runs after canonicalization so it dedupes final canonical targets.
+// Event pages are skipped here: their concept links are stripped entirely at
+// render time (Phase F.5). See concept-links.ts for the full policy.
+console.log('De-duplicating concept links per page...')
+const dedupedCount = await dedupeConceptLinksInPages(outputDir)
+console.log(`  De-duplicated concept links in ${dedupedCount} page(s)`)
 
 console.log(`\nDone!`)
 console.log(`  Removed undocumented paths: ${stats.removedPaths}`)

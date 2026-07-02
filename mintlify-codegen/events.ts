@@ -4,6 +4,8 @@ import { join } from 'node:path'
 
 import type { Blueprint } from '@seamapi/blueprint'
 
+import { stripConceptLinks } from './concept-links.js'
+
 /**
  * Generate event documentation for the API reference.
  *
@@ -189,7 +191,7 @@ function renderEventProperty(prop: EventProperty): string {
   ) {
     body.push(`Value: \`${prop.values[0].name}\``)
   } else {
-    const description = (prop.description ?? '').trim()
+    const description = stripConceptLinks((prop.description ?? '').trim())
     body.push(description || `The ${prop.name.replace(/_/g, ' ')}.`)
 
     if (hasEnumValues(prop) && prop.values.length > 0) {
@@ -235,7 +237,7 @@ function renderEvent(event: EventResource): string {
   return [
     `## \`${event.eventType}\``,
     '',
-    event.description.trim(),
+    stripConceptLinks(event.description.trim()),
     '',
     renderEventSample(event),
     '',
